@@ -49,16 +49,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
@@ -92,10 +98,58 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Catalogo\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Catalogo\FrmAgregarC.Designer.vb">
+      <DependentUpon>FrmAgregarC.vb</DependentUpon>
     </Compile>
-    <Compile Include="Catalogo\Form2.vb">
+    <Compile Include="Catalogo\FrmAgregarC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogo\FrmAgregarD.Designer.vb">
+      <DependentUpon>FrmAgregarD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\FrmAgregarD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogo\FrmAgregarE.Designer.vb">
+      <DependentUpon>FrmAgregarE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\FrmAgregarE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogo\FrmAgregarH.Designer.vb">
+      <DependentUpon>FrmAgregarH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\FrmAgregarH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogo\FrmEntradaYSalida.Designer.vb">
+      <DependentUpon>FrmEntradaYSalida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\FrmEntradaYSalida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\FrmEliminarC.Designer.vb">
+      <DependentUpon>FrmEliminarC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\FrmEliminarC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\FrmEliminarD.Designer.vb">
+      <DependentUpon>FrmEliminarD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\FrmEliminarD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\FrmEliminarE.Designer.vb">
+      <DependentUpon>FrmEliminarE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\FrmEliminarE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\FrmEliminarH.Designer.vb">
+      <DependentUpon>FrmEliminarH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\FrmEliminarH.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -109,6 +163,18 @@
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="Login\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificacion\FrmModificarE.Designer.vb">
+      <DependentUpon>FrmModificarE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificacion\FrmModificarE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificacion\FrmModificarH.Designer.vb">
+      <DependentUpon>FrmModificarH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificacion\FrmModificarH.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -135,6 +201,24 @@
     <Compile Include="Reporte\dataset\DsRegistros.vb">
       <DependentUpon>DsRegistros.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reporte\FrmHoraE.Designer.vb">
+      <DependentUpon>FrmHoraE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\FrmHoraE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\FrmCargoE.Designer.vb">
+      <DependentUpon>FrmCargoE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\FrmCargoE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\FrmDepartamentoE.Designer.vb">
+      <DependentUpon>FrmDepartamentoE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\FrmDepartamentoE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reporte\FrmVistaPrevia.Designer.vb">
       <DependentUpon>FrmVistaPrevia.vb</DependentUpon>
     </Compile>
@@ -143,8 +227,32 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Catalogo\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Catalogo\FrmAgregarC.resx">
+      <DependentUpon>FrmAgregarC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo\FrmAgregarD.resx">
+      <DependentUpon>FrmAgregarD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo\FrmAgregarE.resx">
+      <DependentUpon>FrmAgregarE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo\FrmAgregarH.resx">
+      <DependentUpon>FrmAgregarH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo\FrmEntradaYSalida.resx">
+      <DependentUpon>FrmEntradaYSalida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar\FrmEliminarC.resx">
+      <DependentUpon>FrmEliminarC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar\FrmEliminarD.resx">
+      <DependentUpon>FrmEliminarD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar\FrmEliminarE.resx">
+      <DependentUpon>FrmEliminarE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar\FrmEliminarH.resx">
+      <DependentUpon>FrmEliminarH.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -152,18 +260,34 @@
     <EmbeddedResource Include="Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modificacion\FrmModificarE.resx">
+      <DependentUpon>FrmModificarE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificacion\FrmModificarH.resx">
+      <DependentUpon>FrmModificarH.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\FrmHoraE.resx">
+      <DependentUpon>FrmHoraE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\FrmCargoE.resx">
+      <DependentUpon>FrmCargoE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\FrmDepartamentoE.resx">
+      <DependentUpon>FrmDepartamentoE.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporte\FrmVistaPrevia.resx">
       <DependentUpon>FrmVistaPrevia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\Report1.rdlc" />
-    <EmbeddedResource Include="Reporte\RptCargoEmpleado.rdlc" />
+    <EmbeddedResource Include="Reporte\RptCargoE.rdlc" />
     <EmbeddedResource Include="Reporte\RptEmpleado.rdlc" />
+    <EmbeddedResource Include="Reporte\RptHoraE.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">

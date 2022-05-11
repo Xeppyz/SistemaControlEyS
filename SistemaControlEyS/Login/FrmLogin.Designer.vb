@@ -27,6 +27,8 @@ Partial Class FrmLogin
         Me.TextUsuario = New System.Windows.Forms.TextBox()
         Me.TextContraseña = New System.Windows.Forms.TextBox()
         Me.BtnAceptar = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -75,11 +77,31 @@ Partial Class FrmLogin
         Me.BtnAceptar.Text = "Aceptar"
         Me.BtnAceptar.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Image = Global.SistemaControlEyS.My.Resources.Resources._9102311_login_user_profile_account_password_icon
+        Me.Button2.Location = New System.Drawing.Point(446, 121)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(88, 44)
+        Me.Button2.TabIndex = 6
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.SistemaControlEyS.My.Resources.Resources._285655_user_icon
+        Me.Button1.Location = New System.Drawing.Point(446, 60)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(88, 50)
+        Me.Button1.TabIndex = 5
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(471, 235)
+        Me.ClientSize = New System.Drawing.Size(570, 284)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BtnAceptar)
         Me.Controls.Add(Me.TextContraseña)
         Me.Controls.Add(Me.TextUsuario)
@@ -98,4 +120,6 @@ Partial Class FrmLogin
     Friend WithEvents TextUsuario As TextBox
     Friend WithEvents TextContraseña As TextBox
     Friend WithEvents BtnAceptar As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

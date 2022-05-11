@@ -2,49 +2,103 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix2">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.19514cm</Width>
+              <Width>3.68972cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.19514cm</Width>
+              <Width>3.5989cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.19514cm</Width>
+              <Width>3.61687cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.40488cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.67333cm</Height>
+              <Height>0.97042cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox7">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID</Value>
+                              <Value>Nombres</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Apellidos</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hora Entrada</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -67,7 +121,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre</Value>
+                              <Value>Hora Salida</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -88,148 +142,28 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox11">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>cant Emp</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox11</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox13">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Jefe Dep</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox13</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox15">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Ext</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox17">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Email</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox17</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.67333cm</Height>
+              <Height>0.97042cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="id">
+                    <Textbox Name="nombres">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!id.Value</Value>
+                              <Value>=Fields!nombres.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>id</rd:DefaultName>
+                      <rd:DefaultName>nombres</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -245,50 +179,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nombre">
+                    <Textbox Name="apellidos">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nombre.Value</Value>
+                              <Value>=Fields!apellidos.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nombre</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="cantEmp">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!cantEmp.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>cantEmp</rd:DefaultName>
+                      <rd:DefaultName>apellidos</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -304,21 +209,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="jefeDep">
+                    <Textbox Name="horaEntrada">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!jefeDep.Value</Value>
+                              <Value>=Fields!horaEntrada.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>jefeDep</rd:DefaultName>
+                      <rd:DefaultName>horaEntrada</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -334,51 +239,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ext">
+                    <Textbox Name="horaSalida">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ext.Value</Value>
+                              <Value>=Fields!horaSalida.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ext</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="email">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!email.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>email</rd:DefaultName>
+                      <rd:DefaultName>horaSalida</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -402,8 +277,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -412,15 +285,15 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="Details" />
+              <Group Name="Detalles" />
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DsDepartamento</DataSetName>
-        <Top>0.68474cm</Top>
+        <DataSetName>TblHoraE</DataSetName>
+        <Top>0.76412cm</Top>
         <Left>0.76412cm</Left>
-        <Height>1.34666cm</Height>
-        <Width>14.08542cm</Width>
+        <Height>1.94083cm</Height>
+        <Width>14.31036cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -428,28 +301,27 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.10417in</Height>
+    <Height>1.28125in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>7.51492in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>3.11078cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox19">
+        <Textbox Name="Textbox7">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Departamentos</Value>
+                  <Value>REPORTE DE ENTRADA Y SALIDA </Value>
                   <Style>
-                    <FontFamily>Consolas</FontFamily>
-                    <FontSize>22pt</FontSize>
-                    <Color>Brown</Color>
+                    <FontFamily>CONsolas</FontFamily>
+                    <FontSize>24pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -457,25 +329,56 @@
                 <TextAlign>Center</TextAlign>
               </Style>
             </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox7</rd:DefaultName>
+          <Top>0.62604cm</Top>
+          <Left>2.41448cm</Left>
+          <Height>1.28792cm</Height>
+          <Width>13.63896cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Image Name="clock">
+          <Source>Embedded</Source>
+          <Value>ID897245_clock_manage_schedule_time_icon</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.62604cm</Top>
+          <Left>16.22983cm</Left>
+          <Height>1.97625cm</Height>
+          <Width>2.21437cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox13">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value />
-                  <Style>
-                    <FontFamily>Consolas</FontFamily>
-                    <FontSize>22pt</FontSize>
-                    <Color>Brown</Color>
-                  </Style>
+                  <Value>=Globals!ExecutionTime</Value>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox19</rd:DefaultName>
-          <Top>0.7112cm</Top>
-          <Left>2.11169cm</Left>
-          <Height>0.9175cm</Height>
-          <Width>11.81333cm</Width>
+          <rd:DefaultName>Textbox13</rd:DefaultName>
+          <Top>2.33439cm</Top>
+          <Height>0.6cm</Height>
+          <Width>2.94979cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -491,18 +394,49 @@
         <Border>
           <Style>None</Style>
         </Border>
-        <BackgroundColor>Tan</BackgroundColor>
+        <BackgroundColor>LightBlue</BackgroundColor>
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>3.12208cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox17">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox17</rd:DefaultName>
+          <Top>0.29917cm</Top>
+          <Left>14.25787cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
-        <BackgroundColor>Tan</BackgroundColor>
+        <BackgroundColor>LightBlue</BackgroundColor>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
@@ -521,51 +455,55 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>95042bc9-45b2-4e89-b011-7d52f99ffe08</rd:DataSourceID>
+      <rd:DataSourceID>322d6d05-703d-4292-9d96-4bdad78d7b6a</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DsDepartamento">
+    <DataSet Name="TblHoraE">
       <Query>
         <DataSourceName>DataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="id">
-          <DataField>id</DataField>
+        <Field Name="horaEntrada">
+          <DataField>horaEntrada</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
+        <Field Name="horaSalida">
+          <DataField>horaSalida</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cantEmp">
-          <DataField>cantEmp</DataField>
+        <Field Name="fecha">
+          <DataField>fecha</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="nombres">
+          <DataField>nombres</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="jefeDep">
-          <DataField>jefeDep</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ext">
-          <DataField>ext</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="email">
-          <DataField>email</DataField>
+        <Field Name="apellidos">
+          <DataField>apellidos</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\isi10\Desktop\SistemaControlEyS\SistemaControlEyS\Reporte\dataset\DsRegistros.xsd</rd:SchemaPath>
-        <rd:TableName>DtDepartamento</rd:TableName>
+        <rd:SchemaPath>C:\Users\alexa\OneDrive\Escritorio\SistemaControlEyS\SistemaControlEyS\Reporte\dataset\DsRegistros.xsd</rd:SchemaPath>
+        <rd:TableName>DtHora</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="ID897245_clock_manage_schedule_time_icon">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>0bd97d99-f286-49d3-9278-f104c01179ee</rd:ReportID>
+  <rd:ReportID>408a1098-ce3b-493f-8a6f-69cffd04ecb0</rd:ReportID>
 </Report>
