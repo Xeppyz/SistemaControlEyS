@@ -70,42 +70,49 @@
 
     End Sub
 
-    Private Sub EmpleadoToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem3.Click
-        FrmModificarE.Show()
+    Private Sub EmpleadoToolStripMenuItem3_Click(sender As Object, e As EventArgs)
+
+
+
+
+    End Sub
+
+    Private Sub HorarioToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
 
 
     End Sub
 
-    Private Sub HorarioToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles HorarioToolStripMenuItem1.Click
-        FrmModificarH.Show()
+    Private Sub DepartamentoToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
-
-    End Sub
-
-    Private Sub DepartamentoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DepartamentoToolStripMenuItem1.Click
-        FrmEliminarC.Show()
 
 
     End Sub
 
-    Private Sub CargoToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles CargoToolStripMenuItem2.Click
-        FrmEliminarD.Show()
+    Private Sub CargoToolStripMenuItem2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub EmpleadoToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem4.Click
-        FrmEliminarE.Show()
+    Private Sub EmpleadoToolStripMenuItem4_Click(sender As Object, e As EventArgs)
+
 
     End Sub
 
-    Private Sub HorarioToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles HorarioToolStripMenuItem2.Click
-        FrmEliminarH.Show()
+    Private Sub HorarioToolStripMenuItem2_Click(sender As Object, e As EventArgs)
+
 
     End Sub
 
     Private Sub EntradaySalidaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EntradaySalidaToolStripMenuItem1.Click
         FrmEntradaYSalida.Show()
+
+    End Sub
+
+    Private Sub ModificarToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub FormularioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormularioToolStripMenuItem.Click
 
     End Sub
 End Class

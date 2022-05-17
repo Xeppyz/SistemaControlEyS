@@ -128,29 +128,10 @@
     <Compile Include="Catalogo\FrmEntradaYSalida.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Eliminar\FrmEliminarC.Designer.vb">
-      <DependentUpon>FrmEliminarC.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Eliminar\FrmEliminarC.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Eliminar\FrmEliminarD.Designer.vb">
-      <DependentUpon>FrmEliminarD.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Eliminar\FrmEliminarD.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Eliminar\FrmEliminarE.Designer.vb">
-      <DependentUpon>FrmEliminarE.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Eliminar\FrmEliminarE.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Eliminar\FrmEliminarH.Designer.vb">
-      <DependentUpon>FrmEliminarH.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Eliminar\FrmEliminarH.vb">
-      <SubType>Form</SubType>
+    <Compile Include="CONEXION\DSAyato.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAyato.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -163,18 +144,6 @@
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="Login\FrmLogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modificacion\FrmModificarE.Designer.vb">
-      <DependentUpon>FrmModificarE.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modificacion\FrmModificarE.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modificacion\FrmModificarH.Designer.vb">
-      <DependentUpon>FrmModificarH.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modificacion\FrmModificarH.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -242,29 +211,11 @@
     <EmbeddedResource Include="Catalogo\FrmEntradaYSalida.resx">
       <DependentUpon>FrmEntradaYSalida.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Eliminar\FrmEliminarC.resx">
-      <DependentUpon>FrmEliminarC.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Eliminar\FrmEliminarD.resx">
-      <DependentUpon>FrmEliminarD.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Eliminar\FrmEliminarE.resx">
-      <DependentUpon>FrmEliminarE.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Eliminar\FrmEliminarH.resx">
-      <DependentUpon>FrmEliminarH.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modificacion\FrmModificarE.resx">
-      <DependentUpon>FrmModificarE.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modificacion\FrmModificarH.resx">
-      <DependentUpon>FrmModificarH.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -290,6 +241,17 @@
     <EmbeddedResource Include="Reporte\RptHoraE.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CONEXION\DSAyato.xsc">
+      <DependentUpon>DSAyato.xsd</DependentUpon>
+    </None>
+    <None Include="CONEXION\DSAyato.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAyato.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CONEXION\DSAyato.xss">
+      <DependentUpon>DSAyato.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

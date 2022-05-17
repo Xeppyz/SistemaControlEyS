@@ -26,23 +26,15 @@ Partial Class Form1
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormularioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmpleadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CargoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ModificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HorarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmpleadoToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HorarioToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DepartamentoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CargoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmpleadoToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HorarioToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmpleadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CargoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradaYSalidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrarEntradaYSalidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradaySalidaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -68,40 +60,15 @@ Partial Class Form1
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'FormularioToolStripMenuItem
         '
-        Me.FormularioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.ModificarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.FormularioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem})
         Me.FormularioToolStripMenuItem.Name = "FormularioToolStripMenuItem"
         Me.FormularioToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
         Me.FormularioToolStripMenuItem.Text = "Formulario"
-        '
-        'ReporteToolStripMenuItem
-        '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadoToolStripMenuItem, Me.DepartamentoToolStripMenuItem, Me.CargoToolStripMenuItem, Me.EntradaYSalidaToolStripMenuItem})
-        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
-        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ReporteToolStripMenuItem.Text = "Reporte"
-        '
-        'EmpleadoToolStripMenuItem
-        '
-        Me.EmpleadoToolStripMenuItem.Name = "EmpleadoToolStripMenuItem"
-        Me.EmpleadoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.EmpleadoToolStripMenuItem.Text = "Empleado"
-        '
-        'DepartamentoToolStripMenuItem
-        '
-        Me.DepartamentoToolStripMenuItem.Name = "DepartamentoToolStripMenuItem"
-        Me.DepartamentoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.DepartamentoToolStripMenuItem.Text = "Departamento"
-        '
-        'CargoToolStripMenuItem
-        '
-        Me.CargoToolStripMenuItem.Name = "CargoToolStripMenuItem"
-        Me.CargoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.CargoToolStripMenuItem.Text = "Cargo"
         '
         'AgregarToolStripMenuItem
         '
@@ -109,20 +76,6 @@ Partial Class Form1
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
         Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
-        '
-        'ModificarToolStripMenuItem
-        '
-        Me.ModificarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadoToolStripMenuItem3, Me.HorarioToolStripMenuItem1})
-        Me.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
-        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ModificarToolStripMenuItem.Text = "Modificar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DepartamentoToolStripMenuItem1, Me.CargoToolStripMenuItem2, Me.EmpleadoToolStripMenuItem4, Me.HorarioToolStripMenuItem2})
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'EmpleadoToolStripMenuItem1
         '
@@ -148,46 +101,35 @@ Partial Class Form1
         Me.HorarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.HorarioToolStripMenuItem.Text = "Horario"
         '
-        'EmpleadoToolStripMenuItem3
+        'ReporteToolStripMenuItem
         '
-        Me.EmpleadoToolStripMenuItem3.Name = "EmpleadoToolStripMenuItem3"
-        Me.EmpleadoToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
-        Me.EmpleadoToolStripMenuItem3.Text = "Empleado"
+        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadoToolStripMenuItem, Me.DepartamentoToolStripMenuItem, Me.CargoToolStripMenuItem, Me.EntradaYSalidaToolStripMenuItem})
+        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
+        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.ReporteToolStripMenuItem.Text = "Reporte"
         '
-        'HorarioToolStripMenuItem1
+        'EmpleadoToolStripMenuItem
         '
-        Me.HorarioToolStripMenuItem1.Name = "HorarioToolStripMenuItem1"
-        Me.HorarioToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.HorarioToolStripMenuItem1.Text = "Horario"
+        Me.EmpleadoToolStripMenuItem.Name = "EmpleadoToolStripMenuItem"
+        Me.EmpleadoToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.EmpleadoToolStripMenuItem.Text = "Empleado"
         '
-        'DepartamentoToolStripMenuItem1
+        'DepartamentoToolStripMenuItem
         '
-        Me.DepartamentoToolStripMenuItem1.Name = "DepartamentoToolStripMenuItem1"
-        Me.DepartamentoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.DepartamentoToolStripMenuItem1.Text = "Cargo"
+        Me.DepartamentoToolStripMenuItem.Name = "DepartamentoToolStripMenuItem"
+        Me.DepartamentoToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.DepartamentoToolStripMenuItem.Text = "Departamento"
         '
-        'CargoToolStripMenuItem2
+        'CargoToolStripMenuItem
         '
-        Me.CargoToolStripMenuItem2.Name = "CargoToolStripMenuItem2"
-        Me.CargoToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
-        Me.CargoToolStripMenuItem2.Text = "Departamento"
-        '
-        'EmpleadoToolStripMenuItem4
-        '
-        Me.EmpleadoToolStripMenuItem4.Name = "EmpleadoToolStripMenuItem4"
-        Me.EmpleadoToolStripMenuItem4.Size = New System.Drawing.Size(180, 22)
-        Me.EmpleadoToolStripMenuItem4.Text = "Empleado"
-        '
-        'HorarioToolStripMenuItem2
-        '
-        Me.HorarioToolStripMenuItem2.Name = "HorarioToolStripMenuItem2"
-        Me.HorarioToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
-        Me.HorarioToolStripMenuItem2.Text = "Horario"
+        Me.CargoToolStripMenuItem.Name = "CargoToolStripMenuItem"
+        Me.CargoToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.CargoToolStripMenuItem.Text = "Cargo"
         '
         'EntradaYSalidaToolStripMenuItem
         '
         Me.EntradaYSalidaToolStripMenuItem.Name = "EntradaYSalidaToolStripMenuItem"
-        Me.EntradaYSalidaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EntradaYSalidaToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.EntradaYSalidaToolStripMenuItem.Text = "Entrada y Salida"
         '
         'RegistrarEntradaYSalidaToolStripMenuItem
@@ -200,7 +142,7 @@ Partial Class Form1
         'EntradaySalidaToolStripMenuItem1
         '
         Me.EntradaySalidaToolStripMenuItem1.Name = "EntradaySalidaToolStripMenuItem1"
-        Me.EntradaySalidaToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EntradaySalidaToolStripMenuItem1.Size = New System.Drawing.Size(151, 22)
         Me.EntradaySalidaToolStripMenuItem1.Text = "EntradaySalida"
         '
         'Form1
@@ -229,18 +171,10 @@ Partial Class Form1
     Friend WithEvents DepartamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CargoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgregarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ModificarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmpleadoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents CargoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents EmpleadoToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents HorarioToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EmpleadoToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents HorarioToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents DepartamentoToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents CargoToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents EmpleadoToolStripMenuItem4 As ToolStripMenuItem
-    Friend WithEvents HorarioToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents EntradaYSalidaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistrarEntradaYSalidaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EntradaySalidaToolStripMenuItem1 As ToolStripMenuItem
