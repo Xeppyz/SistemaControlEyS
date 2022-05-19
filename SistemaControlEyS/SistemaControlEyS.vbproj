@@ -98,6 +98,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogo\FrmAgregarC.Designer.vb">
+      <DependentUpon>FrmAgregarC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\FrmAgregarC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Catalogo\FrmAgregarD.Designer.vb">
       <DependentUpon>FrmAgregarD.vb</DependentUpon>
     </Compile>
@@ -146,11 +152,6 @@
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -190,6 +191,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Catalogo\FrmAgregarC.resx">
+      <DependentUpon>FrmAgregarC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogo\FrmAgregarD.resx">
       <DependentUpon>FrmAgregarD.vb</DependentUpon>
     </EmbeddedResource>
@@ -210,7 +214,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -267,7 +270,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\floppy-disk.png" />
+    <Content Include="Imagenes\2303123_bin_delete_garbage_remove_trash_icon.png" />
+    <Content Include="Imagenes\285657_floppy_guardar_save_icon.png" />
+    <Content Include="Imagenes\2931173_document_empty_file_new_sheet_icon.png" />
+    <Content Include="Imagenes\6071808_folder_progress_task_update_update task progress_icon.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -283,6 +289,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

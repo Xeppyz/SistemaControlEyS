@@ -136,15 +136,11 @@
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         Try
-
             Dim dato As String = TextDato.Text & "%"
             DgvDepartamento.DataSource = Depart.BuscarPorNombre(IdDepart)
             DgvDepartamento.Refresh()
 
-
             GroupBox2.Text = "Departamentos encontrados: " & DgvDepartamento.Rows.Count.ToString
-
-
 
         Catch ex As Exception
 
