@@ -123,15 +123,11 @@
         Dim idCargo As Integer = CInt(TextIDCargo.Text.Trim)
         Dim idHorario As Integer = CInt(TextIDHorario.Text.Trim)
 
-        emplea.InsertarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
-        idCargo, idHorario)
-        llenarGrid()
-
-
-
-
-
-
+        If (emplea.InsertarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
+        idCargo, idHorario)) Then
+            MsgBox("Se guardó con éxito el empleado", MsgBoxStyle.Information, "CORRECTO")
+            llenarGrid()
+        End If
 
 
     End Sub
@@ -230,13 +226,12 @@
         Dim idCargo As Integer = CInt(TextIDCargo.Text.Trim)
         Dim idHorario As Integer = CInt(TextIDHorario.Text.Trim)
 
-        emplea.ActualizarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
-        idCargo, idHorario, Idempleado)
-        llenarGrid()
-
-
-
-
+        If (emplea.ActualizarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
+        idCargo, idHorario, Idempleado)) Then
+            MsgBox("Se actualizo correctamente empleado...", MsgBoxStyle.Information, "ÉXITO")
+            Exit Sub
+            llenarGrid()
+        End If
     End Sub
 
     Private Sub DgvEmpleado_DoubleClick(sender As Object, e As EventArgs) Handles DgvEmpleado.DoubleClick

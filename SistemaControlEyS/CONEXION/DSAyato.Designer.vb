@@ -4769,12 +4769,48 @@ Namespace DSAyatoTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT idDepartamento, nombre, cantEmpleado, jefeDepartamento, ext, gmail FROM db"& _ 
                 "o.Departamento"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "UPDATE [dbo].[Departamento] SET [nombre] = @nombre, [cantEmpleado] = @cantEmplead"& _ 
+                "o, [jefeDepartamento] = @jefeDepartamento, [ext] = @ext, [gmail] = @gmail WHERE "& _ 
+                "(([idDepartamento] = @Original_idDepartamento));"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.[Char], 30, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cantEmpleado", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "cantEmpleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@jefeDepartamento", Global.System.Data.SqlDbType.[Char], 30, Global.System.Data.ParameterDirection.Input, 0, 0, "jefeDepartamento", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ext", Global.System.Data.SqlDbType.[Char], 100, Global.System.Data.ParameterDirection.Input, 0, 0, "ext", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gmail", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "gmail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idDepartamento", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idDepartamento", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "DELETE FROM [dbo].[Departamento] WHERE (([idDepartamento] = @Original_idDepartame"& _ 
+                "nto));"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idDepartamento", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idDepartamento", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT idDepartamento, nombre, cantEmpleado, jefeDepartamento, ext, gmail FROM db"& _ 
+                "o.Departamento WHERE nombre like @nombre"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.[Char], 30, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "INSERT INTO [dbo].[Departamento] ([nombre], [cantEmpleado], [jefeDepartamento], ["& _ 
+                "ext], [gmail]) VALUES (@nombre, @cantEmpleado, @jefeDepartamento, @ext, @gmail);"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT idDepartamento, nombre, cantEmpleado, jefeDepartamento, ext, gmail FROM"& _ 
+                " Departamento WHERE (idDepartamento = SCOPE_IDENTITY())"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.[Char], 30, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cantEmpleado", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "cantEmpleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@jefeDepartamento", Global.System.Data.SqlDbType.[Char], 30, Global.System.Data.ParameterDirection.Input, 0, 0, "jefeDepartamento", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ext", Global.System.Data.SqlDbType.[Char], 100, Global.System.Data.ParameterDirection.Input, 0, 0, "ext", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gmail", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "gmail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4796,6 +4832,40 @@ Namespace DSAyatoTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As DSAyato.DepartamentoDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DSAyato.DepartamentoDataTable = New DSAyato.DepartamentoDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As DSAyato.DepartamentoDataTable, ByVal nombre As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (nombre Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("nombre")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(nombre,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function BuscarPorNombre(ByVal nombre As String) As DSAyato.DepartamentoDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (nombre Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("nombre")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(nombre,String)
+            End If
             Dim dataTable As DSAyato.DepartamentoDataTable = New DSAyato.DepartamentoDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -4982,6 +5052,116 @@ Namespace DSAyatoTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal nombre As String, ByVal cantEmpleado As Integer, ByVal jefeDepartamento As String, ByVal ext As String, ByVal gmail As String, ByVal Original_idDepartamento As Integer, ByVal Original_nombre As String, ByVal Original_cantEmpleado As Integer, ByVal Original_jefeDepartamento As String, ByVal Original_ext As String, ByVal Original_gmail As String) As Integer
             Return Me.Update(nombre, cantEmpleado, jefeDepartamento, ext, gmail, Original_idDepartamento, Original_nombre, Original_cantEmpleado, Original_jefeDepartamento, Original_ext, Original_gmail, Original_idDepartamento)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function ActualizarDepartamento(ByVal nombre As String, ByVal cantEmpleado As Integer, ByVal jefeDepartamento As String, ByVal ext As String, ByVal gmail As String, ByVal Original_idDepartamento As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (nombre Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("nombre")
+            Else
+                command.Parameters(0).Value = CType(nombre,String)
+            End If
+            command.Parameters(1).Value = CType(cantEmpleado,Integer)
+            If (jefeDepartamento Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("jefeDepartamento")
+            Else
+                command.Parameters(2).Value = CType(jefeDepartamento,String)
+            End If
+            If (ext Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ext")
+            Else
+                command.Parameters(3).Value = CType(ext,String)
+            End If
+            If (gmail Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("gmail")
+            Else
+                command.Parameters(4).Value = CType(gmail,String)
+            End If
+            command.Parameters(5).Value = CType(Original_idDepartamento,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
+        Public Overloads Overridable Function EliminarDepartamento(ByVal Original_idDepartamento As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            command.Parameters(0).Value = CType(Original_idDepartamento,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertarDepartamento(ByVal nombre As String, ByVal cantEmpleado As Integer, ByVal jefeDepartamento As String, ByVal ext As String, ByVal gmail As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            If (nombre Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("nombre")
+            Else
+                command.Parameters(0).Value = CType(nombre,String)
+            End If
+            command.Parameters(1).Value = CType(cantEmpleado,Integer)
+            If (jefeDepartamento Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("jefeDepartamento")
+            Else
+                command.Parameters(2).Value = CType(jefeDepartamento,String)
+            End If
+            If (ext Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ext")
+            Else
+                command.Parameters(3).Value = CType(ext,String)
+            End If
+            If (gmail Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("gmail")
+            Else
+                command.Parameters(4).Value = CType(gmail,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

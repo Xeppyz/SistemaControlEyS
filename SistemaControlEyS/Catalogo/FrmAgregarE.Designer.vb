@@ -52,10 +52,6 @@ Partial Class FrmAgregarE
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvEmpleado = New System.Windows.Forms.DataGridView()
-        Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtDato = New System.Windows.Forms.TextBox()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.IdEmpleadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoPersonalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoLaboralDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,8 +63,12 @@ Partial Class FrmAgregarE
         Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdCargoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdHorarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DSAyatoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DSAyato = New SistemaControlEyS.DSAyato()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtDato = New System.Windows.Forms.TextBox()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.EmpleadoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.EmpleadoTableAdapter()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -338,36 +338,6 @@ Partial Class FrmAgregarE
         Me.DgvEmpleado.Size = New System.Drawing.Size(764, 133)
         Me.DgvEmpleado.TabIndex = 0
         '
-        'EmpleadoBindingSource
-        '
-        Me.EmpleadoBindingSource.DataMember = "Empleado"
-        Me.EmpleadoBindingSource.DataSource = Me.DSAyatoBindingSource
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 185)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(146, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Escriba el empleadoa  buscar"
-        '
-        'TxtDato
-        '
-        Me.TxtDato.Location = New System.Drawing.Point(162, 182)
-        Me.TxtDato.Name = "TxtDato"
-        Me.TxtDato.Size = New System.Drawing.Size(242, 20)
-        Me.TxtDato.TabIndex = 5
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.Location = New System.Drawing.Point(420, 180)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnBuscar.TabIndex = 6
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
-        '
         'IdEmpleadoDataGridViewTextBoxColumn
         '
         Me.IdEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "idEmpleado"
@@ -435,6 +405,11 @@ Partial Class FrmAgregarE
         Me.IdHorarioDataGridViewTextBoxColumn.HeaderText = "idHorario"
         Me.IdHorarioDataGridViewTextBoxColumn.Name = "IdHorarioDataGridViewTextBoxColumn"
         '
+        'EmpleadoBindingSource
+        '
+        Me.EmpleadoBindingSource.DataMember = "Empleado"
+        Me.EmpleadoBindingSource.DataSource = Me.DSAyatoBindingSource
+        '
         'DSAyatoBindingSource
         '
         Me.DSAyatoBindingSource.DataSource = Me.DSAyato
@@ -444,6 +419,31 @@ Partial Class FrmAgregarE
         '
         Me.DSAyato.DataSetName = "DSAyato"
         Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(10, 185)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(146, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Escriba el empleadoa  buscar"
+        '
+        'TxtDato
+        '
+        Me.TxtDato.Location = New System.Drawing.Point(162, 182)
+        Me.TxtDato.Name = "TxtDato"
+        Me.TxtDato.Size = New System.Drawing.Size(242, 20)
+        Me.TxtDato.TabIndex = 5
+        '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.Location = New System.Drawing.Point(420, 180)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.TabIndex = 6
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
         '
         'EmpleadoTableAdapter
         '

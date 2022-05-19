@@ -98,7 +98,7 @@ SELECT idEmpleado, correoPersonal, correoLaboral, telefono, nombre, ciudad, apel
               <Mapping SourceColumn="idHorario" DataSetColumn="idHorario" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarEmpleado" Modifier="Public" Name="ActualizarEmpleado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ActualizarEmpleado">
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarEmpleado" Modifier="Public" Name="ActualizarEmpleado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ActualizarEmpleado">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Empleado] SET [correoPersonal] = @correoPersonal, [correoLaboral] = @correoLaboral, [telefono] = @telefono, [nombre] = @nombre, [ciudad] = @ciudad, [apellido] = @apellido, [cedula] = @cedula, [direccion] = @direccion, [idCargo] = @idCargo, [idHorario] = @idHorario WHERE (([idEmpleado] = @Original_idEmpleado) );
@@ -119,7 +119,7 @@ SELECT idEmpleado, correoPersonal, correoLaboral, telefono, nombre, ciudad, apel
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminarEmpleado" Modifier="Public" Name="EliminarEmpleado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="EliminarEmpleado">
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminarEmpleado" Modifier="Public" Name="EliminarEmpleado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="EliminarEmpleado">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[Empleado] WHERE (([idEmpleado] = @Original_idEmpleado));</CommandText>
@@ -139,7 +139,7 @@ SELECT idEmpleado, correoPersonal, correoLaboral, telefono, nombre, ciudad, apel
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarEmpleado" Modifier="Public" Name="InsertarEmpleado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertarEmpleado">
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarEmpleado" Modifier="Public" Name="InsertarEmpleado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertarEmpleado">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[Empleado] ([correoPersonal], [correoLaboral], [telefono], [nombre], [ciudad], [apellido], [cedula], [direccion], [idCargo], [idHorario]) VALUES (@correoPersonal, @correoLaboral, @telefono, @nombre, @ciudad, @apellido, @cedula, @direccion, @idCargo, @idHorario);
@@ -226,7 +226,61 @@ SELECT idDepartamento, nombre, cantEmpleado, jefeDepartamento, ext, gmail FROM D
               <Mapping SourceColumn="ext" DataSetColumn="ext" />
               <Mapping SourceColumn="gmail" DataSetColumn="gmail" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarDepartamento" Modifier="Public" Name="ActualizarDepartamento" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ActualizarDepartamento">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[Departamento] SET [nombre] = @nombre, [cantEmpleado] = @cantEmpleado, [jefeDepartamento] = @jefeDepartamento, [ext] = @ext, [gmail] = @gmail WHERE (([idDepartamento] = @Original_idDepartamento));</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="nombre" ColumnName="nombre" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="char(30)" DbType="AnsiString" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="Char" Scale="0" Size="30" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cantEmpleado" ColumnName="cantEmpleado" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@cantEmpleado" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="cantEmpleado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="jefeDepartamento" ColumnName="jefeDepartamento" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="char(30)" DbType="AnsiString" Direction="Input" ParameterName="@jefeDepartamento" Precision="0" ProviderType="Char" Scale="0" Size="30" SourceColumn="jefeDepartamento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ext" ColumnName="ext" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="char(100)" DbType="AnsiString" Direction="Input" ParameterName="@ext" Precision="0" ProviderType="Char" Scale="0" Size="100" SourceColumn="ext" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="gmail" ColumnName="gmail" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="nvarchar(100)" DbType="String" Direction="Input" ParameterName="@gmail" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumn="gmail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_idDepartamento" ColumnName="idDepartamento" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_idDepartamento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idDepartamento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminarDepartamento" Modifier="Public" Name="EliminarDepartamento" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="EliminarDepartamento">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [dbo].[Departamento] WHERE (([idDepartamento] = @Original_idDepartamento));</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_idDepartamento" ColumnName="idDepartamento" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_idDepartamento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idDepartamento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="BDAyatoLovers.dbo.Departamento" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="BuscarPorNombre" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="BuscarPorNombre" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="BuscarPorNombre" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT idDepartamento, nombre, cantEmpleado, jefeDepartamento, ext, gmail FROM dbo.Departamento WHERE nombre like @nombre
+
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="nombre" ColumnName="nombre" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="char(30)" DbType="AnsiString" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="Char" Scale="0" Size="30" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarDepartamento" Modifier="Public" Name="InsertarDepartamento" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertarDepartamento">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [dbo].[Departamento] ([nombre], [cantEmpleado], [jefeDepartamento], [ext], [gmail]) VALUES (@nombre, @cantEmpleado, @jefeDepartamento, @ext, @gmail);
+SELECT idDepartamento, nombre, cantEmpleado, jefeDepartamento, ext, gmail FROM Departamento WHERE (idDepartamento = SCOPE_IDENTITY())
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="nombre" ColumnName="nombre" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="char(30)" DbType="AnsiString" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="Char" Scale="0" Size="30" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cantEmpleado" ColumnName="cantEmpleado" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@cantEmpleado" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="cantEmpleado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="jefeDepartamento" ColumnName="jefeDepartamento" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="char(30)" DbType="AnsiString" Direction="Input" ParameterName="@jefeDepartamento" Precision="0" ProviderType="Char" Scale="0" Size="30" SourceColumn="jefeDepartamento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ext" ColumnName="ext" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="char(100)" DbType="AnsiString" Direction="Input" ParameterName="@ext" Precision="0" ProviderType="Char" Scale="0" Size="100" SourceColumn="ext" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="gmail" ColumnName="gmail" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="nvarchar(100)" DbType="String" Direction="Input" ParameterName="@gmail" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumn="gmail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CargoTableAdapter" GeneratorDataComponentClassName="CargoTableAdapter" Name="Cargo" UserDataComponentName="CargoTableAdapter">
             <MainSource>
@@ -737,13 +791,13 @@ SELECT idRegistro, horaDeMarca, horasExtras, tipoDeMarca, idEmpleado, idLogin FR
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="RefCargo28" msdata:parent="Cargo" msdata:child="Empleado" msdata:parentkey="idCargo" msdata:childkey="idCargo" msprop:Generator_UserParentTable="Cargo" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefCargo28" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="RefCargo28" msprop:Generator_ParentPropName="CargoRow" />
-      <msdata:Relationship name="RefDepartamento27" msdata:parent="Departamento" msdata:child="Cargo" msdata:parentkey="idDepartamento" msdata:childkey="idDepartamento" msprop:Generator_UserParentTable="Departamento" msprop:Generator_UserChildTable="Cargo" msprop:Generator_RelationVarName="relationRefDepartamento27" msprop:Generator_ChildPropName="GetCargoRows" msprop:Generator_ParentPropName="DepartamentoRow" msprop:Generator_UserRelationName="RefDepartamento27" />
-      <msdata:Relationship name="RefEmpleado30" msdata:parent="Empleado" msdata:child="EmpleadoLogin" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="EmpleadoLogin" msprop:Generator_RelationVarName="relationRefEmpleado30" msprop:Generator_ChildPropName="GetEmpleadoLoginRows" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_UserRelationName="RefEmpleado30" />
-      <msdata:Relationship name="RefHorario29" msdata:parent="Horario" msdata:child="Empleado" msdata:parentkey="idHorario" msdata:childkey="idHorario" msprop:Generator_UserParentTable="Horario" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefHorario29" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="RefHorario29" msprop:Generator_ParentPropName="HorarioRow" />
-      <msdata:Relationship name="RefEmpleadoLogin32" msdata:parent="EmpleadoLogin" msdata:child="Login" msdata:parentkey="empleadoLogin" msdata:childkey="empleadoLogin" msprop:Generator_UserParentTable="EmpleadoLogin" msprop:Generator_UserChildTable="Login" msprop:Generator_RelationVarName="relationRefEmpleadoLogin32" msprop:Generator_ChildPropName="GetLoginRows" msprop:Generator_ParentPropName="EmpleadoLoginRow" msprop:Generator_UserRelationName="RefEmpleadoLogin32" />
-      <msdata:Relationship name="RefEmpleado31" msdata:parent="Empleado" msdata:child="Registro_x0020_Entrada_x0020_y_x0020_Salida" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="Registro Entrada y Salida" msprop:Generator_RelationVarName="relationRefEmpleado31" msprop:Generator_ChildPropName="GetRegistro_Entrada_y_SalidaRows" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_UserRelationName="RefEmpleado31" />
-      <msdata:Relationship name="RefLogin33" msdata:parent="Login" msdata:child="Registro_x0020_Entrada_x0020_y_x0020_Salida" msdata:parentkey="idLogin" msdata:childkey="idLogin" msprop:Generator_UserParentTable="Login" msprop:Generator_UserChildTable="Registro Entrada y Salida" msprop:Generator_RelationVarName="relationRefLogin33" msprop:Generator_ChildPropName="GetRegistro_Entrada_y_SalidaRows" msprop:Generator_ParentPropName="LoginRow" msprop:Generator_UserRelationName="RefLogin33" />
+      <msdata:Relationship name="RefCargo28" msdata:parent="Cargo" msdata:child="Empleado" msdata:parentkey="idCargo" msdata:childkey="idCargo" msprop:Generator_UserParentTable="Cargo" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefCargo28" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_ParentPropName="CargoRow" msprop:Generator_UserRelationName="RefCargo28" />
+      <msdata:Relationship name="RefDepartamento27" msdata:parent="Departamento" msdata:child="Cargo" msdata:parentkey="idDepartamento" msdata:childkey="idDepartamento" msprop:Generator_UserParentTable="Departamento" msprop:Generator_UserChildTable="Cargo" msprop:Generator_RelationVarName="relationRefDepartamento27" msprop:Generator_ChildPropName="GetCargoRows" msprop:Generator_UserRelationName="RefDepartamento27" msprop:Generator_ParentPropName="DepartamentoRow" />
+      <msdata:Relationship name="RefEmpleado30" msdata:parent="Empleado" msdata:child="EmpleadoLogin" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="EmpleadoLogin" msprop:Generator_RelationVarName="relationRefEmpleado30" msprop:Generator_ChildPropName="GetEmpleadoLoginRows" msprop:Generator_UserRelationName="RefEmpleado30" msprop:Generator_ParentPropName="EmpleadoRow" />
+      <msdata:Relationship name="RefHorario29" msdata:parent="Horario" msdata:child="Empleado" msdata:parentkey="idHorario" msdata:childkey="idHorario" msprop:Generator_UserParentTable="Horario" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefHorario29" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_ParentPropName="HorarioRow" msprop:Generator_UserRelationName="RefHorario29" />
+      <msdata:Relationship name="RefEmpleadoLogin32" msdata:parent="EmpleadoLogin" msdata:child="Login" msdata:parentkey="empleadoLogin" msdata:childkey="empleadoLogin" msprop:Generator_UserParentTable="EmpleadoLogin" msprop:Generator_UserChildTable="Login" msprop:Generator_RelationVarName="relationRefEmpleadoLogin32" msprop:Generator_ChildPropName="GetLoginRows" msprop:Generator_UserRelationName="RefEmpleadoLogin32" msprop:Generator_ParentPropName="EmpleadoLoginRow" />
+      <msdata:Relationship name="RefEmpleado31" msdata:parent="Empleado" msdata:child="Registro_x0020_Entrada_x0020_y_x0020_Salida" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="Registro Entrada y Salida" msprop:Generator_RelationVarName="relationRefEmpleado31" msprop:Generator_ChildPropName="GetRegistro_Entrada_y_SalidaRows" msprop:Generator_UserRelationName="RefEmpleado31" msprop:Generator_ParentPropName="EmpleadoRow" />
+      <msdata:Relationship name="RefLogin33" msdata:parent="Login" msdata:child="Registro_x0020_Entrada_x0020_y_x0020_Salida" msdata:parentkey="idLogin" msdata:childkey="idLogin" msprop:Generator_UserParentTable="Login" msprop:Generator_UserChildTable="Registro Entrada y Salida" msprop:Generator_RelationVarName="relationRefLogin33" msprop:Generator_ChildPropName="GetRegistro_Entrada_y_SalidaRows" msprop:Generator_UserRelationName="RefLogin33" msprop:Generator_ParentPropName="LoginRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

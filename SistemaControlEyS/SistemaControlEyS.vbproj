@@ -98,12 +98,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Catalogo\FrmAgregarC.Designer.vb">
-      <DependentUpon>FrmAgregarC.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Catalogo\FrmAgregarC.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Catalogo\FrmAgregarD.Designer.vb">
       <DependentUpon>FrmAgregarD.vb</DependentUpon>
     </Compile>
@@ -196,9 +190,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Catalogo\FrmAgregarC.resx">
-      <DependentUpon>FrmAgregarC.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Catalogo\FrmAgregarD.resx">
       <DependentUpon>FrmAgregarD.vb</DependentUpon>
     </EmbeddedResource>

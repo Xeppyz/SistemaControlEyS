@@ -42,7 +42,7 @@
     End Sub
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click
-        FrmAgregarC.Show()
+
 
     End Sub
 
@@ -60,6 +60,7 @@
 
     Private Sub CargoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CargoToolStripMenuItem1.Click
         FrmAgregarD.Show()
+
 
 
     End Sub
@@ -113,6 +114,10 @@
     End Sub
 
     Private Sub FormularioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormularioToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub AgregarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarToolStripMenuItem.Click
 
     End Sub
 End Class
