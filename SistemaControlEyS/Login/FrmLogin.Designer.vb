@@ -79,7 +79,7 @@ Partial Class FrmLogin
         '
         'Button2
         '
-        Me.Button2.Image = Global.SistemaControlEyS.My.Resources.Resources._9102311_login_user_profile_account_password_icon
+
         Me.Button2.Location = New System.Drawing.Point(446, 121)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(88, 44)
@@ -88,7 +88,7 @@ Partial Class FrmLogin
         '
         'Button1
         '
-        Me.Button1.Image = Global.SistemaControlEyS.My.Resources.Resources._285655_user_icon
+
         Me.Button1.Location = New System.Drawing.Point(446, 60)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 50)

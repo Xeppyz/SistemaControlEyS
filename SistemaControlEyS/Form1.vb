@@ -66,7 +66,7 @@
     End Sub
 
     Private Sub HorarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HorarioToolStripMenuItem.Click
-        FrmAgregarH.Show()
+
 
 
     End Sub
