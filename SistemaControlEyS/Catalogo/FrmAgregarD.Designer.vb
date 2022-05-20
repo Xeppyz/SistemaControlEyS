@@ -25,18 +25,26 @@ Partial Class FrmAgregarD
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgregarD))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextEmail = New System.Windows.Forms.TextBox()
+        Me.TextJefe = New System.Windows.Forms.TextBox()
+        Me.TextExt = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextCant = New System.Windows.Forms.TextBox()
+        Me.TextDepart = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvDepartamento = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextDepart = New System.Windows.Forms.TextBox()
-        Me.TextCant = New System.Windows.Forms.TextBox()
-        Me.TextExt = New System.Windows.Forms.TextBox()
-        Me.TextJefe = New System.Windows.Forms.TextBox()
-        Me.TextEmail = New System.Windows.Forms.TextBox()
+        Me.IdDepartamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantEmpleadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JefeDepartamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ExtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DepartamentoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.BtnNuevo = New System.Windows.Forms.ToolStripButton()
         Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
@@ -45,21 +53,13 @@ Partial Class FrmAgregarD
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextDato = New System.Windows.Forms.TextBox()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.DSAyato = New SistemaControlEyS.DSAyato()
-        Me.DepartamentoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DepartamentoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.DepartamentoTableAdapter()
-        Me.IdDepartamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantEmpleadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JefeDepartamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ExtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvDepartamento, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
-        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DepartamentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -79,6 +79,86 @@ Partial Class FrmAgregarD
         Me.GroupBox1.Size = New System.Drawing.Size(857, 120)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'TextEmail
+        '
+        Me.TextEmail.Location = New System.Drawing.Point(706, 29)
+        Me.TextEmail.Name = "TextEmail"
+        Me.TextEmail.Size = New System.Drawing.Size(145, 20)
+        Me.TextEmail.TabIndex = 9
+        '
+        'TextJefe
+        '
+        Me.TextJefe.Location = New System.Drawing.Point(493, 68)
+        Me.TextJefe.Name = "TextJefe"
+        Me.TextJefe.Size = New System.Drawing.Size(167, 20)
+        Me.TextJefe.TabIndex = 8
+        '
+        'TextExt
+        '
+        Me.TextExt.Location = New System.Drawing.Point(493, 26)
+        Me.TextExt.Name = "TextExt"
+        Me.TextExt.Size = New System.Drawing.Size(167, 20)
+        Me.TextExt.TabIndex = 7
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(668, 33)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(32, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Email"
+        '
+        'TextCant
+        '
+        Me.TextCant.Location = New System.Drawing.Point(149, 75)
+        Me.TextCant.Name = "TextCant"
+        Me.TextCant.Size = New System.Drawing.Size(197, 20)
+        Me.TextCant.TabIndex = 6
+        '
+        'TextDepart
+        '
+        Me.TextDepart.Location = New System.Drawing.Point(144, 26)
+        Me.TextDepart.Name = "TextDepart"
+        Me.TextDepart.Size = New System.Drawing.Size(202, 20)
+        Me.TextDepart.TabIndex = 5
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(377, 75)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(110, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Jefe de departamento"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(377, 29)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(53, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Extensión"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(25, 82)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(118, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Cantidad de empleados"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(25, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nombre"
         '
         'GroupBox2
         '
@@ -103,85 +183,52 @@ Partial Class FrmAgregarD
         Me.DgvDepartamento.Size = New System.Drawing.Size(782, 126)
         Me.DgvDepartamento.TabIndex = 0
         '
-        'Label1
+        'IdDepartamentoDataGridViewTextBoxColumn
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 26)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre"
+        Me.IdDepartamentoDataGridViewTextBoxColumn.DataPropertyName = "idDepartamento"
+        Me.IdDepartamentoDataGridViewTextBoxColumn.HeaderText = "idDepartamento"
+        Me.IdDepartamentoDataGridViewTextBoxColumn.Name = "IdDepartamentoDataGridViewTextBoxColumn"
+        Me.IdDepartamentoDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'Label2
+        'NombreDataGridViewTextBoxColumn
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 82)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Cantidad de empleados"
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
         '
-        'Label3
+        'CantEmpleadoDataGridViewTextBoxColumn
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(377, 29)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Extensión"
+        Me.CantEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "cantEmpleado"
+        Me.CantEmpleadoDataGridViewTextBoxColumn.HeaderText = "cantEmpleado"
+        Me.CantEmpleadoDataGridViewTextBoxColumn.Name = "CantEmpleadoDataGridViewTextBoxColumn"
         '
-        'Label4
+        'JefeDepartamentoDataGridViewTextBoxColumn
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(377, 75)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(110, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Jefe de departamento"
+        Me.JefeDepartamentoDataGridViewTextBoxColumn.DataPropertyName = "jefeDepartamento"
+        Me.JefeDepartamentoDataGridViewTextBoxColumn.HeaderText = "jefeDepartamento"
+        Me.JefeDepartamentoDataGridViewTextBoxColumn.Name = "JefeDepartamentoDataGridViewTextBoxColumn"
         '
-        'Label5
+        'ExtDataGridViewTextBoxColumn
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(668, 33)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(32, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Email"
+        Me.ExtDataGridViewTextBoxColumn.DataPropertyName = "ext"
+        Me.ExtDataGridViewTextBoxColumn.HeaderText = "ext"
+        Me.ExtDataGridViewTextBoxColumn.Name = "ExtDataGridViewTextBoxColumn"
         '
-        'TextDepart
+        'GmailDataGridViewTextBoxColumn
         '
-        Me.TextDepart.Location = New System.Drawing.Point(144, 26)
-        Me.TextDepart.Name = "TextDepart"
-        Me.TextDepart.Size = New System.Drawing.Size(202, 20)
-        Me.TextDepart.TabIndex = 5
+        Me.GmailDataGridViewTextBoxColumn.DataPropertyName = "gmail"
+        Me.GmailDataGridViewTextBoxColumn.HeaderText = "gmail"
+        Me.GmailDataGridViewTextBoxColumn.Name = "GmailDataGridViewTextBoxColumn"
         '
-        'TextCant
+        'DepartamentoBindingSource
         '
-        Me.TextCant.Location = New System.Drawing.Point(149, 75)
-        Me.TextCant.Name = "TextCant"
-        Me.TextCant.Size = New System.Drawing.Size(197, 20)
-        Me.TextCant.TabIndex = 6
+        Me.DepartamentoBindingSource.DataMember = "Departamento"
+        Me.DepartamentoBindingSource.DataSource = Me.DSAyato
         '
-        'TextExt
+        'DSAyato
         '
-        Me.TextExt.Location = New System.Drawing.Point(493, 26)
-        Me.TextExt.Name = "TextExt"
-        Me.TextExt.Size = New System.Drawing.Size(167, 20)
-        Me.TextExt.TabIndex = 7
-        '
-        'TextJefe
-        '
-        Me.TextJefe.Location = New System.Drawing.Point(493, 68)
-        Me.TextJefe.Name = "TextJefe"
-        Me.TextJefe.Size = New System.Drawing.Size(167, 20)
-        Me.TextJefe.TabIndex = 8
-        '
-        'TextEmail
-        '
-        Me.TextEmail.Location = New System.Drawing.Point(706, 29)
-        Me.TextEmail.Name = "TextEmail"
-        Me.TextEmail.Size = New System.Drawing.Size(145, 20)
-        Me.TextEmail.TabIndex = 9
+        Me.DSAyato.DataSetName = "DSAyato"
+        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ToolStrip1
         '
@@ -253,56 +300,9 @@ Partial Class FrmAgregarD
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
-        'DSAyato
-        '
-        Me.DSAyato.DataSetName = "DSAyato"
-        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DepartamentoBindingSource
-        '
-        Me.DepartamentoBindingSource.DataMember = "Departamento"
-        Me.DepartamentoBindingSource.DataSource = Me.DSAyato
-        '
         'DepartamentoTableAdapter
         '
         Me.DepartamentoTableAdapter.ClearBeforeFill = True
-        '
-        'IdDepartamentoDataGridViewTextBoxColumn
-        '
-        Me.IdDepartamentoDataGridViewTextBoxColumn.DataPropertyName = "idDepartamento"
-        Me.IdDepartamentoDataGridViewTextBoxColumn.HeaderText = "idDepartamento"
-        Me.IdDepartamentoDataGridViewTextBoxColumn.Name = "IdDepartamentoDataGridViewTextBoxColumn"
-        Me.IdDepartamentoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'CantEmpleadoDataGridViewTextBoxColumn
-        '
-        Me.CantEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "cantEmpleado"
-        Me.CantEmpleadoDataGridViewTextBoxColumn.HeaderText = "cantEmpleado"
-        Me.CantEmpleadoDataGridViewTextBoxColumn.Name = "CantEmpleadoDataGridViewTextBoxColumn"
-        '
-        'JefeDepartamentoDataGridViewTextBoxColumn
-        '
-        Me.JefeDepartamentoDataGridViewTextBoxColumn.DataPropertyName = "jefeDepartamento"
-        Me.JefeDepartamentoDataGridViewTextBoxColumn.HeaderText = "jefeDepartamento"
-        Me.JefeDepartamentoDataGridViewTextBoxColumn.Name = "JefeDepartamentoDataGridViewTextBoxColumn"
-        '
-        'ExtDataGridViewTextBoxColumn
-        '
-        Me.ExtDataGridViewTextBoxColumn.DataPropertyName = "ext"
-        Me.ExtDataGridViewTextBoxColumn.HeaderText = "ext"
-        Me.ExtDataGridViewTextBoxColumn.Name = "ExtDataGridViewTextBoxColumn"
-        '
-        'GmailDataGridViewTextBoxColumn
-        '
-        Me.GmailDataGridViewTextBoxColumn.DataPropertyName = "gmail"
-        Me.GmailDataGridViewTextBoxColumn.HeaderText = "gmail"
-        Me.GmailDataGridViewTextBoxColumn.Name = "GmailDataGridViewTextBoxColumn"
         '
         'FrmAgregarD
         '
@@ -317,15 +317,15 @@ Partial Class FrmAgregarD
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FrmAgregarD"
-        Me.Text = "FrmAgregarD"
+        Me.Text = "Agregar Departamento"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvDepartamento, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DepartamentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DepartamentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
