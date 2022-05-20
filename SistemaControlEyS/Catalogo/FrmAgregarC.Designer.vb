@@ -222,7 +222,7 @@ Partial Class FrmAgregarC
         Me.BtnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(23, 22)
-        Me.BtnNuevo.Text = "ToolStripButton1"
+        Me.BtnNuevo.Text = "Nuevo"
         '
         'BtnGuardar
         '
@@ -231,7 +231,7 @@ Partial Class FrmAgregarC
         Me.BtnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnGuardar.Text = "ToolStripButton2"
+        Me.BtnGuardar.Text = "Guardar"
         '
         'BtnEditar
         '
@@ -240,7 +240,7 @@ Partial Class FrmAgregarC
         Me.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnEditar.Text = "ToolStripButton3"
+        Me.BtnEditar.Text = "Editar"
         '
         'BtnEliminar
         '
@@ -249,7 +249,7 @@ Partial Class FrmAgregarC
         Me.BtnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnEliminar.Text = "ToolStripButton4"
+        Me.BtnEliminar.Text = "Eliminar"
         '
         'FrmAgregarC
         '
