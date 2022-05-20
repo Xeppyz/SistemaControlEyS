@@ -42,6 +42,7 @@
     End Sub
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click
+        FrmAgregarC.Show()
 
 
     End Sub
