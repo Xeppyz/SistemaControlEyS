@@ -50,10 +50,13 @@
         Dim descripcion As String = TextDescrip.Text.Trim
         Dim iddepartamento As Integer = CInt(TextIdDepart.Text.Trim)
 
-        carg.InsertarCargo(cargo, descripcion, iddepartamento)
-        llenarGrid()
-
+        If (carg.InsertarCargo(cargo, descripcion, iddepartamento)) Then
+            MsgBox("Se guardó exitosamente", MsgBoxStyle.Information, "CORRECTO")
+            llenarGrid()
+        End If
 
     End Sub
+
+
 
 End Class

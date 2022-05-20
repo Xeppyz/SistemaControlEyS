@@ -26,6 +26,7 @@
         BtnEliminar.Enabled = False
         TextDepart.Focus()
 
+
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -46,9 +47,10 @@
             Exit Sub
         End If
         If (String.IsNullOrEmpty(TextEmail.Text)) Then
-            MsgBox("No se puede dejar en blanco el Email", MsgBoxStyle.Critical, "ERROR")
+            MsgBox("No se permite dejar en blanco el Email", MsgBoxStyle.Critical, "ERROR")
             Exit Sub
         End If
+
 
 
         Dim nombreDepartamento As String = TextDepart.Text.Trim
@@ -92,7 +94,7 @@
         Dim email As String = TextEmail.Text.Trim
 
         If (Depart.ActualizarDepartamento(nombreDepartamento, cantidadEmpleados, extension, jefeDepartamento, email, IdDepart)) Then
-            MsgBox("Se actualizó correctamente el departamento", MsgBoxStyle.Information, "Correcto")
+            MsgBox("Se actualizó con éxito el departamento...", MsgBoxStyle.Critical, "CORRECTO")
             llenarGrid()
         End If
     End Sub

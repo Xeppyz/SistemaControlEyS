@@ -16,6 +16,7 @@
     End Sub
 
     Private Sub ReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteToolStripMenuItem.Click
+        MsgBox("PROXIMAMENTE...", MsgBoxStyle.Exclamation, "En obras")
 
     End Sub
 
