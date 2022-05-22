@@ -7,6 +7,7 @@
         'TODO: esta línea de código carga datos en la tabla 'DSAyato.Departamento' Puede moverla o quitarla según sea necesario.
         Me.DepartamentoTableAdapter.Fill(Me.DSAyato.Departamento)
         llenarGrid()
+
     End Sub
 
     Sub llenarGrid()
@@ -140,7 +141,7 @@
         Try
 
             Dim dato As String = TextDato.Text & "%"
-            DgvDepartamento.DataSource = Depart.BuscarPorNombre(IdDepart)
+            DgvDepartamento.DataSource = Depart.BuscarPorNombre(dato)
             DgvDepartamento.Refresh()
 
 

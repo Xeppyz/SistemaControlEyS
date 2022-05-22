@@ -293,7 +293,7 @@ Partial Class FrmAgregarD
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(345, 166)
+        Me.BtnBuscar.Location = New System.Drawing.Point(340, 166)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
         Me.BtnBuscar.TabIndex = 5
