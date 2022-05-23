@@ -2,7 +2,7 @@
     Private Sub btnReporte_Click(sender As Object, e As EventArgs)
 
 
-        FrmVistaPrevia.Show()
+
     End Sub
 
     Private Sub ArchivoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ArchivoToolStripMenuItem.Click
@@ -21,7 +21,7 @@
     End Sub
 
     Private Sub EmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem.Click
-        FrmVistaPrevia.Show()
+
 
 
 
@@ -30,14 +30,15 @@
     End Sub
 
     Private Sub DepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DepartamentoToolStripMenuItem.Click
-        FrmDepartamentoE.Show()
+
 
 
     End Sub
 
     Private Sub CargoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargoToolStripMenuItem.Click
 
-        FrmCargoE.Show()
+
+
 
 
     End Sub
@@ -50,7 +51,7 @@
 
     Private Sub EntradaYSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradaYSalidaToolStripMenuItem.Click
 
-        FrmHoraE.Show()
+
 
     End Sub
 
@@ -68,6 +69,7 @@
     End Sub
 
     Private Sub HorarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HorarioToolStripMenuItem.Click
+        FrmAgregarH.Show()
 
 
 

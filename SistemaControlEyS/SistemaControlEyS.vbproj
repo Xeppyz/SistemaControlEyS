@@ -116,6 +116,12 @@
     <Compile Include="Catalogo\FrmAgregarE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Catalogo\FrmAgregarH.Designer.vb">
+      <DependentUpon>FrmAgregarH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\FrmAgregarH.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Catalogo\FrmEntradaYSalida.Designer.vb">
       <DependentUpon>FrmEntradaYSalida.vb</DependentUpon>
     </Compile>
@@ -156,38 +162,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Reporte\dataset\DsRegistros.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsRegistros.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte\dataset\DsRegistros.vb">
-      <DependentUpon>DsRegistros.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte\FrmHoraE.Designer.vb">
-      <DependentUpon>FrmHoraE.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte\FrmHoraE.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reporte\FrmCargoE.Designer.vb">
-      <DependentUpon>FrmCargoE.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte\FrmCargoE.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reporte\FrmDepartamentoE.Designer.vb">
-      <DependentUpon>FrmDepartamentoE.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte\FrmDepartamentoE.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reporte\FrmVistaPrevia.Designer.vb">
-      <DependentUpon>FrmVistaPrevia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte\FrmVistaPrevia.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Catalogo\FrmAgregarC.resx">
@@ -198,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogo\FrmAgregarE.resx">
       <DependentUpon>FrmAgregarE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo\FrmAgregarH.resx">
+      <DependentUpon>FrmAgregarH.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogo\FrmEntradaYSalida.resx">
       <DependentUpon>FrmEntradaYSalida.vb</DependentUpon>
@@ -214,22 +191,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\FrmHoraE.resx">
-      <DependentUpon>FrmHoraE.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\FrmCargoE.resx">
-      <DependentUpon>FrmCargoE.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\FrmDepartamentoE.resx">
-      <DependentUpon>FrmDepartamentoE.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\FrmVistaPrevia.resx">
-      <DependentUpon>FrmVistaPrevia.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\Report1.rdlc" />
-    <EmbeddedResource Include="Reporte\RptCargoE.rdlc" />
-    <EmbeddedResource Include="Reporte\RptEmpleado.rdlc" />
-    <EmbeddedResource Include="Reporte\RptHoraE.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CONEXION\DSAyato.xsc">
@@ -254,17 +215,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Reporte\dataset\DsRegistros.xsc">
-      <DependentUpon>DsRegistros.xsd</DependentUpon>
-    </None>
-    <None Include="Reporte\dataset\DsRegistros.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsRegistros.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Reporte\dataset\DsRegistros.xss">
-      <DependentUpon>DsRegistros.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\Loader.cs" />
@@ -282,6 +232,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reporte\dataset\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

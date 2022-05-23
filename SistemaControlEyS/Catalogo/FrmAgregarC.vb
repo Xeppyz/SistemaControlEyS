@@ -132,6 +132,7 @@
         Try
             Dim dato As String = TextDato.Text & "%"
             DgvCargo.DataSource = carg.BuscarPorNombre(dato)
+            DgvCargo.Refresh()
 
 
 

@@ -51,8 +51,6 @@ Partial Public Class DSAyato
     
     Private relationRefEmpleado31 As Global.System.Data.DataRelation
     
-    Private relationRefLogin33 As Global.System.Data.DataRelation
-    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -358,7 +356,6 @@ Partial Public Class DSAyato
         Me.relationRefHorario29 = Me.Relations("RefHorario29")
         Me.relationRefEmpleadoLogin32 = Me.Relations("RefEmpleadoLogin32")
         Me.relationRefEmpleado31 = Me.Relations("RefEmpleado31")
-        Me.relationRefLogin33 = Me.Relations("RefLogin33")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -395,8 +392,6 @@ Partial Public Class DSAyato
         Me.Relations.Add(Me.relationRefEmpleadoLogin32)
         Me.relationRefEmpleado31 = New Global.System.Data.DataRelation("RefEmpleado31", New Global.System.Data.DataColumn() {Me.tableEmpleado.idEmpleadoColumn}, New Global.System.Data.DataColumn() {Me.tableRegistro_Entrada_y_Salida.idEmpleadoColumn}, false)
         Me.Relations.Add(Me.relationRefEmpleado31)
-        Me.relationRefLogin33 = New Global.System.Data.DataRelation("RefLogin33", New Global.System.Data.DataColumn() {Me.tableLogin.idLoginColumn}, New Global.System.Data.DataColumn() {Me.tableRegistro_Entrada_y_Salida.idLoginColumn}, false)
-        Me.Relations.Add(Me.relationRefLogin33)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1992,7 +1987,7 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddHorarioRow(ByVal descripcion As String, ByVal horaEntrada As Integer, ByVal horaSalida As Integer) As HorarioRow
+        Public Overloads Function AddHorarioRow(ByVal descripcion As String, ByVal horaEntrada As String, ByVal horaSalida As String) As HorarioRow
             Dim rowHorarioRow As HorarioRow = CType(Me.NewRow,HorarioRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, descripcion, horaEntrada, horaSalida}
             rowHorarioRow.ItemArray = columnValuesArray
@@ -2036,9 +2031,9 @@ Partial Public Class DSAyato
             MyBase.Columns.Add(Me.columnidHorario)
             Me.columndescripcion = New Global.System.Data.DataColumn("descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndescripcion)
-            Me.columnhoraEntrada = New Global.System.Data.DataColumn("horaEntrada", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnhoraEntrada = New Global.System.Data.DataColumn("horaEntrada", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnhoraEntrada)
-            Me.columnhoraSalida = New Global.System.Data.DataColumn("horaSalida", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnhoraSalida = New Global.System.Data.DataColumn("horaSalida", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnhoraSalida)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidHorario}, true))
             Me.columnidHorario.AutoIncrement = true
@@ -2632,14 +2627,11 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRegistro_Entrada_y_SalidaRow(ByVal horaDeMarca As Date, ByVal horasExtras As Integer, ByVal tipoDeMarca As Boolean, ByVal parentEmpleadoRowByRefEmpleado31 As EmpleadoRow, ByVal parentLoginRowByRefLogin33 As LoginRow) As Registro_Entrada_y_SalidaRow
+        Public Overloads Function AddRegistro_Entrada_y_SalidaRow(ByVal horaDeMarca As Date, ByVal horasExtras As Integer, ByVal tipoDeMarca As Boolean, ByVal parentEmpleadoRowByRefEmpleado31 As EmpleadoRow, ByVal idLogin As Integer) As Registro_Entrada_y_SalidaRow
             Dim rowRegistro_Entrada_y_SalidaRow As Registro_Entrada_y_SalidaRow = CType(Me.NewRow,Registro_Entrada_y_SalidaRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, horaDeMarca, horasExtras, tipoDeMarca, Nothing, Nothing}
+            Dim columnValuesArray() As Object = New Object() {Nothing, horaDeMarca, horasExtras, tipoDeMarca, Nothing, idLogin}
             If (Not (parentEmpleadoRowByRefEmpleado31) Is Nothing) Then
                 columnValuesArray(4) = parentEmpleadoRowByRefEmpleado31(0)
-            End If
-            If (Not (parentLoginRowByRefLogin33) Is Nothing) Then
-                columnValuesArray(5) = parentLoginRowByRefLogin33(0)
             End If
             rowRegistro_Entrada_y_SalidaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRegistro_Entrada_y_SalidaRow)
@@ -3282,9 +3274,9 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property horaEntrada() As Integer
+        Public Property horaEntrada() As String
             Get
-                Return CType(Me(Me.tableHorario.horaEntradaColumn),Integer)
+                Return CType(Me(Me.tableHorario.horaEntradaColumn),String)
             End Get
             Set
                 Me(Me.tableHorario.horaEntradaColumn) = value
@@ -3293,9 +3285,9 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property horaSalida() As Integer
+        Public Property horaSalida() As String
             Get
-                Return CType(Me(Me.tableHorario.horaSalidaColumn),Integer)
+                Return CType(Me(Me.tableHorario.horaSalidaColumn),String)
             End Get
             Set
                 Me(Me.tableHorario.horaSalidaColumn) = value
@@ -3382,16 +3374,6 @@ Partial Public Class DSAyato
                 Me.SetParentRow(value, Me.Table.ParentRelations("RefEmpleadoLogin32"))
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function GetRegistro_Entrada_y_SalidaRows() As Registro_Entrada_y_SalidaRow()
-            If (Me.Table.ChildRelations("RefLogin33") Is Nothing) Then
-                Return New Registro_Entrada_y_SalidaRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("RefLogin33")),Registro_Entrada_y_SalidaRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -3488,17 +3470,6 @@ Partial Public Class DSAyato
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("RefEmpleado31"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property LoginRow() As LoginRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("RefLogin33")),LoginRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("RefLogin33"))
             End Set
         End Property
         
@@ -6153,11 +6124,40 @@ Namespace DSAyatoTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT idHorario, descripcion, horaEntrada, horaSalida FROM dbo.Horario"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "UPDATE [dbo].[Horario] SET [descripcion] = @descripcion, [horaEntrada] = @horaEnt"& _ 
+                "rada, [horaSalida] = @horaSalida WHERE (([idHorario] = @Original_idHorario));"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@descripcion", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horaEntrada", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "horaEntrada", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horaSalida", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "horaSalida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idHorario", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idHorario", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "DELETE FROM [dbo].[Horario] WHERE (([idHorario] = @Original_idHorario));"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idHorario", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idHorario", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT idHorario, descripcion, horaEntrada, horaSalida FROM dbo.Horario WHERE des"& _ 
+                "cripcion like @descripcion"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@descripcion", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "INSERT INTO [dbo].[Horario] ([descripcion], [horaEntrada], [horaSalida]) VALUES ("& _ 
+                "@descripcion, @horaEntrada, @horaSalida);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT idHorario, descripcion, horaEn"& _ 
+                "trada, horaSalida FROM Horario WHERE (idHorario = SCOPE_IDENTITY())"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@descripcion", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horaEntrada", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "horaEntrada", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horaSalida", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "horaSalida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6179,6 +6179,40 @@ Namespace DSAyatoTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As DSAyato.HorarioDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DSAyato.HorarioDataTable = New DSAyato.HorarioDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As DSAyato.HorarioDataTable, ByVal descripcion As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (descripcion Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("descripcion")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(descripcion,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function BuscarPorID(ByVal descripcion As String) As DSAyato.HorarioDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (descripcion Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("descripcion")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(descripcion,String)
+            End If
             Dim dataTable As DSAyato.HorarioDataTable = New DSAyato.HorarioDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -6309,6 +6343,104 @@ Namespace DSAyatoTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal descripcion As String, ByVal horaEntrada As Integer, ByVal horaSalida As Integer, ByVal Original_idHorario As Integer, ByVal Original_descripcion As String, ByVal Original_horaEntrada As Integer, ByVal Original_horaSalida As Integer) As Integer
             Return Me.Update(descripcion, horaEntrada, horaSalida, Original_idHorario, Original_descripcion, Original_horaEntrada, Original_horaSalida, Original_idHorario)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function ActualizarHorario(ByVal descripcion As String, ByVal horaEntrada As String, ByVal horaSalida As String, ByVal Original_idHorario As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (descripcion Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("descripcion")
+            Else
+                command.Parameters(0).Value = CType(descripcion,String)
+            End If
+            If (horaEntrada Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(horaEntrada,String)
+            End If
+            If (horaSalida Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(horaSalida,String)
+            End If
+            command.Parameters(3).Value = CType(Original_idHorario,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
+        Public Overloads Overridable Function EliminarHorario(ByVal Original_idHorario As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            command.Parameters(0).Value = CType(Original_idHorario,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertarHorario(ByVal descripcion As String, ByVal horaEntrada As String, ByVal horaSalida As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            If (descripcion Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("descripcion")
+            Else
+                command.Parameters(0).Value = CType(descripcion,String)
+            End If
+            If (horaEntrada Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(horaEntrada,String)
+            End If
+            If (horaSalida Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(horaSalida,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     
