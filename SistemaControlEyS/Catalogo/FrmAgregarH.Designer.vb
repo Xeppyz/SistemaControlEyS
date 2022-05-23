@@ -30,16 +30,13 @@ Partial Class FrmAgregarH
         Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
         Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextDescrip = New System.Windows.Forms.TextBox()
-        Me.TextEntrada = New System.Windows.Forms.TextBox()
         Me.TextSalida = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextDato = New System.Windows.Forms.TextBox()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.TextEntrada = New System.Windows.Forms.TextBox()
+        Me.TextDescrip = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvHorario = New System.Windows.Forms.DataGridView()
         Me.IdHorarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,6 +44,9 @@ Partial Class FrmAgregarH
         Me.HoraSalidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HorarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DSAyato = New SistemaControlEyS.DSAyato()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextDato = New System.Windows.Forms.TextBox()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.HorarioTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.HorarioTableAdapter()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -115,42 +115,19 @@ Partial Class FrmAgregarH
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
-        'GroupBox2
+        'TextSalida
         '
-        Me.GroupBox2.Controls.Add(Me.DgvHorario)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 215)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(776, 109)
-        Me.GroupBox2.TabIndex = 2
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Horarios encontrados: 0"
+        Me.TextSalida.Location = New System.Drawing.Point(552, 28)
+        Me.TextSalida.Name = "TextSalida"
+        Me.TextSalida.Size = New System.Drawing.Size(100, 20)
+        Me.TextSalida.TabIndex = 5
         '
-        'label1
+        'TextEntrada
         '
-        Me.label1.AutoSize = True
-        Me.label1.Location = New System.Drawing.Point(24, 27)
-        Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(63, 13)
-        Me.label1.TabIndex = 0
-        Me.label1.Text = "Descripción"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(277, 31)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Hora de entrada"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(471, 31)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Hora de salida"
+        Me.TextEntrada.Location = New System.Drawing.Point(365, 27)
+        Me.TextEntrada.Name = "TextEntrada"
+        Me.TextEntrada.Size = New System.Drawing.Size(100, 20)
+        Me.TextEntrada.TabIndex = 4
         '
         'TextDescrip
         '
@@ -161,45 +138,42 @@ Partial Class FrmAgregarH
         Me.TextDescrip.Size = New System.Drawing.Size(175, 84)
         Me.TextDescrip.TabIndex = 3
         '
-        'TextEntrada
+        'Label3
         '
-        Me.TextEntrada.Location = New System.Drawing.Point(365, 27)
-        Me.TextEntrada.Name = "TextEntrada"
-        Me.TextEntrada.Size = New System.Drawing.Size(100, 20)
-        Me.TextEntrada.TabIndex = 4
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(471, 31)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(75, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Hora de salida"
         '
-        'TextSalida
+        'Label2
         '
-        Me.TextSalida.Location = New System.Drawing.Point(552, 28)
-        Me.TextSalida.Name = "TextSalida"
-        Me.TextSalida.Size = New System.Drawing.Size(100, 20)
-        Me.TextSalida.TabIndex = 5
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(277, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(84, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Hora de entrada"
         '
-        'Label4
+        'label1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(21, 178)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(123, 24)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Buscar por ID"
+        Me.label1.AutoSize = True
+        Me.label1.Location = New System.Drawing.Point(24, 27)
+        Me.label1.Name = "label1"
+        Me.label1.Size = New System.Drawing.Size(63, 13)
+        Me.label1.TabIndex = 0
+        Me.label1.Text = "Descripción"
         '
-        'TextDato
+        'GroupBox2
         '
-        Me.TextDato.Location = New System.Drawing.Point(150, 181)
-        Me.TextDato.Name = "TextDato"
-        Me.TextDato.Size = New System.Drawing.Size(100, 20)
-        Me.TextDato.TabIndex = 4
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.Location = New System.Drawing.Point(259, 178)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnBuscar.TabIndex = 5
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
+        Me.GroupBox2.Controls.Add(Me.DgvHorario)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 215)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(776, 109)
+        Me.GroupBox2.TabIndex = 2
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Horarios encontrados: 0"
         '
         'DgvHorario
         '
@@ -248,6 +222,32 @@ Partial Class FrmAgregarH
         '
         Me.DSAyato.DataSetName = "DSAyato"
         Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(21, 178)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(204, 24)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Buscar por descripción"
+        '
+        'TextDato
+        '
+        Me.TextDato.Location = New System.Drawing.Point(231, 183)
+        Me.TextDato.Name = "TextDato"
+        Me.TextDato.Size = New System.Drawing.Size(100, 20)
+        Me.TextDato.TabIndex = 4
+        '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.Location = New System.Drawing.Point(337, 183)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.TabIndex = 5
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
         '
         'HorarioTableAdapter
         '
