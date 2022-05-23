@@ -11,6 +11,7 @@
     End Sub
 
     Private Sub FrmAgregarE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'TODO: esta línea de código carga datos en la tabla 'DSAyato.Empleado' Puede moverla o quitarla según sea necesario.
         Me.EmpleadoTableAdapter.Fill(Me.DSAyato.Empleado)
         llenarGrid()
@@ -38,6 +39,8 @@
     Sub llenarGrid()
         DgvEmpleado.DataSource = emplea.GetData
         DgvEmpleado.Refresh()
+
+        DgvEmpleado.Columns().Item(0).Visible = False
         Dim contador As Integer = CInt(DgvEmpleado.Rows.Count) - 1
         GroupBox2.Text = "Empleados encontrados: " & contador.ToString
 

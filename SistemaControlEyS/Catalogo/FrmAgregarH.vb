@@ -14,7 +14,9 @@
 
         DgvHorario.DataSource = horario.GetData
         DgvHorario.Refresh()
-        GroupBox2.Text = "Horarios encontrados: " & DgvHorario.Rows.Count.ToString
+        DgvHorario.Columns().Item(0).Visible = False
+        Dim contador As Integer = CInt(DgvHorario.Rows.Count) - 1
+        GroupBox2.Text = "Horarios encontrados: " & contador.ToString
 
     End Sub
 
@@ -126,17 +128,27 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Try
 
-            Dim dato As String = TextDato.Text & "%"
 
-            DgvHorario.DataSource = horario.BuscarPorID(dato)
-            DgvHorario.Refresh()
+        If (TextDato.Text.Equals("")) Then
+            llenarGrid()
 
-            GroupBox2.Text = "Horarios encontrados: " & DgvHorario.Rows.Count.ToString
+        Else
+            Try
+                Dim dato As String = TextDato.Text & "%"
 
-        Catch ex As Exception
+                DgvHorario.DataSource = horario.BuscarPorID(dato)
+                DgvHorario.Refresh()
+                Dim contador As Integer = CInt(DgvHorario.Rows.Count) - 1
+                GroupBox2.Text = "Horarios encontrados: " & contador.ToString
 
-        End Try
+
+            Catch ex As Exception
+
+            End Try
+        End If
+
+
+
     End Sub
 End Class

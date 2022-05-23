@@ -26,6 +26,7 @@
     Sub llenarGrid()
         DgvCargo.DataSource = carg.GetData
         DgvCargo.Refresh()
+        DgvCargo.Columns().Item(0).Visible = False
         Dim contador As Integer = CInt(DgvCargo.Rows.Count) - 1
         GroupBox2.Text = "Cargos encontrados: " & contador.ToString
 

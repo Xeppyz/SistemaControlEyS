@@ -52,6 +52,12 @@ Partial Class FrmAgregarE
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvEmpleado = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtDato = New System.Windows.Forms.TextBox()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.DSAyato = New SistemaControlEyS.DSAyato()
+        Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmpleadoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.EmpleadoTableAdapter()
         Me.IdEmpleadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoPersonalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoLaboralDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -63,20 +69,12 @@ Partial Class FrmAgregarE
         Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdCargoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdHorarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DSAyatoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DSAyato = New SistemaControlEyS.DSAyato()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtDato = New System.Windows.Forms.TextBox()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.EmpleadoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.EmpleadoTableAdapter()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DSAyatoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -322,7 +320,7 @@ Partial Class FrmAgregarE
         Me.GroupBox2.Controls.Add(Me.DgvEmpleado)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 219)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(770, 152)
+        Me.GroupBox2.Size = New System.Drawing.Size(816, 152)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Empleados guardados: 0"
@@ -337,8 +335,47 @@ Partial Class FrmAgregarE
         Me.DgvEmpleado.Location = New System.Drawing.Point(3, 16)
         Me.DgvEmpleado.Name = "DgvEmpleado"
         Me.DgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvEmpleado.Size = New System.Drawing.Size(764, 133)
+        Me.DgvEmpleado.Size = New System.Drawing.Size(810, 133)
         Me.DgvEmpleado.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(10, 185)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(146, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Escriba el empleadoa  buscar"
+        '
+        'TxtDato
+        '
+        Me.TxtDato.Location = New System.Drawing.Point(162, 185)
+        Me.TxtDato.Name = "TxtDato"
+        Me.TxtDato.Size = New System.Drawing.Size(242, 20)
+        Me.TxtDato.TabIndex = 5
+        '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.Location = New System.Drawing.Point(410, 185)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.TabIndex = 6
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        '
+        'DSAyato
+        '
+        Me.DSAyato.DataSetName = "DSAyato"
+        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmpleadoBindingSource
+        '
+        Me.EmpleadoBindingSource.DataMember = "Empleado"
+        Me.EmpleadoBindingSource.DataSource = Me.DSAyato
+        '
+        'EmpleadoTableAdapter
+        '
+        Me.EmpleadoTableAdapter.ClearBeforeFill = True
         '
         'IdEmpleadoDataGridViewTextBoxColumn
         '
@@ -407,50 +444,6 @@ Partial Class FrmAgregarE
         Me.IdHorarioDataGridViewTextBoxColumn.HeaderText = "idHorario"
         Me.IdHorarioDataGridViewTextBoxColumn.Name = "IdHorarioDataGridViewTextBoxColumn"
         '
-        'EmpleadoBindingSource
-        '
-        Me.EmpleadoBindingSource.DataMember = "Empleado"
-        Me.EmpleadoBindingSource.DataSource = Me.DSAyatoBindingSource
-        '
-        'DSAyatoBindingSource
-        '
-        Me.DSAyatoBindingSource.DataSource = Me.DSAyato
-        Me.DSAyatoBindingSource.Position = 0
-        '
-        'DSAyato
-        '
-        Me.DSAyato.DataSetName = "DSAyato"
-        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 185)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(146, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Escriba el empleadoa  buscar"
-        '
-        'TxtDato
-        '
-        Me.TxtDato.Location = New System.Drawing.Point(162, 185)
-        Me.TxtDato.Name = "TxtDato"
-        Me.TxtDato.Size = New System.Drawing.Size(242, 20)
-        Me.TxtDato.TabIndex = 5
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.Location = New System.Drawing.Point(410, 185)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnBuscar.TabIndex = 6
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
-        '
-        'EmpleadoTableAdapter
-        '
-        Me.EmpleadoTableAdapter.ClearBeforeFill = True
-        '
         'FrmAgregarE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -472,9 +465,8 @@ Partial Class FrmAgregarE
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DSAyatoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -509,7 +501,8 @@ Partial Class FrmAgregarE
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents DSAyatoBindingSource As BindingSource
+    Friend WithEvents CmbCargo As ComboBox
+    Friend WithEvents CmbHorario As ComboBox
     Friend WithEvents DSAyato As DSAyato
     Friend WithEvents EmpleadoBindingSource As BindingSource
     Friend WithEvents EmpleadoTableAdapter As DSAyatoTableAdapters.EmpleadoTableAdapter
@@ -524,6 +517,4 @@ Partial Class FrmAgregarE
     Friend WithEvents DireccionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdCargoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdHorarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CmbCargo As ComboBox
-    Friend WithEvents CmbHorario As ComboBox
 End Class
