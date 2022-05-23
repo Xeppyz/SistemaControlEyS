@@ -1,4 +1,8 @@
 ﻿Public Class Form1
+
+    Dim empleado As New DSAyatoTableAdapters.EmpleadoTableAdapter
+    Dim tblemp As New DSAyato.EmpleadoDataTable
+
     Private Sub btnReporte_Click(sender As Object, e As EventArgs)
 
 
@@ -22,8 +26,8 @@
 
     Private Sub EmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem.Click
 
-
-
+        empleado.Fill(tblemp)
+        VerReporte(tblemp, "DsEmpleado", "C:\Users\alexa\OneDrive\Escritorio\SistemaControlEyS\SistemaControlEyS\Reporte\RptEmpleado.rdlc")
 
 
 

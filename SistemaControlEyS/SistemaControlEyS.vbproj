@@ -128,6 +128,12 @@
     <Compile Include="Catalogo\FrmEntradaYSalida.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Catalogo\FrmVistaPrevia.Designer.vb">
+      <DependentUpon>FrmVistaPrevia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\FrmVistaPrevia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CONEXION\DSAyato.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +152,7 @@
     <Compile Include="Login\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulo\ConfiguracionGlobal.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -179,6 +186,9 @@
     <EmbeddedResource Include="Catalogo\FrmEntradaYSalida.resx">
       <DependentUpon>FrmEntradaYSalida.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo\FrmVistaPrevia.resx">
+      <DependentUpon>FrmVistaPrevia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +201,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\RptEmpleado.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CONEXION\DSAyato.xsc">

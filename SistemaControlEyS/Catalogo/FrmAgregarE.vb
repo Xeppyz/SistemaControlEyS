@@ -1,6 +1,8 @@
 ﻿Public Class FrmAgregarE
     Dim emplea As New DSAyatoTableAdapters.EmpleadoTableAdapter
     Dim Idempleado As Integer
+    Dim carg As New DSAyatoTableAdapters.CargoTableAdapter
+    Dim horario As New DSAyatoTableAdapters.HorarioTableAdapter
 
 
 
@@ -12,13 +14,34 @@
         'TODO: esta línea de código carga datos en la tabla 'DSAyato.Empleado' Puede moverla o quitarla según sea necesario.
         Me.EmpleadoTableAdapter.Fill(Me.DSAyato.Empleado)
         llenarGrid()
+        llenarCarg()
+        llenarHorario()
+
+    End Sub
+
+    Sub llenarHorario()
+        CmbHorario.DataSource = horario.GetData
+        CmbHorario.DisplayMember = "descripcion"
+        CmbHorario.ValueMember = "idHorario"
+        CmbHorario.Refresh()
+
+    End Sub
+
+    Sub llenarCarg()
+        CmbCargo.DataSource = carg.GetData
+        CmbCargo.DisplayMember = "Nombre"
+        CmbCargo.ValueMember = "idCargo"
+        CmbCargo.Refresh()
 
     End Sub
 
     Sub llenarGrid()
         DgvEmpleado.DataSource = emplea.GetData
         DgvEmpleado.Refresh()
-        GroupBox2.Text = "Empleados guardados: " & DgvEmpleado.Rows.Count.ToString
+        Dim contador As Integer = CInt(DgvEmpleado.Rows.Count) - 1
+        GroupBox2.Text = "Empleados encontrados: " & contador.ToString
+
+
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
@@ -30,8 +53,6 @@
         TextApellidos.Clear()
         TextCedula.Clear()
         TextDireccion.Clear()
-        TextIDCargo.Clear()
-        TextIDHorario.Clear()
         BtnGuardar.Enabled = True
         BtnEditar.Enabled = False
         BtnEliminar.Enabled = False
@@ -97,21 +118,6 @@
 
         End If
 
-
-        If (String.IsNullOrEmpty(TextIDCargo.Text)) Then
-            MsgBox("Digite el ID del Cargo, porfavor...", MsgBoxStyle.Critical, "ERROR")
-            TextIDCargo.Focus()
-            Exit Sub
-
-        End If
-
-        If (String.IsNullOrEmpty(TextIDHorario.Text)) Then
-            MsgBox("Digite el ID del horario, porfavor...", MsgBoxStyle.Critical, "ERROR")
-            TextIDHorario.Focus()
-            Exit Sub
-
-        End If
-
         Dim correoPersona As String = TextPersonal.Text.Trim
         Dim correoLaboral As String = TextLaboral.Text.Trim
         Dim telefono As Integer = CInt(TextTelefono.Text.Trim)
@@ -120,8 +126,8 @@
         Dim apellido As String = TextApellidos.Text.Trim
         Dim cedula As String = TextCedula.Text.Trim
         Dim direccion As String = TextDireccion.Text.Trim
-        Dim idCargo As Integer = CInt(TextIDCargo.Text.Trim)
-        Dim idHorario As Integer = CInt(TextIDHorario.Text.Trim)
+        Dim idCargo As Integer = CInt(CmbCargo.SelectedValue)
+        Dim idHorario As Integer = CInt(CmbHorario.SelectedValue)
 
         If (emplea.InsertarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
         idCargo, idHorario)) Then
@@ -201,20 +207,6 @@
         End If
 
 
-        If (String.IsNullOrEmpty(TextIDCargo.Text)) Then
-            MsgBox("Digite el ID del Cargo, porfavor...", MsgBoxStyle.Critical, "ERROR")
-            TextIDCargo.Focus()
-            Exit Sub
-
-        End If
-
-        If (String.IsNullOrEmpty(TextIDHorario.Text)) Then
-            MsgBox("Digite el ID del horario, porfavor...", MsgBoxStyle.Critical, "ERROR")
-            TextIDHorario.Focus()
-            Exit Sub
-
-        End If
-
         Dim correoPersona As String = TextPersonal.Text.Trim
         Dim correoLaboral As String = TextLaboral.Text.Trim
         Dim telefono As Integer = CInt(TextTelefono.Text.Trim)
@@ -223,8 +215,8 @@
         Dim apellido As String = TextApellidos.Text.Trim
         Dim cedula As String = TextCedula.Text.Trim
         Dim direccion As String = TextDireccion.Text.Trim
-        Dim idCargo As Integer = CInt(TextIDCargo.Text.Trim)
-        Dim idHorario As Integer = CInt(TextIDHorario.Text.Trim)
+        Dim idCargo As Integer = CInt(CmbCargo.SelectedValue)
+        Dim idHorario As Integer = CInt(CmbCargo.SelectedValue)
 
         If (emplea.ActualizarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
         idCargo, idHorario, Idempleado)) Then
@@ -246,8 +238,8 @@
             TextApellidos.Text = DgvEmpleado.Item(6, fila).Value
             TextCedula.Text = DgvEmpleado.Item(7, fila).Value
             TextDireccion.Text = DgvEmpleado.Item(8, fila).Value
-            TextIDCargo.Text = DgvEmpleado.Item(9, fila).Value
-            TextIDHorario.Text = DgvEmpleado.Item(10, fila).Value
+            CmbCargo.SelectedValue = DgvEmpleado.Item(9, fila).Value
+            CmbHorario.SelectedValue = DgvEmpleado.Item(10, fila).Value
             BtnGuardar.Enabled = False
             BtnEditar.Enabled = True
             BtnEliminar.Enabled = True
@@ -278,14 +270,40 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Try
-            Dim dato As String = TxtDato.Text & "%"
-            DgvEmpleado.DataSource = emplea.BuscarPorNombre(dato)
-            DgvEmpleado.Refresh()
 
-            GroupBox2.Text = "Empleados encontrados: " & DgvEmpleado.Rows.Count.ToString
-        Catch ex As Exception
+        If (TxtDato.Text.Equals("")) Then
+            llenarGrid()
 
-        End Try
+        Else
+            Try
+                Dim dato As String = TxtDato.Text & "%"
+                DgvEmpleado.DataSource = emplea.BuscarPorNombre(dato)
+                DgvEmpleado.Refresh()
+
+                Dim contador As Integer = CInt(DgvEmpleado.Rows.Count) - 1
+                GroupBox2.Text = "Empleados encontrados: " & contador.ToString
+            Catch ex As Exception
+
+            End Try
+        End If
+
+
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub CmbCargo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbCargo.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub TxtDato_TextChanged(sender As Object, e As EventArgs) Handles TxtDato.TextChanged
+
+    End Sub
+
+    Private Sub CmbHorario_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbHorario.SelectedIndexChanged
+
     End Sub
 End Class

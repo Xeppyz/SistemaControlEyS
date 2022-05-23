@@ -35,7 +35,7 @@ Partial Class FrmLogin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Myanmar Text", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(107, 73)
+        Me.Label1.Location = New System.Drawing.Point(53, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(72, 29)
         Me.Label1.TabIndex = 0
@@ -45,7 +45,7 @@ Partial Class FrmLogin
         '
         Me.Contraseña.AutoSize = True
         Me.Contraseña.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Contraseña.Location = New System.Drawing.Point(78, 123)
+        Me.Contraseña.Location = New System.Drawing.Point(24, 117)
         Me.Contraseña.Name = "Contraseña"
         Me.Contraseña.Size = New System.Drawing.Size(101, 22)
         Me.Contraseña.TabIndex = 2
@@ -54,7 +54,7 @@ Partial Class FrmLogin
         'TextUsuario
         '
         Me.TextUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextUsuario.Location = New System.Drawing.Point(185, 76)
+        Me.TextUsuario.Location = New System.Drawing.Point(131, 58)
         Me.TextUsuario.Name = "TextUsuario"
         Me.TextUsuario.Size = New System.Drawing.Size(231, 26)
         Me.TextUsuario.TabIndex = 1
@@ -62,7 +62,7 @@ Partial Class FrmLogin
         'TextContraseña
         '
         Me.TextContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextContraseña.Location = New System.Drawing.Point(185, 119)
+        Me.TextContraseña.Location = New System.Drawing.Point(131, 115)
         Me.TextContraseña.Name = "TextContraseña"
         Me.TextContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextContraseña.Size = New System.Drawing.Size(231, 26)
@@ -70,7 +70,7 @@ Partial Class FrmLogin
         '
         'BtnAceptar
         '
-        Me.BtnAceptar.Location = New System.Drawing.Point(252, 172)
+        Me.BtnAceptar.Location = New System.Drawing.Point(193, 176)
         Me.BtnAceptar.Name = "BtnAceptar"
         Me.BtnAceptar.Size = New System.Drawing.Size(109, 51)
         Me.BtnAceptar.TabIndex = 4
@@ -79,8 +79,7 @@ Partial Class FrmLogin
         '
         'Button2
         '
-
-        Me.Button2.Location = New System.Drawing.Point(446, 121)
+        Me.Button2.Location = New System.Drawing.Point(389, 107)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(88, 44)
         Me.Button2.TabIndex = 6
@@ -88,8 +87,7 @@ Partial Class FrmLogin
         '
         'Button1
         '
-
-        Me.Button1.Location = New System.Drawing.Point(446, 60)
+        Me.Button1.Location = New System.Drawing.Point(389, 47)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 50)
         Me.Button1.TabIndex = 5
@@ -99,7 +97,8 @@ Partial Class FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(570, 284)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(504, 370)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BtnAceptar)

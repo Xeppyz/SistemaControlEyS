@@ -2,18 +2,34 @@
 
     Dim carg As New DSAyatoTableAdapters.CargoTableAdapter
     Dim idcargo As Integer
+    Dim depart As New DSAyatoTableAdapters.DepartamentoTableAdapter
+
 
 
     Private Sub FrmAgregarC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DSAyato.Cargo' Puede moverla o quitarla según sea necesario.
         Me.CargoTableAdapter.Fill(Me.DSAyato.Cargo)
         llenarGrid()
+        llenarDepart()
+
+    End Sub
+
+    Sub llenarDepart()
+
+        CmbDepart.DataSource = depart.GetData
+        CmbDepart.DisplayMember = "Nombre"
+        CmbDepart.ValueMember = "idDepartamento"
+        CmbDepart.Refresh()
+
     End Sub
 
     Sub llenarGrid()
         DgvCargo.DataSource = carg.GetData
         DgvCargo.Refresh()
-        GroupBox2.Text = "Cargos encontrados: " & DgvCargo.Rows.Count.ToString
+        Dim contador As Integer = CInt(DgvCargo.Rows.Count) - 1
+        GroupBox2.Text = "Cargos encontrados: " & contador.ToString
+
+
 
     End Sub
 
@@ -21,7 +37,6 @@
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         TextCargo.Text = ""
         TextDescrip.Clear()
-        TextIdDepart.Clear()
         BtnGuardar.Enabled = True
         BtnEditar.Enabled = False
         BtnEliminar.Enabled = False
@@ -42,14 +57,12 @@
             Exit Sub
         End If
 
-        If (Not IsNumeric(TextIdDepart.Text)) Then
-            MsgBox("No se puede dejar en blanco el ID", MsgBoxStyle.Critical, "ERROR")
-            Exit Sub
-        End If
+
 
         Dim cargo As String = TextCargo.Text.Trim
         Dim descripcion As String = TextDescrip.Text.Trim
-        Dim iddepartamento As Integer = CInt(TextIdDepart.Text.Trim)
+        Dim iddepartamento As Integer = CInt(CmbDepart.SelectedValue)
+
 
         If (carg.InsertarCargo(cargo, descripcion, iddepartamento)) Then
             MsgBox("Se guardó exitosamente", MsgBoxStyle.Information, "CORRECTO")
@@ -71,14 +84,11 @@
             Exit Sub
         End If
 
-        If (Not IsNumeric(TextIdDepart.Text)) Then
-            MsgBox("No se puede dejar en blanco el ID", MsgBoxStyle.Critical, "ERROR")
-            Exit Sub
-        End If
+
 
         Dim cargo As String = TextCargo.Text.Trim
         Dim descripcion As String = TextDescrip.Text.Trim
-        Dim iddepartamento As Integer = CInt(TextIdDepart.Text.Trim)
+        Dim iddepartamento As Integer = CInt(CmbDepart.SelectedValue)
 
         If (carg.ActualizarCargo(cargo, descripcion, iddepartamento, idcargo)) Then
             MsgBox("Se actualizó correctamente el cargo", MsgBoxStyle.Information, "Correcto")
@@ -98,7 +108,7 @@
             idcargo = DgvCargo.Item(0, fila).Value
             TextCargo.Text = DgvCargo.Item(1, fila).Value
             TextDescrip.Text = DgvCargo.Item(2, fila).Value
-            TextIdDepart.Text = DgvCargo.Item(3, fila).Value
+            CmbDepart.SelectedValue = DgvCargo.Item(3, fila).Value
             BtnGuardar.Enabled = False
             BtnEditar.Enabled = True
             BtnEliminar.Enabled = True
@@ -129,17 +139,33 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Try
-            Dim dato As String = TextDato.Text & "%"
-            DgvCargo.DataSource = carg.BuscarPorNombre(dato)
-            DgvCargo.Refresh()
+
+        If (TextDato.Text.Equals("")) Then
+            llenarGrid()
+
+
+        Else
+            Try
+                Dim dato As String = TextDato.Text & "%"
+                DgvCargo.DataSource = carg.BuscarPorNombre(dato)
+                DgvCargo.Refresh()
+
+
+                Dim contador As Integer = CInt(DgvCargo.Rows.Count) - 1
+                GroupBox2.Text = "Cargos encontrados: " & contador.ToString
+
+            Catch ex As Exception
+
+            End Try
+
+
+        End If
 
 
 
-            GroupBox2.Text = "Cargos encontrados: " & DgvCargo.Rows.Count.ToString
+    End Sub
 
-        Catch ex As Exception
+    Private Sub CmbDepart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbDepart.SelectedIndexChanged
 
-        End Try
     End Sub
 End Class

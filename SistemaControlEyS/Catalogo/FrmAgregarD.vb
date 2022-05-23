@@ -13,7 +13,9 @@
     Sub llenarGrid()
         DgvDepartamento.DataSource = Depart.GetData
         DgvDepartamento.Refresh()
-        GroupBox2.Text = "Departamentos encontrados: " & DgvDepartamento.Rows.Count.ToString
+        Dim contador As Integer = CInt(DgvDepartamento.Rows.Count) - 1
+        GroupBox2.Text = "Departamento encontrados: " & contador.ToString
+
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
@@ -138,19 +140,30 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Try
 
-            Dim dato As String = TextDato.Text & "%"
-            DgvDepartamento.DataSource = Depart.BuscarPorNombre(dato)
-            DgvDepartamento.Refresh()
+        If (TextDato.Text.Equals("")) Then
+            llenarGrid()
 
 
-            GroupBox2.Text = "Departamentos encontrados: " & DgvDepartamento.Rows.Count.ToString
+        Else
+
+            Try
+
+                Dim dato As String = TextDato.Text & "%"
+                DgvDepartamento.DataSource = Depart.BuscarPorNombre(dato)
+                DgvDepartamento.Refresh()
+
+                Dim contador As Integer = CInt(DgvDepartamento.Rows.Count) - 1
+                GroupBox2.Text = "Departamentos encontrados: " & contador.ToString
 
 
 
-        Catch ex As Exception
 
-        End Try
+            Catch ex As Exception
+
+            End Try
+        End If
+
+
     End Sub
 End Class

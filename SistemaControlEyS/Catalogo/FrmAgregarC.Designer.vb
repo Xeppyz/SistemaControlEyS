@@ -25,7 +25,6 @@ Partial Class FrmAgregarC
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgregarC))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextIdDepart = New System.Windows.Forms.TextBox()
         Me.TextDescrip = New System.Windows.Forms.TextBox()
         Me.TextCargo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -33,6 +32,12 @@ Partial Class FrmAgregarC
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvCargo = New System.Windows.Forms.DataGridView()
+        Me.IdCargoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdDepartamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CargoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.TextDato = New System.Windows.Forms.TextBox()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -41,24 +46,19 @@ Partial Class FrmAgregarC
         Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
         Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
         Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
-        Me.IdCargoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdDepartamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CargoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.CargoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.CargoTableAdapter()
+        Me.CmbDepart = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
         CType(Me.CargoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextIdDepart)
+        Me.GroupBox1.Controls.Add(Me.CmbDepart)
         Me.GroupBox1.Controls.Add(Me.TextDescrip)
         Me.GroupBox1.Controls.Add(Me.TextCargo)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -66,16 +66,9 @@ Partial Class FrmAgregarC
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 28)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(713, 129)
+        Me.GroupBox1.Size = New System.Drawing.Size(752, 129)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        '
-        'TextIdDepart
-        '
-        Me.TextIdDepart.Location = New System.Drawing.Point(608, 30)
-        Me.TextIdDepart.Name = "TextIdDepart"
-        Me.TextIdDepart.Size = New System.Drawing.Size(98, 20)
-        Me.TextIdDepart.TabIndex = 5
         '
         'TextDescrip
         '
@@ -98,9 +91,9 @@ Partial Class FrmAgregarC
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(506, 37)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 13)
+        Me.Label3.Size = New System.Drawing.Size(74, 13)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "ID departamento"
+        Me.Label3.Text = "Departamento"
         '
         'Label2
         '
@@ -142,6 +135,41 @@ Partial Class FrmAgregarC
         Me.DgvCargo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvCargo.Size = New System.Drawing.Size(468, 75)
         Me.DgvCargo.TabIndex = 0
+        '
+        'IdCargoDataGridViewTextBoxColumn
+        '
+        Me.IdCargoDataGridViewTextBoxColumn.DataPropertyName = "idCargo"
+        Me.IdCargoDataGridViewTextBoxColumn.HeaderText = "idCargo"
+        Me.IdCargoDataGridViewTextBoxColumn.Name = "IdCargoDataGridViewTextBoxColumn"
+        Me.IdCargoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        '
+        'IdDepartamentoDataGridViewTextBoxColumn
+        '
+        Me.IdDepartamentoDataGridViewTextBoxColumn.DataPropertyName = "idDepartamento"
+        Me.IdDepartamentoDataGridViewTextBoxColumn.HeaderText = "idDepartamento"
+        Me.IdDepartamentoDataGridViewTextBoxColumn.Name = "IdDepartamentoDataGridViewTextBoxColumn"
+        '
+        'CargoBindingSource
+        '
+        Me.CargoBindingSource.DataMember = "Cargo"
+        Me.CargoBindingSource.DataSource = Me.DSAyato
+        '
+        'DSAyato
+        '
+        Me.DSAyato.DataSetName = "DSAyato"
+        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TextDato
         '
@@ -213,44 +241,17 @@ Partial Class FrmAgregarC
         Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)
         Me.BtnEliminar.Text = "Eliminar"
         '
-        'IdCargoDataGridViewTextBoxColumn
-        '
-        Me.IdCargoDataGridViewTextBoxColumn.DataPropertyName = "idCargo"
-        Me.IdCargoDataGridViewTextBoxColumn.HeaderText = "idCargo"
-        Me.IdCargoDataGridViewTextBoxColumn.Name = "IdCargoDataGridViewTextBoxColumn"
-        Me.IdCargoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        '
-        'IdDepartamentoDataGridViewTextBoxColumn
-        '
-        Me.IdDepartamentoDataGridViewTextBoxColumn.DataPropertyName = "idDepartamento"
-        Me.IdDepartamentoDataGridViewTextBoxColumn.HeaderText = "idDepartamento"
-        Me.IdDepartamentoDataGridViewTextBoxColumn.Name = "IdDepartamentoDataGridViewTextBoxColumn"
-        '
-        'CargoBindingSource
-        '
-        Me.CargoBindingSource.DataMember = "Cargo"
-        Me.CargoBindingSource.DataSource = Me.DSAyato
-        '
-        'DSAyato
-        '
-        Me.DSAyato.DataSetName = "DSAyato"
-        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'CargoTableAdapter
         '
         Me.CargoTableAdapter.ClearBeforeFill = True
+        '
+        'CmbDepart
+        '
+        Me.CmbDepart.FormattingEnabled = True
+        Me.CmbDepart.Location = New System.Drawing.Point(586, 33)
+        Me.CmbDepart.Name = "CmbDepart"
+        Me.CmbDepart.Size = New System.Drawing.Size(160, 21)
+        Me.CmbDepart.TabIndex = 5
         '
         'FrmAgregarC
         '
@@ -270,10 +271,10 @@ Partial Class FrmAgregarC
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         CType(Me.CargoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -281,7 +282,6 @@ Partial Class FrmAgregarC
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextIdDepart As TextBox
     Friend WithEvents TextDescrip As TextBox
     Friend WithEvents TextCargo As TextBox
     Friend WithEvents Label3 As Label
@@ -303,4 +303,5 @@ Partial Class FrmAgregarC
     Friend WithEvents BtnGuardar As ToolStripButton
     Friend WithEvents BtnEditar As ToolStripButton
     Friend WithEvents BtnEliminar As ToolStripButton
+    Friend WithEvents CmbDepart As ComboBox
 End Class

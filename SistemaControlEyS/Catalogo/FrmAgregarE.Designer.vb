@@ -30,8 +30,8 @@ Partial Class FrmAgregarE
         Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
         Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextIDHorario = New System.Windows.Forms.TextBox()
-        Me.TextIDCargo = New System.Windows.Forms.TextBox()
+        Me.CmbHorario = New System.Windows.Forms.ComboBox()
+        Me.CmbCargo = New System.Windows.Forms.ComboBox()
         Me.TextDireccion = New System.Windows.Forms.TextBox()
         Me.TextCedula = New System.Windows.Forms.TextBox()
         Me.TextApellidos = New System.Windows.Forms.TextBox()
@@ -84,7 +84,7 @@ Partial Class FrmAgregarE
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNuevo, Me.BtnGuardar, Me.BtnEditar, Me.BtnEliminar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(794, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(974, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -126,8 +126,8 @@ Partial Class FrmAgregarE
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextIDHorario)
-        Me.GroupBox1.Controls.Add(Me.TextIDCargo)
+        Me.GroupBox1.Controls.Add(Me.CmbHorario)
+        Me.GroupBox1.Controls.Add(Me.CmbCargo)
         Me.GroupBox1.Controls.Add(Me.TextDireccion)
         Me.GroupBox1.Controls.Add(Me.TextCedula)
         Me.GroupBox1.Controls.Add(Me.TextApellidos)
@@ -149,23 +149,25 @@ Partial Class FrmAgregarE
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 25)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(794, 144)
+        Me.GroupBox1.Size = New System.Drawing.Size(974, 151)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
-        'TextIDHorario
+        'CmbHorario
         '
-        Me.TextIDHorario.Location = New System.Drawing.Point(711, 118)
-        Me.TextIDHorario.Name = "TextIDHorario"
-        Me.TextIDHorario.Size = New System.Drawing.Size(51, 20)
-        Me.TextIDHorario.TabIndex = 19
+        Me.CmbHorario.FormattingEnabled = True
+        Me.CmbHorario.Location = New System.Drawing.Point(789, 26)
+        Me.CmbHorario.Name = "CmbHorario"
+        Me.CmbHorario.Size = New System.Drawing.Size(158, 21)
+        Me.CmbHorario.TabIndex = 21
         '
-        'TextIDCargo
+        'CmbCargo
         '
-        Me.TextIDCargo.Location = New System.Drawing.Point(573, 119)
-        Me.TextIDCargo.Name = "TextIDCargo"
-        Me.TextIDCargo.Size = New System.Drawing.Size(60, 20)
-        Me.TextIDCargo.TabIndex = 18
+        Me.CmbCargo.FormattingEnabled = True
+        Me.CmbCargo.Location = New System.Drawing.Point(789, 65)
+        Me.CmbCargo.Name = "CmbCargo"
+        Me.CmbCargo.Size = New System.Drawing.Size(158, 21)
+        Me.CmbCargo.TabIndex = 20
         '
         'TextDireccion
         '
@@ -206,7 +208,7 @@ Partial Class FrmAgregarE
         '
         'TextTelefono
         '
-        Me.TextTelefono.Location = New System.Drawing.Point(110, 115)
+        Me.TextTelefono.Location = New System.Drawing.Point(110, 111)
         Me.TextTelefono.Name = "TextTelefono"
         Me.TextTelefono.Size = New System.Drawing.Size(199, 20)
         Me.TextTelefono.TabIndex = 12
@@ -221,11 +223,11 @@ Partial Class FrmAgregarE
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(650, 122)
+        Me.Label11.Location = New System.Drawing.Point(745, 29)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(55, 13)
+        Me.Label11.Size = New System.Drawing.Size(41, 13)
         Me.Label11.TabIndex = 10
-        Me.Label11.Text = "ID Horario"
+        Me.Label11.Text = "Horario"
         '
         'TextPersonal
         '
@@ -237,11 +239,11 @@ Partial Class FrmAgregarE
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(518, 122)
+        Me.Label10.Location = New System.Drawing.Point(745, 71)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(49, 13)
+        Me.Label10.Size = New System.Drawing.Size(38, 13)
         Me.Label10.TabIndex = 8
-        Me.Label10.Text = "ID Cargo"
+        Me.Label10.Text = " Cargo"
         '
         'Label9
         '
@@ -431,14 +433,14 @@ Partial Class FrmAgregarE
         '
         'TxtDato
         '
-        Me.TxtDato.Location = New System.Drawing.Point(162, 182)
+        Me.TxtDato.Location = New System.Drawing.Point(162, 185)
         Me.TxtDato.Name = "TxtDato"
         Me.TxtDato.Size = New System.Drawing.Size(242, 20)
         Me.TxtDato.TabIndex = 5
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(420, 180)
+        Me.BtnBuscar.Location = New System.Drawing.Point(410, 185)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
         Me.BtnBuscar.TabIndex = 6
@@ -454,7 +456,7 @@ Partial Class FrmAgregarE
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
-        Me.ClientSize = New System.Drawing.Size(794, 383)
+        Me.ClientSize = New System.Drawing.Size(974, 411)
         Me.Controls.Add(Me.BtnBuscar)
         Me.Controls.Add(Me.TxtDato)
         Me.Controls.Add(Me.Label1)
@@ -495,8 +497,6 @@ Partial Class FrmAgregarE
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextIDHorario As TextBox
-    Friend WithEvents TextIDCargo As TextBox
     Friend WithEvents TextDireccion As TextBox
     Friend WithEvents TextCedula As TextBox
     Friend WithEvents TextApellidos As TextBox
@@ -524,4 +524,6 @@ Partial Class FrmAgregarE
     Friend WithEvents DireccionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdCargoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdHorarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CmbCargo As ComboBox
+    Friend WithEvents CmbHorario As ComboBox
 End Class
