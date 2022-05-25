@@ -1,18 +1,21 @@
 ﻿Public Class FrmAgregarH
     Dim horario As New DSAyatoTableAdapters.HorarioTableAdapter
     Dim idHorario As Integer
+    Dim Tahorario As New DSAyatoTableAdapters.DatosHorariosTableAdapter
+    Dim Dthorario As New DSAyato.DatosHorariosDataTable
+
 
 
     Private Sub FrmAgregarH_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DSAyato.Horario' Puede moverla o quitarla según sea necesario.
-        Me.HorarioTableAdapter.Fill(Me.DSAyato.Horario)
+
         llenarGrid()
 
     End Sub
 
     Sub llenarGrid()
+        Tahorario.Fill(Dthorario)
 
-        DgvHorario.DataSource = horario.GetData
+        DgvHorario.DataSource = Dthorario
         DgvHorario.Refresh()
         DgvHorario.Columns().Item(0).Visible = False
         Dim contador As Integer = CInt(DgvHorario.Rows.Count) - 1

@@ -2,16 +2,20 @@
 
     Dim Depart As New DSAyatoTableAdapters.DepartamentoTableAdapter
     Dim IdDepart As Integer
+    Dim Tadepart As New DSAyatoTableAdapters.DatosDepartamentosTableAdapter
+    Dim Dtdepart As New DSAyato.DatosDepartamentosDataTable
+
 
     Private Sub FrmAgregarD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DSAyato.Departamento' Puede moverla o quitarla según sea necesario.
-        Me.DepartamentoTableAdapter.Fill(Me.DSAyato.Departamento)
+
         llenarGrid()
 
     End Sub
 
     Sub llenarGrid()
-        DgvDepartamento.DataSource = Depart.GetData
+
+        Tadepart.Fill(Dtdepart)
+        DgvDepartamento.DataSource = Dtdepart
         DgvDepartamento.Refresh()
         DgvDepartamento.Columns().Item(0).Visible = False
         Dim contador As Integer = CInt(DgvDepartamento.Rows.Count) - 1
@@ -98,7 +102,7 @@
         Dim email As String = TextEmail.Text.Trim
 
         If (Depart.ActualizarDepartamento(nombreDepartamento, cantidadEmpleados, extension, jefeDepartamento, email, IdDepart)) Then
-            MsgBox("Se actualizó con éxito el departamento...", MsgBoxStyle.Critical, "CORRECTO")
+            MsgBox("Se actualizó con éxito el departamento...", MsgBoxStyle.Information, "CORRECTO")
             llenarGrid()
         End If
     End Sub

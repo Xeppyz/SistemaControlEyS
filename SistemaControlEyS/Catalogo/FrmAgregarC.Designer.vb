@@ -125,7 +125,7 @@ Partial Class FrmAgregarC
         Me.GroupBox2.Controls.Add(Me.DgvCargo)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 189)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(474, 94)
+        Me.GroupBox2.Size = New System.Drawing.Size(752, 139)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Cargos encontrados: 0"
@@ -140,7 +140,7 @@ Partial Class FrmAgregarC
         Me.DgvCargo.Location = New System.Drawing.Point(3, 16)
         Me.DgvCargo.Name = "DgvCargo"
         Me.DgvCargo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvCargo.Size = New System.Drawing.Size(468, 75)
+        Me.DgvCargo.Size = New System.Drawing.Size(746, 120)
         Me.DgvCargo.TabIndex = 0
         '
         'IdCargoDataGridViewTextBoxColumn
@@ -208,7 +208,7 @@ Partial Class FrmAgregarC
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNuevo, Me.BtnGuardar, Me.BtnEditar, Me.BtnEliminar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(790, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(806, 25)
         Me.ToolStrip1.TabIndex = 5
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -257,7 +257,7 @@ Partial Class FrmAgregarC
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
-        Me.ClientSize = New System.Drawing.Size(790, 295)
+        Me.ClientSize = New System.Drawing.Size(806, 353)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.BtnBuscar)

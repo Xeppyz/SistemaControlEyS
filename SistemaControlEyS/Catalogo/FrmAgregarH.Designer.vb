@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmAgregarH
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,8 @@ Partial Class FrmAgregarH
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.BtnNuevo = New System.Windows.Forms.ToolStripButton()
         Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
@@ -37,21 +36,14 @@ Partial Class FrmAgregarH
         Me.label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvHorario = New System.Windows.Forms.DataGridView()
-        Me.IdHorarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HoraEntradaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HoraSalidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HorarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextDato = New System.Windows.Forms.TextBox()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.HorarioTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.HorarioTableAdapter()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvHorario, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HorarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,7 +52,7 @@ Partial Class FrmAgregarH
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNuevo, Me.BtnGuardar, Me.BtnEditar, Me.BtnEliminar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(823, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(853, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -169,53 +161,20 @@ Partial Class FrmAgregarH
         Me.GroupBox2.Controls.Add(Me.DgvHorario)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 215)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(776, 109)
+        Me.GroupBox2.Size = New System.Drawing.Size(776, 130)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Horarios encontrados: 0"
         '
         'DgvHorario
         '
-        Me.DgvHorario.AutoGenerateColumns = False
         Me.DgvHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvHorario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdHorarioDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.HoraEntradaDataGridViewTextBoxColumn, Me.HoraSalidaDataGridViewTextBoxColumn})
-        Me.DgvHorario.DataSource = Me.HorarioBindingSource
         Me.DgvHorario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvHorario.Location = New System.Drawing.Point(3, 16)
         Me.DgvHorario.Name = "DgvHorario"
         Me.DgvHorario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvHorario.Size = New System.Drawing.Size(770, 90)
+        Me.DgvHorario.Size = New System.Drawing.Size(770, 111)
         Me.DgvHorario.TabIndex = 0
-        '
-        'IdHorarioDataGridViewTextBoxColumn
-        '
-        Me.IdHorarioDataGridViewTextBoxColumn.DataPropertyName = "idHorario"
-        Me.IdHorarioDataGridViewTextBoxColumn.HeaderText = "idHorario"
-        Me.IdHorarioDataGridViewTextBoxColumn.Name = "IdHorarioDataGridViewTextBoxColumn"
-        Me.IdHorarioDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        '
-        'HoraEntradaDataGridViewTextBoxColumn
-        '
-        Me.HoraEntradaDataGridViewTextBoxColumn.DataPropertyName = "horaEntrada"
-        Me.HoraEntradaDataGridViewTextBoxColumn.HeaderText = "horaEntrada"
-        Me.HoraEntradaDataGridViewTextBoxColumn.Name = "HoraEntradaDataGridViewTextBoxColumn"
-        '
-        'HoraSalidaDataGridViewTextBoxColumn
-        '
-        Me.HoraSalidaDataGridViewTextBoxColumn.DataPropertyName = "horaSalida"
-        Me.HoraSalidaDataGridViewTextBoxColumn.HeaderText = "horaSalida"
-        Me.HoraSalidaDataGridViewTextBoxColumn.Name = "HoraSalidaDataGridViewTextBoxColumn"
-        '
-        'HorarioBindingSource
-        '
-        Me.HorarioBindingSource.DataMember = "Horario"
-        Me.HorarioBindingSource.DataSource = Me.DSAyato
         '
         'DSAyato
         '
@@ -248,16 +207,12 @@ Partial Class FrmAgregarH
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
-        'HorarioTableAdapter
-        '
-        Me.HorarioTableAdapter.ClearBeforeFill = True
-        '
         'FrmAgregarH
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
-        Me.ClientSize = New System.Drawing.Size(823, 336)
+        Me.ClientSize = New System.Drawing.Size(853, 401)
         Me.Controls.Add(Me.BtnBuscar)
         Me.Controls.Add(Me.TextDato)
         Me.Controls.Add(Me.Label4)
@@ -272,7 +227,6 @@ Partial Class FrmAgregarH
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvHorario, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HorarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -297,10 +251,4 @@ Partial Class FrmAgregarH
     Friend WithEvents TextDato As TextBox
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents DSAyato As DSAyato
-    Friend WithEvents HorarioBindingSource As BindingSource
-    Friend WithEvents HorarioTableAdapter As DSAyatoTableAdapters.HorarioTableAdapter
-    Friend WithEvents IdHorarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents HoraEntradaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents HoraSalidaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
