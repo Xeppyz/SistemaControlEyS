@@ -37,9 +37,9 @@ Partial Public Class DSAyato
     
     Private tableLogin As LoginDataTable
     
-    Private tableRegistro_Entrada_y_Salida As Registro_Entrada_y_SalidaDataTable
+    Private tableRegistroEntradaySalida As RegistroEntradaySalidaDataTable
     
-    Private tableDataTable1 As DataTable1DataTable
+    Private tableDatosEmpleados As DatosEmpleadosDataTable
     
     Private relationRefCargo28 As Global.System.Data.DataRelation
     
@@ -52,6 +52,8 @@ Partial Public Class DSAyato
     Private relationRefEmpleadoLogin32 As Global.System.Data.DataRelation
     
     Private relationRefEmpleado31 As Global.System.Data.DataRelation
+    
+    Private relationRefCargo281 As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -100,11 +102,11 @@ Partial Public Class DSAyato
             If (Not (ds.Tables("Login")) Is Nothing) Then
                 MyBase.Tables.Add(New LoginDataTable(ds.Tables("Login")))
             End If
-            If (Not (ds.Tables("Registro Entrada y Salida")) Is Nothing) Then
-                MyBase.Tables.Add(New Registro_Entrada_y_SalidaDataTable(ds.Tables("Registro Entrada y Salida")))
+            If (Not (ds.Tables("RegistroEntradaySalida")) Is Nothing) Then
+                MyBase.Tables.Add(New RegistroEntradaySalidaDataTable(ds.Tables("RegistroEntradaySalida")))
             End If
-            If (Not (ds.Tables("DataTable1")) Is Nothing) Then
-                MyBase.Tables.Add(New DataTable1DataTable(ds.Tables("DataTable1")))
+            If (Not (ds.Tables("DatosEmpleados")) Is Nothing) Then
+                MyBase.Tables.Add(New DatosEmpleadosDataTable(ds.Tables("DatosEmpleados")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -187,9 +189,9 @@ Partial Public Class DSAyato
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Registro_Entrada_y_Salida() As Registro_Entrada_y_SalidaDataTable
+    Public ReadOnly Property RegistroEntradaySalida() As RegistroEntradaySalidaDataTable
         Get
-            Return Me.tableRegistro_Entrada_y_Salida
+            Return Me.tableRegistroEntradaySalida
         End Get
     End Property
     
@@ -197,9 +199,9 @@ Partial Public Class DSAyato
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property DataTable1() As DataTable1DataTable
+    Public ReadOnly Property DatosEmpleados() As DatosEmpleadosDataTable
         Get
-            Return Me.tableDataTable1
+            Return Me.tableDatosEmpleados
         End Get
     End Property
     
@@ -288,11 +290,11 @@ Partial Public Class DSAyato
             If (Not (ds.Tables("Login")) Is Nothing) Then
                 MyBase.Tables.Add(New LoginDataTable(ds.Tables("Login")))
             End If
-            If (Not (ds.Tables("Registro Entrada y Salida")) Is Nothing) Then
-                MyBase.Tables.Add(New Registro_Entrada_y_SalidaDataTable(ds.Tables("Registro Entrada y Salida")))
+            If (Not (ds.Tables("RegistroEntradaySalida")) Is Nothing) Then
+                MyBase.Tables.Add(New RegistroEntradaySalidaDataTable(ds.Tables("RegistroEntradaySalida")))
             End If
-            If (Not (ds.Tables("DataTable1")) Is Nothing) Then
-                MyBase.Tables.Add(New DataTable1DataTable(ds.Tables("DataTable1")))
+            If (Not (ds.Tables("DatosEmpleados")) Is Nothing) Then
+                MyBase.Tables.Add(New DatosEmpleadosDataTable(ds.Tables("DatosEmpleados")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -362,16 +364,16 @@ Partial Public Class DSAyato
                 Me.tableLogin.InitVars
             End If
         End If
-        Me.tableRegistro_Entrada_y_Salida = CType(MyBase.Tables("Registro Entrada y Salida"),Registro_Entrada_y_SalidaDataTable)
+        Me.tableRegistroEntradaySalida = CType(MyBase.Tables("RegistroEntradaySalida"),RegistroEntradaySalidaDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableRegistro_Entrada_y_Salida) Is Nothing) Then
-                Me.tableRegistro_Entrada_y_Salida.InitVars
+            If (Not (Me.tableRegistroEntradaySalida) Is Nothing) Then
+                Me.tableRegistroEntradaySalida.InitVars
             End If
         End If
-        Me.tableDataTable1 = CType(MyBase.Tables("DataTable1"),DataTable1DataTable)
+        Me.tableDatosEmpleados = CType(MyBase.Tables("DatosEmpleados"),DatosEmpleadosDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableDataTable1) Is Nothing) Then
-                Me.tableDataTable1.InitVars
+            If (Not (Me.tableDatosEmpleados) Is Nothing) Then
+                Me.tableDatosEmpleados.InitVars
             End If
         End If
         Me.relationRefCargo28 = Me.Relations("RefCargo28")
@@ -380,6 +382,7 @@ Partial Public Class DSAyato
         Me.relationRefHorario29 = Me.Relations("RefHorario29")
         Me.relationRefEmpleadoLogin32 = Me.Relations("RefEmpleadoLogin32")
         Me.relationRefEmpleado31 = Me.Relations("RefEmpleado31")
+        Me.relationRefCargo281 = Me.Relations("RefCargo281")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -402,10 +405,10 @@ Partial Public Class DSAyato
         MyBase.Tables.Add(Me.tableHorario)
         Me.tableLogin = New LoginDataTable()
         MyBase.Tables.Add(Me.tableLogin)
-        Me.tableRegistro_Entrada_y_Salida = New Registro_Entrada_y_SalidaDataTable()
-        MyBase.Tables.Add(Me.tableRegistro_Entrada_y_Salida)
-        Me.tableDataTable1 = New DataTable1DataTable()
-        MyBase.Tables.Add(Me.tableDataTable1)
+        Me.tableRegistroEntradaySalida = New RegistroEntradaySalidaDataTable()
+        MyBase.Tables.Add(Me.tableRegistroEntradaySalida)
+        Me.tableDatosEmpleados = New DatosEmpleadosDataTable()
+        MyBase.Tables.Add(Me.tableDatosEmpleados)
         Me.relationRefCargo28 = New Global.System.Data.DataRelation("RefCargo28", New Global.System.Data.DataColumn() {Me.tableCargo.idCargoColumn}, New Global.System.Data.DataColumn() {Me.tableEmpleado.idCargoColumn}, false)
         Me.Relations.Add(Me.relationRefCargo28)
         Me.relationRefDepartamento27 = New Global.System.Data.DataRelation("RefDepartamento27", New Global.System.Data.DataColumn() {Me.tableDepartamento.idDepartamentoColumn}, New Global.System.Data.DataColumn() {Me.tableCargo.idDepartamentoColumn}, false)
@@ -416,8 +419,10 @@ Partial Public Class DSAyato
         Me.Relations.Add(Me.relationRefHorario29)
         Me.relationRefEmpleadoLogin32 = New Global.System.Data.DataRelation("RefEmpleadoLogin32", New Global.System.Data.DataColumn() {Me.tableEmpleadoLogin.empleadoLoginColumn}, New Global.System.Data.DataColumn() {Me.tableLogin.empleadoLoginColumn}, false)
         Me.Relations.Add(Me.relationRefEmpleadoLogin32)
-        Me.relationRefEmpleado31 = New Global.System.Data.DataRelation("RefEmpleado31", New Global.System.Data.DataColumn() {Me.tableEmpleado.idEmpleadoColumn}, New Global.System.Data.DataColumn() {Me.tableRegistro_Entrada_y_Salida.idEmpleadoColumn}, false)
+        Me.relationRefEmpleado31 = New Global.System.Data.DataRelation("RefEmpleado31", New Global.System.Data.DataColumn() {Me.tableEmpleado.idEmpleadoColumn}, New Global.System.Data.DataColumn() {Me.tableRegistroEntradaySalida.idEmpleadoColumn}, false)
         Me.Relations.Add(Me.relationRefEmpleado31)
+        Me.relationRefCargo281 = New Global.System.Data.DataRelation("RefCargo281", New Global.System.Data.DataColumn() {Me.tableDatosEmpleados.IdCargoColumn}, New Global.System.Data.DataColumn() {Me.tableEmpleado.idCargoColumn}, false)
+        Me.Relations.Add(Me.relationRefCargo281)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -458,13 +463,13 @@ Partial Public Class DSAyato
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeRegistro_Entrada_y_Salida() As Boolean
+    Private Function ShouldSerializeRegistroEntradaySalida() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeDataTable1() As Boolean
+    Private Function ShouldSerializeDatosEmpleados() As Boolean
         Return false
     End Function
     
@@ -545,10 +550,10 @@ Partial Public Class DSAyato
     Public Delegate Sub LoginRowChangeEventHandler(ByVal sender As Object, ByVal e As LoginRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub Registro_Entrada_y_SalidaRowChangeEventHandler(ByVal sender As Object, ByVal e As Registro_Entrada_y_SalidaRowChangeEvent)
+    Public Delegate Sub RegistroEntradaySalidaRowChangeEventHandler(ByVal sender As Object, ByVal e As RegistroEntradaySalidaRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub DataTable1RowChangeEventHandler(ByVal sender As Object, ByVal e As DataTable1RowChangeEvent)
+    Public Delegate Sub DatosEmpleadosRowChangeEventHandler(ByVal sender As Object, ByVal e As DatosEmpleadosRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2527,8 +2532,8 @@ Partial Public Class DSAyato
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class Registro_Entrada_y_SalidaDataTable
-        Inherits Global.System.Data.TypedTableBase(Of Registro_Entrada_y_SalidaRow)
+    Partial Public Class RegistroEntradaySalidaDataTable
+        Inherits Global.System.Data.TypedTableBase(Of RegistroEntradaySalidaRow)
         
         Private columnidRegistro As Global.System.Data.DataColumn
         
@@ -2546,7 +2551,7 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Registro Entrada y Salida"
+            Me.TableName = "RegistroEntradaySalida"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -2636,53 +2641,53 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As Registro_Entrada_y_SalidaRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As RegistroEntradaySalidaRow
             Get
-                Return CType(Me.Rows(index),Registro_Entrada_y_SalidaRow)
+                Return CType(Me.Rows(index),RegistroEntradaySalidaRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event Registro_Entrada_y_SalidaRowChanging As Registro_Entrada_y_SalidaRowChangeEventHandler
+        Public Event RegistroEntradaySalidaRowChanging As RegistroEntradaySalidaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event Registro_Entrada_y_SalidaRowChanged As Registro_Entrada_y_SalidaRowChangeEventHandler
+        Public Event RegistroEntradaySalidaRowChanged As RegistroEntradaySalidaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event Registro_Entrada_y_SalidaRowDeleting As Registro_Entrada_y_SalidaRowChangeEventHandler
+        Public Event RegistroEntradaySalidaRowDeleting As RegistroEntradaySalidaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event Registro_Entrada_y_SalidaRowDeleted As Registro_Entrada_y_SalidaRowChangeEventHandler
+        Public Event RegistroEntradaySalidaRowDeleted As RegistroEntradaySalidaRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddRegistro_Entrada_y_SalidaRow(ByVal row As Registro_Entrada_y_SalidaRow)
+        Public Overloads Sub AddRegistroEntradaySalidaRow(ByVal row As RegistroEntradaySalidaRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRegistro_Entrada_y_SalidaRow(ByVal horaDeMarca As Date, ByVal horasExtras As Integer, ByVal tipoDeMarca As Boolean, ByVal parentEmpleadoRowByRefEmpleado31 As EmpleadoRow, ByVal idLogin As Integer) As Registro_Entrada_y_SalidaRow
-            Dim rowRegistro_Entrada_y_SalidaRow As Registro_Entrada_y_SalidaRow = CType(Me.NewRow,Registro_Entrada_y_SalidaRow)
+        Public Overloads Function AddRegistroEntradaySalidaRow(ByVal horaDeMarca As Date, ByVal horasExtras As Integer, ByVal tipoDeMarca As Boolean, ByVal parentEmpleadoRowByRefEmpleado31 As EmpleadoRow, ByVal idLogin As Integer) As RegistroEntradaySalidaRow
+            Dim rowRegistroEntradaySalidaRow As RegistroEntradaySalidaRow = CType(Me.NewRow,RegistroEntradaySalidaRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, horaDeMarca, horasExtras, tipoDeMarca, Nothing, idLogin}
             If (Not (parentEmpleadoRowByRefEmpleado31) Is Nothing) Then
                 columnValuesArray(4) = parentEmpleadoRowByRefEmpleado31(0)
             End If
-            rowRegistro_Entrada_y_SalidaRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowRegistro_Entrada_y_SalidaRow)
-            Return rowRegistro_Entrada_y_SalidaRow
+            rowRegistroEntradaySalidaRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowRegistroEntradaySalidaRow)
+            Return rowRegistroEntradaySalidaRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByidRegistro(ByVal idRegistro As Integer) As Registro_Entrada_y_SalidaRow
-            Return CType(Me.Rows.Find(New Object() {idRegistro}),Registro_Entrada_y_SalidaRow)
+        Public Function FindByidRegistro(ByVal idRegistro As Integer) As RegistroEntradaySalidaRow
+            Return CType(Me.Rows.Find(New Object() {idRegistro}),RegistroEntradaySalidaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As Registro_Entrada_y_SalidaDataTable = CType(MyBase.Clone,Registro_Entrada_y_SalidaDataTable)
+            Dim cln As RegistroEntradaySalidaDataTable = CType(MyBase.Clone,RegistroEntradaySalidaDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -2690,7 +2695,7 @@ Partial Public Class DSAyato
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New Registro_Entrada_y_SalidaDataTable()
+            Return New RegistroEntradaySalidaDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2734,28 +2739,28 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewRegistro_Entrada_y_SalidaRow() As Registro_Entrada_y_SalidaRow
-            Return CType(Me.NewRow,Registro_Entrada_y_SalidaRow)
+        Public Function NewRegistroEntradaySalidaRow() As RegistroEntradaySalidaRow
+            Return CType(Me.NewRow,RegistroEntradaySalidaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New Registro_Entrada_y_SalidaRow(builder)
+            Return New RegistroEntradaySalidaRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(Registro_Entrada_y_SalidaRow)
+            Return GetType(RegistroEntradaySalidaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.Registro_Entrada_y_SalidaRowChangedEvent) Is Nothing) Then
-                RaiseEvent Registro_Entrada_y_SalidaRowChanged(Me, New Registro_Entrada_y_SalidaRowChangeEvent(CType(e.Row,Registro_Entrada_y_SalidaRow), e.Action))
+            If (Not (Me.RegistroEntradaySalidaRowChangedEvent) Is Nothing) Then
+                RaiseEvent RegistroEntradaySalidaRowChanged(Me, New RegistroEntradaySalidaRowChangeEvent(CType(e.Row,RegistroEntradaySalidaRow), e.Action))
             End If
         End Sub
         
@@ -2763,8 +2768,8 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.Registro_Entrada_y_SalidaRowChangingEvent) Is Nothing) Then
-                RaiseEvent Registro_Entrada_y_SalidaRowChanging(Me, New Registro_Entrada_y_SalidaRowChangeEvent(CType(e.Row,Registro_Entrada_y_SalidaRow), e.Action))
+            If (Not (Me.RegistroEntradaySalidaRowChangingEvent) Is Nothing) Then
+                RaiseEvent RegistroEntradaySalidaRowChanging(Me, New RegistroEntradaySalidaRowChangeEvent(CType(e.Row,RegistroEntradaySalidaRow), e.Action))
             End If
         End Sub
         
@@ -2772,8 +2777,8 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.Registro_Entrada_y_SalidaRowDeletedEvent) Is Nothing) Then
-                RaiseEvent Registro_Entrada_y_SalidaRowDeleted(Me, New Registro_Entrada_y_SalidaRowChangeEvent(CType(e.Row,Registro_Entrada_y_SalidaRow), e.Action))
+            If (Not (Me.RegistroEntradaySalidaRowDeletedEvent) Is Nothing) Then
+                RaiseEvent RegistroEntradaySalidaRowDeleted(Me, New RegistroEntradaySalidaRowChangeEvent(CType(e.Row,RegistroEntradaySalidaRow), e.Action))
             End If
         End Sub
         
@@ -2781,14 +2786,14 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.Registro_Entrada_y_SalidaRowDeletingEvent) Is Nothing) Then
-                RaiseEvent Registro_Entrada_y_SalidaRowDeleting(Me, New Registro_Entrada_y_SalidaRowChangeEvent(CType(e.Row,Registro_Entrada_y_SalidaRow), e.Action))
+            If (Not (Me.RegistroEntradaySalidaRowDeletingEvent) Is Nothing) Then
+                RaiseEvent RegistroEntradaySalidaRowDeleting(Me, New RegistroEntradaySalidaRowChangeEvent(CType(e.Row,RegistroEntradaySalidaRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveRegistro_Entrada_y_SalidaRow(ByVal row As Registro_Entrada_y_SalidaRow)
+        Public Sub RemoveRegistroEntradaySalidaRow(ByVal row As RegistroEntradaySalidaRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -2815,7 +2820,7 @@ Partial Public Class DSAyato
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "Registro_Entrada_y_SalidaDataTable"
+            attribute2.FixedValue = "RegistroEntradaySalidaDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -2864,18 +2869,30 @@ Partial Public Class DSAyato
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class DataTable1DataTable
-        Inherits Global.System.Data.TypedTableBase(Of DataTable1Row)
+    Partial Public Class DatosEmpleadosDataTable
+        Inherits Global.System.Data.TypedTableBase(Of DatosEmpleadosRow)
+        
+        Private columnIdEmpleado As Global.System.Data.DataColumn
+        
+        Private columnEmail_Personal As Global.System.Data.DataColumn
+        
+        Private columnEmail_Laboral As Global.System.Data.DataColumn
+        
+        Private columnTélefono As Global.System.Data.DataColumn
         
         Private columnNombre As Global.System.Data.DataColumn
         
+        Private columnCiudad As Global.System.Data.DataColumn
+        
         Private columnApellido As Global.System.Data.DataColumn
         
-        Private columnTelefono As Global.System.Data.DataColumn
+        Private columnCédula As Global.System.Data.DataColumn
         
-        Private columnEmail As Global.System.Data.DataColumn
+        Private columnDirección As Global.System.Data.DataColumn
         
-        Private columnCedula As Global.System.Data.DataColumn
+        Private columnIdCargo As Global.System.Data.DataColumn
+        
+        Private columnIdHorario As Global.System.Data.DataColumn
         
         Private columnCargo As Global.System.Data.DataColumn
         
@@ -2885,7 +2902,7 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "DataTable1"
+            Me.TableName = "DatosEmpleados"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -2918,9 +2935,49 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property IdEmpleadoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIdEmpleado
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property Email_PersonalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEmail_Personal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property Email_LaboralColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEmail_Laboral
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property TélefonoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTélefono
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property NombreColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnNombre
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property CiudadColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCiudad
             End Get
         End Property
         
@@ -2934,25 +2991,33 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property TelefonoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property CédulaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnTelefono
+                Return Me.columnCédula
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property EmailColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property DirecciónColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnEmail
+                Return Me.columnDirección
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property CedulaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IdCargoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnCedula
+                Return Me.columnIdCargo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property IdHorarioColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIdHorario
             End Get
         End Property
         
@@ -2983,44 +3048,50 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As DataTable1Row
+        Public Default ReadOnly Property Item(ByVal index As Integer) As DatosEmpleadosRow
             Get
-                Return CType(Me.Rows(index),DataTable1Row)
+                Return CType(Me.Rows(index),DatosEmpleadosRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event DataTable1RowChanging As DataTable1RowChangeEventHandler
+        Public Event DatosEmpleadosRowChanging As DatosEmpleadosRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event DataTable1RowChanged As DataTable1RowChangeEventHandler
+        Public Event DatosEmpleadosRowChanged As DatosEmpleadosRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event DataTable1RowDeleting As DataTable1RowChangeEventHandler
+        Public Event DatosEmpleadosRowDeleting As DatosEmpleadosRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event DataTable1RowDeleted As DataTable1RowChangeEventHandler
+        Public Event DatosEmpleadosRowDeleted As DatosEmpleadosRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddDataTable1Row(ByVal row As DataTable1Row)
+        Public Overloads Sub AddDatosEmpleadosRow(ByVal row As DatosEmpleadosRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddDataTable1Row(ByVal Nombre As String, ByVal Apellido As String, ByVal Telefono As String, ByVal Email As String, ByVal Cedula As String, ByVal Cargo As String, ByVal Horario As String) As DataTable1Row
-            Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow,DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {Nombre, Apellido, Telefono, Email, Cedula, Cargo, Horario}
-            rowDataTable1Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowDataTable1Row)
-            Return rowDataTable1Row
+        Public Overloads Function AddDatosEmpleadosRow(ByVal Email_Personal As String, ByVal Email_Laboral As String, ByVal Télefono As String, ByVal Nombre As String, ByVal Ciudad As String, ByVal Apellido As String, ByVal Cédula As String, ByVal Dirección As String, ByVal IdCargo As Integer, ByVal IdHorario As Integer, ByVal Cargo As String, ByVal Horario As String) As DatosEmpleadosRow
+            Dim rowDatosEmpleadosRow As DatosEmpleadosRow = CType(Me.NewRow,DatosEmpleadosRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Email_Personal, Email_Laboral, Télefono, Nombre, Ciudad, Apellido, Cédula, Dirección, IdCargo, IdHorario, Cargo, Horario}
+            rowDatosEmpleadosRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowDatosEmpleadosRow)
+            Return rowDatosEmpleadosRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function FindByIdEmpleado(ByVal IdEmpleado As Integer) As DatosEmpleadosRow
+            Return CType(Me.Rows.Find(New Object() {IdEmpleado}),DatosEmpleadosRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As DataTable1DataTable = CType(MyBase.Clone,DataTable1DataTable)
+            Dim cln As DatosEmpleadosDataTable = CType(MyBase.Clone,DatosEmpleadosDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -3028,17 +3099,23 @@ Partial Public Class DSAyato
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New DataTable1DataTable()
+            Return New DatosEmpleadosDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnIdEmpleado = MyBase.Columns("IdEmpleado")
+            Me.columnEmail_Personal = MyBase.Columns("Email Personal")
+            Me.columnEmail_Laboral = MyBase.Columns("Email Laboral")
+            Me.columnTélefono = MyBase.Columns("Télefono")
             Me.columnNombre = MyBase.Columns("Nombre")
+            Me.columnCiudad = MyBase.Columns("Ciudad")
             Me.columnApellido = MyBase.Columns("Apellido")
-            Me.columnTelefono = MyBase.Columns("Telefono")
-            Me.columnEmail = MyBase.Columns("Email")
-            Me.columnCedula = MyBase.Columns("Cedula")
+            Me.columnCédula = MyBase.Columns("Cédula")
+            Me.columnDirección = MyBase.Columns("Dirección")
+            Me.columnIdCargo = MyBase.Columns("IdCargo")
+            Me.columnIdHorario = MyBase.Columns("IdHorario")
             Me.columnCargo = MyBase.Columns("Cargo")
             Me.columnHorario = MyBase.Columns("Horario")
         End Sub
@@ -3046,30 +3123,57 @@ Partial Public Class DSAyato
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnIdEmpleado = New Global.System.Data.DataColumn("IdEmpleado", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIdEmpleado)
+            Me.columnEmail_Personal = New Global.System.Data.DataColumn("Email Personal", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmail_Personal)
+            Me.columnEmail_Laboral = New Global.System.Data.DataColumn("Email Laboral", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmail_Laboral)
+            Me.columnTélefono = New Global.System.Data.DataColumn("Télefono", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTélefono)
             Me.columnNombre = New Global.System.Data.DataColumn("Nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNombre)
+            Me.columnCiudad = New Global.System.Data.DataColumn("Ciudad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCiudad)
             Me.columnApellido = New Global.System.Data.DataColumn("Apellido", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnApellido)
-            Me.columnTelefono = New Global.System.Data.DataColumn("Telefono", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTelefono)
-            Me.columnEmail = New Global.System.Data.DataColumn("Email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEmail)
-            Me.columnCedula = New Global.System.Data.DataColumn("Cedula", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCedula)
+            Me.columnCédula = New Global.System.Data.DataColumn("Cédula", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCédula)
+            Me.columnDirección = New Global.System.Data.DataColumn("Dirección", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDirección)
+            Me.columnIdCargo = New Global.System.Data.DataColumn("IdCargo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIdCargo)
+            Me.columnIdHorario = New Global.System.Data.DataColumn("IdHorario", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIdHorario)
             Me.columnCargo = New Global.System.Data.DataColumn("Cargo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCargo)
             Me.columnHorario = New Global.System.Data.DataColumn("Horario", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnHorario)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIdEmpleado}, true))
+            Me.columnIdEmpleado.AutoIncrement = true
+            Me.columnIdEmpleado.AutoIncrementSeed = -1
+            Me.columnIdEmpleado.AutoIncrementStep = -1
+            Me.columnIdEmpleado.AllowDBNull = false
+            Me.columnIdEmpleado.ReadOnly = true
+            Me.columnIdEmpleado.Unique = true
+            Me.columnEmail_Personal.AllowDBNull = false
+            Me.columnEmail_Personal.MaxLength = 100
+            Me.columnEmail_Laboral.AllowDBNull = false
+            Me.columnEmail_Laboral.MaxLength = 100
+            Me.columnTélefono.AllowDBNull = false
+            Me.columnTélefono.MaxLength = 15
             Me.columnNombre.AllowDBNull = false
             Me.columnNombre.MaxLength = 30
+            Me.columnCiudad.AllowDBNull = false
+            Me.columnCiudad.MaxLength = 30
             Me.columnApellido.AllowDBNull = false
             Me.columnApellido.MaxLength = 30
-            Me.columnTelefono.AllowDBNull = false
-            Me.columnTelefono.MaxLength = 15
-            Me.columnEmail.AllowDBNull = false
-            Me.columnEmail.MaxLength = 100
-            Me.columnCedula.AllowDBNull = false
-            Me.columnCedula.MaxLength = 14
+            Me.columnCédula.AllowDBNull = false
+            Me.columnCédula.MaxLength = 14
+            Me.columnDirección.AllowDBNull = false
+            Me.columnDirección.MaxLength = 30
+            Me.columnIdCargo.AllowDBNull = false
+            Me.columnIdHorario.AllowDBNull = false
             Me.columnCargo.AllowDBNull = false
             Me.columnCargo.MaxLength = 30
             Me.columnHorario.AllowDBNull = false
@@ -3078,28 +3182,28 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewDataTable1Row() As DataTable1Row
-            Return CType(Me.NewRow,DataTable1Row)
+        Public Function NewDatosEmpleadosRow() As DatosEmpleadosRow
+            Return CType(Me.NewRow,DatosEmpleadosRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New DataTable1Row(builder)
+            Return New DatosEmpleadosRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(DataTable1Row)
+            Return GetType(DatosEmpleadosRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.DataTable1RowChangedEvent) Is Nothing) Then
-                RaiseEvent DataTable1RowChanged(Me, New DataTable1RowChangeEvent(CType(e.Row,DataTable1Row), e.Action))
+            If (Not (Me.DatosEmpleadosRowChangedEvent) Is Nothing) Then
+                RaiseEvent DatosEmpleadosRowChanged(Me, New DatosEmpleadosRowChangeEvent(CType(e.Row,DatosEmpleadosRow), e.Action))
             End If
         End Sub
         
@@ -3107,8 +3211,8 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.DataTable1RowChangingEvent) Is Nothing) Then
-                RaiseEvent DataTable1RowChanging(Me, New DataTable1RowChangeEvent(CType(e.Row,DataTable1Row), e.Action))
+            If (Not (Me.DatosEmpleadosRowChangingEvent) Is Nothing) Then
+                RaiseEvent DatosEmpleadosRowChanging(Me, New DatosEmpleadosRowChangeEvent(CType(e.Row,DatosEmpleadosRow), e.Action))
             End If
         End Sub
         
@@ -3116,8 +3220,8 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.DataTable1RowDeletedEvent) Is Nothing) Then
-                RaiseEvent DataTable1RowDeleted(Me, New DataTable1RowChangeEvent(CType(e.Row,DataTable1Row), e.Action))
+            If (Not (Me.DatosEmpleadosRowDeletedEvent) Is Nothing) Then
+                RaiseEvent DatosEmpleadosRowDeleted(Me, New DatosEmpleadosRowChangeEvent(CType(e.Row,DatosEmpleadosRow), e.Action))
             End If
         End Sub
         
@@ -3125,14 +3229,14 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.DataTable1RowDeletingEvent) Is Nothing) Then
-                RaiseEvent DataTable1RowDeleting(Me, New DataTable1RowChangeEvent(CType(e.Row,DataTable1Row), e.Action))
+            If (Not (Me.DatosEmpleadosRowDeletingEvent) Is Nothing) Then
+                RaiseEvent DatosEmpleadosRowDeleting(Me, New DatosEmpleadosRowChangeEvent(CType(e.Row,DatosEmpleadosRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveDataTable1Row(ByVal row As DataTable1Row)
+        Public Sub RemoveDatosEmpleadosRow(ByVal row As DatosEmpleadosRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -3159,7 +3263,7 @@ Partial Public Class DSAyato
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "DataTable1DataTable"
+            attribute2.FixedValue = "DatosEmpleadosDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -3363,6 +3467,17 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property DatosEmpleadosRow() As DatosEmpleadosRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("RefCargo281")),DatosEmpleadosRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("RefCargo281"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function GetEmpleadoLoginRows() As EmpleadoLoginRow()
             If (Me.Table.ChildRelations("RefEmpleado30") Is Nothing) Then
                 Return New EmpleadoLoginRow(-1) {}
@@ -3373,11 +3488,11 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function GetRegistro_Entrada_y_SalidaRows() As Registro_Entrada_y_SalidaRow()
+        Public Function GetRegistroEntradaySalidaRows() As RegistroEntradaySalidaRow()
             If (Me.Table.ChildRelations("RefEmpleado31") Is Nothing) Then
-                Return New Registro_Entrada_y_SalidaRow(-1) {}
+                Return New RegistroEntradaySalidaRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("RefEmpleado31")),Registro_Entrada_y_SalidaRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("RefEmpleado31")),RegistroEntradaySalidaRow())
             End If
         End Function
     End Class
@@ -3758,26 +3873,26 @@ Partial Public Class DSAyato
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class Registro_Entrada_y_SalidaRow
+    Partial Public Class RegistroEntradaySalidaRow
         Inherits Global.System.Data.DataRow
         
-        Private tableRegistro_Entrada_y_Salida As Registro_Entrada_y_SalidaDataTable
+        Private tableRegistroEntradaySalida As RegistroEntradaySalidaDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableRegistro_Entrada_y_Salida = CType(Me.Table,Registro_Entrada_y_SalidaDataTable)
+            Me.tableRegistroEntradaySalida = CType(Me.Table,RegistroEntradaySalidaDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property idRegistro() As Integer
             Get
-                Return CType(Me(Me.tableRegistro_Entrada_y_Salida.idRegistroColumn),Integer)
+                Return CType(Me(Me.tableRegistroEntradaySalida.idRegistroColumn),Integer)
             End Get
             Set
-                Me(Me.tableRegistro_Entrada_y_Salida.idRegistroColumn) = value
+                Me(Me.tableRegistroEntradaySalida.idRegistroColumn) = value
             End Set
         End Property
         
@@ -3785,10 +3900,10 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property horaDeMarca() As Date
             Get
-                Return CType(Me(Me.tableRegistro_Entrada_y_Salida.horaDeMarcaColumn),Date)
+                Return CType(Me(Me.tableRegistroEntradaySalida.horaDeMarcaColumn),Date)
             End Get
             Set
-                Me(Me.tableRegistro_Entrada_y_Salida.horaDeMarcaColumn) = value
+                Me(Me.tableRegistroEntradaySalida.horaDeMarcaColumn) = value
             End Set
         End Property
         
@@ -3797,14 +3912,14 @@ Partial Public Class DSAyato
         Public Property horasExtras() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableRegistro_Entrada_y_Salida.horasExtrasColumn),Integer)
+                    Return CType(Me(Me.tableRegistroEntradaySalida.horasExtrasColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'horasExtras' de la tabla 'Registro Entrada y Salida' es D"& _ 
-                            "BNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'horasExtras' de la tabla 'RegistroEntradaySalida' es DBNu"& _ 
+                            "ll.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRegistro_Entrada_y_Salida.horasExtrasColumn) = value
+                Me(Me.tableRegistroEntradaySalida.horasExtrasColumn) = value
             End Set
         End Property
         
@@ -3812,10 +3927,10 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property tipoDeMarca() As Boolean
             Get
-                Return CType(Me(Me.tableRegistro_Entrada_y_Salida.tipoDeMarcaColumn),Boolean)
+                Return CType(Me(Me.tableRegistroEntradaySalida.tipoDeMarcaColumn),Boolean)
             End Get
             Set
-                Me(Me.tableRegistro_Entrada_y_Salida.tipoDeMarcaColumn) = value
+                Me(Me.tableRegistroEntradaySalida.tipoDeMarcaColumn) = value
             End Set
         End Property
         
@@ -3823,10 +3938,10 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property idEmpleado() As Integer
             Get
-                Return CType(Me(Me.tableRegistro_Entrada_y_Salida.idEmpleadoColumn),Integer)
+                Return CType(Me(Me.tableRegistroEntradaySalida.idEmpleadoColumn),Integer)
             End Get
             Set
-                Me(Me.tableRegistro_Entrada_y_Salida.idEmpleadoColumn) = value
+                Me(Me.tableRegistroEntradaySalida.idEmpleadoColumn) = value
             End Set
         End Property
         
@@ -3834,10 +3949,10 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property idLogin() As Integer
             Get
-                Return CType(Me(Me.tableRegistro_Entrada_y_Salida.idLoginColumn),Integer)
+                Return CType(Me(Me.tableRegistroEntradaySalida.idLoginColumn),Integer)
             End Get
             Set
-                Me(Me.tableRegistro_Entrada_y_Salida.idLoginColumn) = value
+                Me(Me.tableRegistroEntradaySalida.idLoginColumn) = value
             End Set
         End Property
         
@@ -3855,39 +3970,94 @@ Partial Public Class DSAyato
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IshorasExtrasNull() As Boolean
-            Return Me.IsNull(Me.tableRegistro_Entrada_y_Salida.horasExtrasColumn)
+            Return Me.IsNull(Me.tableRegistroEntradaySalida.horasExtrasColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SethorasExtrasNull()
-            Me(Me.tableRegistro_Entrada_y_Salida.horasExtrasColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRegistroEntradaySalida.horasExtrasColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class DataTable1Row
+    Partial Public Class DatosEmpleadosRow
         Inherits Global.System.Data.DataRow
         
-        Private tableDataTable1 As DataTable1DataTable
+        Private tableDatosEmpleados As DatosEmpleadosDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableDataTable1 = CType(Me.Table,DataTable1DataTable)
+            Me.tableDatosEmpleados = CType(Me.Table,DatosEmpleadosDataTable)
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property IdEmpleado() As Integer
+            Get
+                Return CType(Me(Me.tableDatosEmpleados.IdEmpleadoColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableDatosEmpleados.IdEmpleadoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Email_Personal() As String
+            Get
+                Return CType(Me(Me.tableDatosEmpleados.Email_PersonalColumn),String)
+            End Get
+            Set
+                Me(Me.tableDatosEmpleados.Email_PersonalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Email_Laboral() As String
+            Get
+                Return CType(Me(Me.tableDatosEmpleados.Email_LaboralColumn),String)
+            End Get
+            Set
+                Me(Me.tableDatosEmpleados.Email_LaboralColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Télefono() As String
+            Get
+                Return CType(Me(Me.tableDatosEmpleados.TélefonoColumn),String)
+            End Get
+            Set
+                Me(Me.tableDatosEmpleados.TélefonoColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property Nombre() As String
             Get
-                Return CType(Me(Me.tableDataTable1.NombreColumn),String)
+                Return CType(Me(Me.tableDatosEmpleados.NombreColumn),String)
             End Get
             Set
-                Me(Me.tableDataTable1.NombreColumn) = value
+                Me(Me.tableDatosEmpleados.NombreColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Ciudad() As String
+            Get
+                Return CType(Me(Me.tableDatosEmpleados.CiudadColumn),String)
+            End Get
+            Set
+                Me(Me.tableDatosEmpleados.CiudadColumn) = value
             End Set
         End Property
         
@@ -3895,43 +4065,54 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property Apellido() As String
             Get
-                Return CType(Me(Me.tableDataTable1.ApellidoColumn),String)
+                Return CType(Me(Me.tableDatosEmpleados.ApellidoColumn),String)
             End Get
             Set
-                Me(Me.tableDataTable1.ApellidoColumn) = value
+                Me(Me.tableDatosEmpleados.ApellidoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Telefono() As String
+        Public Property Cédula() As String
             Get
-                Return CType(Me(Me.tableDataTable1.TelefonoColumn),String)
+                Return CType(Me(Me.tableDatosEmpleados.CédulaColumn),String)
             End Get
             Set
-                Me(Me.tableDataTable1.TelefonoColumn) = value
+                Me(Me.tableDatosEmpleados.CédulaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Email() As String
+        Public Property Dirección() As String
             Get
-                Return CType(Me(Me.tableDataTable1.EmailColumn),String)
+                Return CType(Me(Me.tableDatosEmpleados.DirecciónColumn),String)
             End Get
             Set
-                Me(Me.tableDataTable1.EmailColumn) = value
+                Me(Me.tableDatosEmpleados.DirecciónColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Cedula() As String
+        Public Property IdCargo() As Integer
             Get
-                Return CType(Me(Me.tableDataTable1.CedulaColumn),String)
+                Return CType(Me(Me.tableDatosEmpleados.IdCargoColumn),Integer)
             End Get
             Set
-                Me(Me.tableDataTable1.CedulaColumn) = value
+                Me(Me.tableDatosEmpleados.IdCargoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property IdHorario() As Integer
+            Get
+                Return CType(Me(Me.tableDatosEmpleados.IdHorarioColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableDatosEmpleados.IdHorarioColumn) = value
             End Set
         End Property
         
@@ -3939,10 +4120,10 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property Cargo() As String
             Get
-                Return CType(Me(Me.tableDataTable1.CargoColumn),String)
+                Return CType(Me(Me.tableDatosEmpleados.CargoColumn),String)
             End Get
             Set
-                Me(Me.tableDataTable1.CargoColumn) = value
+                Me(Me.tableDatosEmpleados.CargoColumn) = value
             End Set
         End Property
         
@@ -3950,12 +4131,22 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property Horario() As String
             Get
-                Return CType(Me(Me.tableDataTable1.HorarioColumn),String)
+                Return CType(Me(Me.tableDatosEmpleados.HorarioColumn),String)
             End Get
             Set
-                Me(Me.tableDataTable1.HorarioColumn) = value
+                Me(Me.tableDatosEmpleados.HorarioColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function GetEmpleadoRows() As EmpleadoRow()
+            If (Me.Table.ChildRelations("RefCargo281") Is Nothing) Then
+                Return New EmpleadoRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("RefCargo281")),EmpleadoRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -4178,16 +4369,16 @@ Partial Public Class DSAyato
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class Registro_Entrada_y_SalidaRowChangeEvent
+    Public Class RegistroEntradaySalidaRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As Registro_Entrada_y_SalidaRow
+        Private eventRow As RegistroEntradaySalidaRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As Registro_Entrada_y_SalidaRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As RegistroEntradaySalidaRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -4195,7 +4386,7 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As Registro_Entrada_y_SalidaRow
+        Public ReadOnly Property Row() As RegistroEntradaySalidaRow
             Get
                 Return Me.eventRow
             End Get
@@ -4214,16 +4405,16 @@ Partial Public Class DSAyato
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class DataTable1RowChangeEvent
+    Public Class DatosEmpleadosRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As DataTable1Row
+        Private eventRow As DatosEmpleadosRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As DataTable1Row, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As DatosEmpleadosRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -4231,7 +4422,7 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As DataTable1Row
+        Public ReadOnly Property Row() As DatosEmpleadosRow
             Get
                 Return Me.eventRow
             End Get
@@ -7315,7 +7506,7 @@ Namespace DSAyatoTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class Registro_Entrada_y_SalidaTableAdapter
+    Partial Public Class RegistroEntradaySalidaTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -7432,7 +7623,7 @@ Namespace DSAyatoTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Registro Entrada y Salida"
+            tableMapping.DataSetTable = "RegistroEntradaySalida"
             tableMapping.ColumnMappings.Add("idRegistro", "idRegistro")
             tableMapping.ColumnMappings.Add("horaDeMarca", "horaDeMarca")
             tableMapping.ColumnMappings.Add("horasExtras", "horasExtras")
@@ -7517,7 +7708,7 @@ Namespace DSAyatoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DSAyato.Registro_Entrada_y_SalidaDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DSAyato.RegistroEntradaySalidaDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7530,9 +7721,9 @@ Namespace DSAyatoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DSAyato.Registro_Entrada_y_SalidaDataTable
+        Public Overloads Overridable Function GetData() As DSAyato.RegistroEntradaySalidaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DSAyato.Registro_Entrada_y_SalidaDataTable = New DSAyato.Registro_Entrada_y_SalidaDataTable()
+            Dim dataTable As DSAyato.RegistroEntradaySalidaDataTable = New DSAyato.RegistroEntradaySalidaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -7540,7 +7731,7 @@ Namespace DSAyatoTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DSAyato.Registro_Entrada_y_SalidaDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DSAyato.RegistroEntradaySalidaDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -7548,7 +7739,7 @@ Namespace DSAyatoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As DSAyato) As Integer
-            Return Me.Adapter.Update(dataSet, "Registro Entrada y Salida")
+            Return Me.Adapter.Update(dataSet, "RegistroEntradaySalida")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7686,7 +7877,7 @@ Namespace DSAyatoTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class DataTable1TableAdapter
+    Partial Public Class DatosEmpleadosTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -7803,12 +7994,18 @@ Namespace DSAyatoTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "DataTable1"
+            tableMapping.DataSetTable = "DatosEmpleados"
+            tableMapping.ColumnMappings.Add("IdEmpleado", "IdEmpleado")
+            tableMapping.ColumnMappings.Add("Email Personal", "Email Personal")
+            tableMapping.ColumnMappings.Add("Email Laboral", "Email Laboral")
+            tableMapping.ColumnMappings.Add("Télefono", "Télefono")
             tableMapping.ColumnMappings.Add("Nombre", "Nombre")
+            tableMapping.ColumnMappings.Add("Ciudad", "Ciudad")
             tableMapping.ColumnMappings.Add("Apellido", "Apellido")
-            tableMapping.ColumnMappings.Add("Telefono", "Telefono")
-            tableMapping.ColumnMappings.Add("Email", "Email")
-            tableMapping.ColumnMappings.Add("Cedula", "Cedula")
+            tableMapping.ColumnMappings.Add("Cédula", "Cédula")
+            tableMapping.ColumnMappings.Add("Dirección", "Dirección")
+            tableMapping.ColumnMappings.Add("IdCargo", "IdCargo")
+            tableMapping.ColumnMappings.Add("IdHorario", "IdHorario")
             tableMapping.ColumnMappings.Add("Cargo", "Cargo")
             tableMapping.ColumnMappings.Add("Horario", "Horario")
             Me._adapter.TableMappings.Add(tableMapping)
@@ -7827,12 +8024,15 @@ Namespace DSAyatoTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Empleado.nombre AS Nombre, Empleado.apellido AS Apellido, Empleado."& _ 
-                "telefono AS Telefono, Empleado.correoLaboral AS Email, Empleado.cedula AS Cedula"& _ 
-                ", Cargo.nombre AS Cargo, Horario.descripcion AS Horario"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Emplead"& _ 
-                "o INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cargo ON Empleado.idCargo = Cargo.idCargo"& _ 
-                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Horario ON Empleado.idHorario = Horario.id"& _ 
-                "Horario"
+            Me._commandCollection(0).CommandText = "SELECT        Empleado.idEmpleado AS IdEmpleado, Empleado.correoPersonal AS [Emai"& _ 
+                "l Personal], Empleado.correoLaboral AS [Email Laboral], Empleado.telefono AS Tél"& _ 
+                "efono, Empleado.nombre AS Nombre, Empleado.ciudad AS Ciudad, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                 "& _ 
+                "        Empleado.apellido AS Apellido, Empleado.cedula AS Cédula, Empleado.direc"& _ 
+                "cion AS Dirección, Empleado.idCargo AS IdCargo, Empleado.idHorario AS IdHorario,"& _ 
+                " Cargo.nombre AS Cargo, Horario.descripcion AS Horario"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Empleado"& _ 
+                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cargo ON Empleado.idCargo = Cargo.idCargo "& _ 
+                "INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Horario ON Empleado.idHorario = Horario.idH"& _ 
+                "orario"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -7840,7 +8040,7 @@ Namespace DSAyatoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DSAyato.DataTable1DataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DSAyato.DatosEmpleadosDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7853,9 +8053,9 @@ Namespace DSAyatoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function TblEmpleado() As DSAyato.DataTable1DataTable
+        Public Overloads Overridable Function GetData() As DSAyato.DatosEmpleadosDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DSAyato.DataTable1DataTable = New DSAyato.DataTable1DataTable()
+            Dim dataTable As DSAyato.DatosEmpleadosDataTable = New DSAyato.DatosEmpleadosDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -7886,7 +8086,7 @@ Namespace DSAyatoTableAdapters
         
         Private _loginTableAdapter As LoginTableAdapter
         
-        Private _registro_Entrada_y_SalidaTableAdapter As Registro_Entrada_y_SalidaTableAdapter
+        Private _registroEntradaySalidaTableAdapter As RegistroEntradaySalidaTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -7992,12 +8192,12 @@ Namespace DSAyatoTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property Registro_Entrada_y_SalidaTableAdapter() As Registro_Entrada_y_SalidaTableAdapter
+        Public Property RegistroEntradaySalidaTableAdapter() As RegistroEntradaySalidaTableAdapter
             Get
-                Return Me._registro_Entrada_y_SalidaTableAdapter
+                Return Me._registroEntradaySalidaTableAdapter
             End Get
             Set
-                Me._registro_Entrada_y_SalidaTableAdapter = value
+                Me._registroEntradaySalidaTableAdapter = value
             End Set
         End Property
         
@@ -8044,9 +8244,9 @@ Namespace DSAyatoTableAdapters
                             AndAlso (Not (Me._loginTableAdapter.Connection) Is Nothing)) Then
                     Return Me._loginTableAdapter.Connection
                 End If
-                If ((Not (Me._registro_Entrada_y_SalidaTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._registro_Entrada_y_SalidaTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._registro_Entrada_y_SalidaTableAdapter.Connection
+                If ((Not (Me._registroEntradaySalidaTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._registroEntradaySalidaTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._registroEntradaySalidaTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -8079,7 +8279,7 @@ Namespace DSAyatoTableAdapters
                 If (Not (Me._loginTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._registro_Entrada_y_SalidaTableAdapter) Is Nothing) Then
+                If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -8147,12 +8347,12 @@ Namespace DSAyatoTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._registro_Entrada_y_SalidaTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Registro_Entrada_y_Salida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._registro_Entrada_y_SalidaTableAdapter.Update(updatedRows))
+                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -8214,11 +8414,11 @@ Namespace DSAyatoTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._registro_Entrada_y_SalidaTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Registro_Entrada_y_Salida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._registro_Entrada_y_SalidaTableAdapter.Update(addedRows))
+                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -8232,11 +8432,11 @@ Namespace DSAyatoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DSAyato, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._registro_Entrada_y_SalidaTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Registro_Entrada_y_Salida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._registro_Entrada_y_SalidaTableAdapter.Update(deletedRows))
+                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -8359,8 +8559,8 @@ Namespace DSAyatoTableAdapters
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
-            If ((Not (Me._registro_Entrada_y_SalidaTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._registro_Entrada_y_SalidaTableAdapter.Connection) = false)) Then
+            If ((Not (Me._registroEntradaySalidaTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._registroEntradaySalidaTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
@@ -8450,13 +8650,13 @@ Namespace DSAyatoTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._loginTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._registro_Entrada_y_SalidaTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._registro_Entrada_y_SalidaTableAdapter, Me._registro_Entrada_y_SalidaTableAdapter.Connection)
-                    Me._registro_Entrada_y_SalidaTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._registro_Entrada_y_SalidaTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._registro_Entrada_y_SalidaTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._registro_Entrada_y_SalidaTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._registro_Entrada_y_SalidaTableAdapter.Adapter)
+                If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._registroEntradaySalidaTableAdapter, Me._registroEntradaySalidaTableAdapter.Connection)
+                    Me._registroEntradaySalidaTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._registroEntradaySalidaTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._registroEntradaySalidaTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._registroEntradaySalidaTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._registroEntradaySalidaTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -8543,9 +8743,9 @@ Namespace DSAyatoTableAdapters
                     Me._loginTableAdapter.Connection = CType(revertConnections(Me._loginTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._loginTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._registro_Entrada_y_SalidaTableAdapter) Is Nothing) Then
-                    Me._registro_Entrada_y_SalidaTableAdapter.Connection = CType(revertConnections(Me._registro_Entrada_y_SalidaTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._registro_Entrada_y_SalidaTableAdapter.Transaction = Nothing
+                If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
+                    Me._registroEntradaySalidaTableAdapter.Connection = CType(revertConnections(Me._registroEntradaySalidaTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._registroEntradaySalidaTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

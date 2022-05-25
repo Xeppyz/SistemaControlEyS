@@ -23,8 +23,8 @@ Partial Class FrmAgregarC
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgregarC))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CmbDepart = New System.Windows.Forms.ComboBox()
         Me.TextDescrip = New System.Windows.Forms.TextBox()
         Me.TextCargo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -47,7 +47,6 @@ Partial Class FrmAgregarC
         Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
         Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.CargoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.CargoTableAdapter()
-        Me.CmbDepart = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +68,14 @@ Partial Class FrmAgregarC
         Me.GroupBox1.Size = New System.Drawing.Size(752, 129)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'CmbDepart
+        '
+        Me.CmbDepart.FormattingEnabled = True
+        Me.CmbDepart.Location = New System.Drawing.Point(586, 33)
+        Me.CmbDepart.Name = "CmbDepart"
+        Me.CmbDepart.Size = New System.Drawing.Size(160, 21)
+        Me.CmbDepart.TabIndex = 5
         '
         'TextDescrip
         '
@@ -208,7 +215,7 @@ Partial Class FrmAgregarC
         'BtnNuevo
         '
         Me.BtnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
+        Me.BtnNuevo.Image = Global.SistemaControlEyS.My.Resources.Resources.cleaning
         Me.BtnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(23, 22)
@@ -217,7 +224,7 @@ Partial Class FrmAgregarC
         'BtnGuardar
         '
         Me.BtnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnGuardar.Image = CType(resources.GetObject("BtnGuardar.Image"), System.Drawing.Image)
+        Me.BtnGuardar.Image = Global.SistemaControlEyS.My.Resources.Resources.disquete
         Me.BtnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(23, 22)
@@ -226,7 +233,7 @@ Partial Class FrmAgregarC
         'BtnEditar
         '
         Me.BtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
+        Me.BtnEditar.Image = Global.SistemaControlEyS.My.Resources.Resources.editar
         Me.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(23, 22)
@@ -235,7 +242,7 @@ Partial Class FrmAgregarC
         'BtnEliminar
         '
         Me.BtnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
+        Me.BtnEliminar.Image = Global.SistemaControlEyS.My.Resources.Resources.boton_eliminar
         Me.BtnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)
@@ -244,14 +251,6 @@ Partial Class FrmAgregarC
         'CargoTableAdapter
         '
         Me.CargoTableAdapter.ClearBeforeFill = True
-        '
-        'CmbDepart
-        '
-        Me.CmbDepart.FormattingEnabled = True
-        Me.CmbDepart.Location = New System.Drawing.Point(586, 33)
-        Me.CmbDepart.Name = "CmbDepart"
-        Me.CmbDepart.Size = New System.Drawing.Size(160, 21)
-        Me.CmbDepart.TabIndex = 5
         '
         'FrmAgregarC
         '

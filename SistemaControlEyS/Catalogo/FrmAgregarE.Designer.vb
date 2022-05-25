@@ -22,13 +22,7 @@ Partial Class FrmAgregarE
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgregarE))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.BtnNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
-        Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CmbHorario = New System.Windows.Forms.ComboBox()
         Me.CmbCargo = New System.Windows.Forms.ComboBox()
@@ -55,26 +49,14 @@ Partial Class FrmAgregarE
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtDato = New System.Windows.Forms.TextBox()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.DSAyato = New SistemaControlEyS.DSAyato()
-        Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmpleadoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.EmpleadoTableAdapter()
-        Me.IdEmpleadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CorreoPersonalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CorreoLaboralDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdCargoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdHorarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BtnNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
+        Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -85,42 +67,6 @@ Partial Class FrmAgregarE
         Me.ToolStrip1.Size = New System.Drawing.Size(974, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'BtnNuevo
-        '
-        Me.BtnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
-        Me.BtnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnNuevo.Name = "BtnNuevo"
-        Me.BtnNuevo.Size = New System.Drawing.Size(23, 22)
-        Me.BtnNuevo.Text = "Nuevo"
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnGuardar.Image = CType(resources.GetObject("BtnGuardar.Image"), System.Drawing.Image)
-        Me.BtnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnGuardar.Text = "Guardar"
-        '
-        'BtnEditar
-        '
-        Me.BtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
-        Me.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnEditar.Text = "Editar"
-        '
-        'BtnEliminar
-        '
-        Me.BtnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
-        Me.BtnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnEliminar.Text = "Eliminar"
         '
         'GroupBox1
         '
@@ -318,24 +264,21 @@ Partial Class FrmAgregarE
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.DgvEmpleado)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 219)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 214)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(816, 152)
+        Me.GroupBox2.Size = New System.Drawing.Size(962, 157)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Empleados guardados: 0"
         '
         'DgvEmpleado
         '
-        Me.DgvEmpleado.AutoGenerateColumns = False
         Me.DgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvEmpleado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdEmpleadoDataGridViewTextBoxColumn, Me.CorreoPersonalDataGridViewTextBoxColumn, Me.CorreoLaboralDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.CiudadDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.IdCargoDataGridViewTextBoxColumn, Me.IdHorarioDataGridViewTextBoxColumn})
-        Me.DgvEmpleado.DataSource = Me.EmpleadoBindingSource
         Me.DgvEmpleado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvEmpleado.Location = New System.Drawing.Point(3, 16)
         Me.DgvEmpleado.Name = "DgvEmpleado"
         Me.DgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvEmpleado.Size = New System.Drawing.Size(810, 133)
+        Me.DgvEmpleado.Size = New System.Drawing.Size(956, 138)
         Me.DgvEmpleado.TabIndex = 0
         '
         'Label1
@@ -358,91 +301,46 @@ Partial Class FrmAgregarE
         '
         Me.BtnBuscar.Location = New System.Drawing.Point(410, 185)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(81, 23)
         Me.BtnBuscar.TabIndex = 6
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
-        'DSAyato
+        'BtnNuevo
         '
-        Me.DSAyato.DataSetName = "DSAyato"
-        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.BtnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnNuevo.Image = Global.SistemaControlEyS.My.Resources.Resources.cleaning
+        Me.BtnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(23, 22)
+        Me.BtnNuevo.Text = "Nuevo"
         '
-        'EmpleadoBindingSource
+        'BtnGuardar
         '
-        Me.EmpleadoBindingSource.DataMember = "Empleado"
-        Me.EmpleadoBindingSource.DataSource = Me.DSAyato
+        Me.BtnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnGuardar.Image = Global.SistemaControlEyS.My.Resources.Resources.disquete
+        Me.BtnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(23, 22)
+        Me.BtnGuardar.Text = "Guardar"
         '
-        'EmpleadoTableAdapter
+        'BtnEditar
         '
-        Me.EmpleadoTableAdapter.ClearBeforeFill = True
+        Me.BtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnEditar.Image = Global.SistemaControlEyS.My.Resources.Resources.editar
+        Me.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnEditar.Name = "BtnEditar"
+        Me.BtnEditar.Size = New System.Drawing.Size(23, 22)
+        Me.BtnEditar.Text = "Editar"
         '
-        'IdEmpleadoDataGridViewTextBoxColumn
+        'BtnEliminar
         '
-        Me.IdEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "idEmpleado"
-        Me.IdEmpleadoDataGridViewTextBoxColumn.HeaderText = "idEmpleado"
-        Me.IdEmpleadoDataGridViewTextBoxColumn.Name = "IdEmpleadoDataGridViewTextBoxColumn"
-        Me.IdEmpleadoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CorreoPersonalDataGridViewTextBoxColumn
-        '
-        Me.CorreoPersonalDataGridViewTextBoxColumn.DataPropertyName = "correoPersonal"
-        Me.CorreoPersonalDataGridViewTextBoxColumn.HeaderText = "correoPersonal"
-        Me.CorreoPersonalDataGridViewTextBoxColumn.Name = "CorreoPersonalDataGridViewTextBoxColumn"
-        '
-        'CorreoLaboralDataGridViewTextBoxColumn
-        '
-        Me.CorreoLaboralDataGridViewTextBoxColumn.DataPropertyName = "correoLaboral"
-        Me.CorreoLaboralDataGridViewTextBoxColumn.HeaderText = "correoLaboral"
-        Me.CorreoLaboralDataGridViewTextBoxColumn.Name = "CorreoLaboralDataGridViewTextBoxColumn"
-        '
-        'TelefonoDataGridViewTextBoxColumn
-        '
-        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono"
-        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "telefono"
-        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'CiudadDataGridViewTextBoxColumn
-        '
-        Me.CiudadDataGridViewTextBoxColumn.DataPropertyName = "ciudad"
-        Me.CiudadDataGridViewTextBoxColumn.HeaderText = "ciudad"
-        Me.CiudadDataGridViewTextBoxColumn.Name = "CiudadDataGridViewTextBoxColumn"
-        '
-        'ApellidoDataGridViewTextBoxColumn
-        '
-        Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido"
-        Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "apellido"
-        Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
-        '
-        'CedulaDataGridViewTextBoxColumn
-        '
-        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "cedula"
-        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "cedula"
-        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
-        '
-        'DireccionDataGridViewTextBoxColumn
-        '
-        Me.DireccionDataGridViewTextBoxColumn.DataPropertyName = "direccion"
-        Me.DireccionDataGridViewTextBoxColumn.HeaderText = "direccion"
-        Me.DireccionDataGridViewTextBoxColumn.Name = "DireccionDataGridViewTextBoxColumn"
-        '
-        'IdCargoDataGridViewTextBoxColumn
-        '
-        Me.IdCargoDataGridViewTextBoxColumn.DataPropertyName = "idCargo"
-        Me.IdCargoDataGridViewTextBoxColumn.HeaderText = "idCargo"
-        Me.IdCargoDataGridViewTextBoxColumn.Name = "IdCargoDataGridViewTextBoxColumn"
-        '
-        'IdHorarioDataGridViewTextBoxColumn
-        '
-        Me.IdHorarioDataGridViewTextBoxColumn.DataPropertyName = "idHorario"
-        Me.IdHorarioDataGridViewTextBoxColumn.HeaderText = "idHorario"
-        Me.IdHorarioDataGridViewTextBoxColumn.Name = "IdHorarioDataGridViewTextBoxColumn"
+        Me.BtnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnEliminar.Image = Global.SistemaControlEyS.My.Resources.Resources.boton_eliminar
+        Me.BtnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)
+        Me.BtnEliminar.Text = "Eliminar"
         '
         'FrmAgregarE
         '
@@ -465,8 +363,6 @@ Partial Class FrmAgregarE
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -503,18 +399,4 @@ Partial Class FrmAgregarE
     Friend WithEvents Label8 As Label
     Friend WithEvents CmbCargo As ComboBox
     Friend WithEvents CmbHorario As ComboBox
-    Friend WithEvents DSAyato As DSAyato
-    Friend WithEvents EmpleadoBindingSource As BindingSource
-    Friend WithEvents EmpleadoTableAdapter As DSAyatoTableAdapters.EmpleadoTableAdapter
-    Friend WithEvents IdEmpleadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CorreoPersonalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CorreoLaboralDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CiudadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DireccionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdCargoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdHorarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

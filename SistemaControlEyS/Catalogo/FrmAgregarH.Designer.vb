@@ -23,7 +23,6 @@ Partial Class FrmAgregarH
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgregarH))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.BtnNuevo = New System.Windows.Forms.ToolStripButton()
         Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
@@ -68,7 +67,7 @@ Partial Class FrmAgregarH
         'BtnNuevo
         '
         Me.BtnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
+        Me.BtnNuevo.Image = Global.SistemaControlEyS.My.Resources.Resources.cleaning
         Me.BtnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(23, 22)
@@ -77,7 +76,7 @@ Partial Class FrmAgregarH
         'BtnGuardar
         '
         Me.BtnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnGuardar.Image = CType(resources.GetObject("BtnGuardar.Image"), System.Drawing.Image)
+        Me.BtnGuardar.Image = Global.SistemaControlEyS.My.Resources.Resources.disquete
         Me.BtnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(23, 22)
@@ -86,7 +85,7 @@ Partial Class FrmAgregarH
         'BtnEditar
         '
         Me.BtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
+        Me.BtnEditar.Image = Global.SistemaControlEyS.My.Resources.Resources.editar
         Me.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(23, 22)
@@ -95,7 +94,7 @@ Partial Class FrmAgregarH
         'BtnEliminar
         '
         Me.BtnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
+        Me.BtnEliminar.Image = Global.SistemaControlEyS.My.Resources.Resources.boton_eliminar
         Me.BtnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)

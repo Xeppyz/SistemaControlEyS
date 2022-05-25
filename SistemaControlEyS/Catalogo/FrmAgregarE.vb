@@ -4,6 +4,9 @@
     Dim carg As New DSAyatoTableAdapters.CargoTableAdapter
     Dim horario As New DSAyatoTableAdapters.HorarioTableAdapter
 
+    Dim Taemp As New DSAyatoTableAdapters.DatosEmpleadosTableAdapter
+    Dim Dtemp As New DSAyato.DatosEmpleadosDataTable
+
 
 
     Private Sub Label1_Click(sender As Object, e As EventArgs)
@@ -11,9 +14,8 @@
     End Sub
 
     Private Sub FrmAgregarE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DSAyato.DatosEmpleados' Puede moverla o quitarla según sea necesario.
 
-        'TODO: esta línea de código carga datos en la tabla 'DSAyato.Empleado' Puede moverla o quitarla según sea necesario.
-        Me.EmpleadoTableAdapter.Fill(Me.DSAyato.Empleado)
         llenarGrid()
         llenarCarg()
         llenarHorario()
@@ -37,10 +39,20 @@
     End Sub
 
     Sub llenarGrid()
-        DgvEmpleado.DataSource = emplea.GetData
-        DgvEmpleado.Refresh()
 
-        DgvEmpleado.Columns().Item(0).Visible = False
+
+        Taemp.Fill(Dtemp)
+
+        DgvEmpleado.DataSource = Dtemp
+        DgvEmpleado.Refresh()
+        DgvEmpleado.Columns.Item("Idempleado").Visible = False
+        DgvEmpleado.Columns.Item("Email Personal").Visible = False
+        DgvEmpleado.Columns.Item("Ciudad").Visible = False
+        DgvEmpleado.Columns.Item("Dirección").Visible = False
+        DgvEmpleado.Columns.Item("IdCargo").Visible = False
+        DgvEmpleado.Columns.Item("IdHorario").Visible = False
+
+
         Dim contador As Integer = CInt(DgvEmpleado.Rows.Count) - 1
         GroupBox2.Text = "Empleados encontrados: " & contador.ToString
 
@@ -219,7 +231,7 @@
         Dim cedula As String = TextCedula.Text.Trim
         Dim direccion As String = TextDireccion.Text.Trim
         Dim idCargo As Integer = CInt(CmbCargo.SelectedValue)
-        Dim idHorario As Integer = CInt(CmbCargo.SelectedValue)
+        Dim idHorario As Integer = CInt(CmbHorario.SelectedValue)
 
         If (emplea.ActualizarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
         idCargo, idHorario, Idempleado)) Then
@@ -243,6 +255,8 @@
             TextDireccion.Text = DgvEmpleado.Item(8, fila).Value
             CmbCargo.SelectedValue = DgvEmpleado.Item(9, fila).Value
             CmbHorario.SelectedValue = DgvEmpleado.Item(10, fila).Value
+
+
             BtnGuardar.Enabled = False
             BtnEditar.Enabled = True
             BtnEliminar.Enabled = True

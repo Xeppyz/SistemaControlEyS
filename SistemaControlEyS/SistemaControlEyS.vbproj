@@ -139,6 +139,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSAyato.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CONEXION\DSAyato.vb">
+      <DependentUpon>DSAyato.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +231,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Iconos\boton-eliminar.png" />
+    <Content Include="Iconos\cleaning.png" />
+    <Content Include="Iconos\disquete.png" />
+    <Content Include="Iconos\editar.png" />
+    <Content Include="PictureBox\pngwing.com.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
