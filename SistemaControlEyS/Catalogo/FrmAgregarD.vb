@@ -17,7 +17,7 @@
         Tadepart.Fill(Dtdepart)
         DgvDepartamento.DataSource = Dtdepart
         DgvDepartamento.Refresh()
-        DgvDepartamento.Columns().Item(0).Visible = False
+
         Dim contador As Integer = CInt(DgvDepartamento.Rows.Count) - 1
         GroupBox2.Text = "Departamento encontrados: " & contador.ToString
 

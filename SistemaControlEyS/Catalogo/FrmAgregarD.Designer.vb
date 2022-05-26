@@ -118,18 +118,18 @@ Partial Class FrmAgregarD
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(377, 75)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(110, 13)
+        Me.Label4.Size = New System.Drawing.Size(53, 13)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Jefe de departamento"
+        Me.Label4.Text = "Extensión"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(377, 29)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 13)
+        Me.Label3.Size = New System.Drawing.Size(95, 13)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Extensión"
+        Me.Label3.Text = "Jefe departamento"
         '
         'Label2
         '
