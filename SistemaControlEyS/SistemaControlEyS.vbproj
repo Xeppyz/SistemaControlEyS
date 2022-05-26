@@ -122,6 +122,12 @@
     <Compile Include="Catalogo\FrmAgregarH.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Catalogo\FrmAsistencia.Designer.vb">
+      <DependentUpon>FrmAsistencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\FrmAsistencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Catalogo\FrmEntradaYSalida.Designer.vb">
       <DependentUpon>FrmEntradaYSalida.vb</DependentUpon>
     </Compile>
@@ -186,6 +192,9 @@
     <EmbeddedResource Include="Catalogo\FrmAgregarH.resx">
       <DependentUpon>FrmAgregarH.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo\FrmAsistencia.resx">
+      <DependentUpon>FrmAsistencia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogo\FrmEntradaYSalida.resx">
       <DependentUpon>FrmEntradaYSalida.vb</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +213,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\RptCargo.rdlc" />
+    <EmbeddedResource Include="Reporte\RptDepartamento.rdlc" />
     <EmbeddedResource Include="Reporte\RptEmpleado.rdlc" />
   </ItemGroup>
   <ItemGroup>
@@ -252,8 +263,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reporte\dataset\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

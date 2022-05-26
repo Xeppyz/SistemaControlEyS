@@ -35,7 +35,6 @@ Partial Class FrmAgregarD
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvDepartamento = New System.Windows.Forms.DataGridView()
-        Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.BtnNuevo = New System.Windows.Forms.ToolStripButton()
         Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
@@ -44,11 +43,12 @@ Partial Class FrmAgregarD
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextDato = New System.Windows.Forms.TextBox()
         Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvDepartamento, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -169,11 +169,6 @@ Partial Class FrmAgregarD
         Me.DgvDepartamento.Size = New System.Drawing.Size(782, 126)
         Me.DgvDepartamento.TabIndex = 0
         '
-        'DSAyato
-        '
-        Me.DSAyato.DataSetName = "DSAyato"
-        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNuevo, Me.BtnGuardar, Me.BtnEditar, Me.BtnEliminar})
@@ -244,6 +239,11 @@ Partial Class FrmAgregarD
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
+        'DSAyato
+        '
+        Me.DSAyato.DataSetName = "DSAyato"
+        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'FrmAgregarD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -262,9 +262,9 @@ Partial Class FrmAgregarD
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvDepartamento, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -850,6 +850,155 @@ FROM            Cargo INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RptEmpleadoTableAdapter" GeneratorDataComponentClassName="RptEmpleadoTableAdapter" Name="RptEmpleado" UserDataComponentName="RptEmpleadoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Empleado.nombre AS Nombre, Empleado.apellido AS Apellido, Empleado.correoLaboral AS Email, Empleado.telefono AS Teléfono, Empleado.cedula AS Cédula, Cargo.nombre AS Cargo, Departamento.nombre AS Departamento, 
+                         Horario.descripcion AS Horario
+FROM            Empleado INNER JOIN
+                         Cargo ON Empleado.idCargo = Cargo.idCargo INNER JOIN
+                         Departamento ON Cargo.idDepartamento = Departamento.idDepartamento INNER JOIN
+                         Horario ON Empleado.idHorario = Horario.idHorario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="Apellido" DataSetColumn="Apellido" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="Teléfono" DataSetColumn="Teléfono" />
+              <Mapping SourceColumn="Cédula" DataSetColumn="Cédula" />
+              <Mapping SourceColumn="Cargo" DataSetColumn="Cargo" />
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="Horario" DataSetColumn="Horario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RptCargoTableAdapter" GeneratorDataComponentClassName="RptCargoTableAdapter" Name="RptCargo" UserDataComponentName="RptCargoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Cargo.nombre AS Cargo, Cargo.descripcion AS Descripción, Departamento.nombre AS Departamento
+FROM            Cargo INNER JOIN
+                         Departamento ON Cargo.idDepartamento = Departamento.idDepartamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Cargo" DataSetColumn="Cargo" />
+              <Mapping SourceColumn="Descripción" DataSetColumn="Descripción" />
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Departamento1TableAdapter" GeneratorDataComponentClassName="Departamento1TableAdapter" Name="Departamento1" UserDataComponentName="Departamento1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="BDAyatoLovers.dbo.Departamento" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Departamento] WHERE (([nombre] = @Original_Departamento) AND ([cantEmpleado] = @Original_Cantidad_Empleado) AND ([jefeDepartamento] = @Original_Jefe) AND ([ext] = @Original_Extesión) AND ([gmail] = @Original_Email) AND ([idDepartamento] = @Original_ID_Departamento))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_Departamento" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Departamento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Cantidad_Empleado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cantidad Empleado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_Jefe" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Jefe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_Extesión" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Extesión" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Departamento" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID Departamento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Departamento] ([nombre], [cantEmpleado], [jefeDepartamento], [ext], [gmail]) VALUES (@Departamento, @Cantidad_Empleado, @Jefe, @Extesión, @Email);
+SELECT nombre AS Departamento, cantEmpleado AS [Cantidad Empleado], jefeDepartamento AS Jefe, ext AS Extesión, gmail AS Email, idDepartamento AS [ID Departamento] FROM Departamento WHERE (idDepartamento = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Departamento" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Departamento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Cantidad_Empleado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cantidad Empleado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Jefe" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Jefe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Extesión" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Extesión" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        nombre AS Departamento, cantEmpleado AS [Cantidad Empleado], jefeDepartamento AS Jefe, ext AS Extesión, gmail AS Email, idDepartamento AS [ID Departamento]
+FROM            Departamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Departamento] SET [nombre] = @Departamento, [cantEmpleado] = @Cantidad_Empleado, [jefeDepartamento] = @Jefe, [ext] = @Extesión, [gmail] = @Email WHERE (([nombre] = @Original_Departamento) AND ([cantEmpleado] = @Original_Cantidad_Empleado) AND ([jefeDepartamento] = @Original_Jefe) AND ([ext] = @Original_Extesión) AND ([gmail] = @Original_Email) AND ([idDepartamento] = @Original_ID_Departamento));
+SELECT nombre AS Departamento, cantEmpleado AS [Cantidad Empleado], jefeDepartamento AS Jefe, ext AS Extesión, gmail AS Email, idDepartamento AS [ID Departamento] FROM Departamento WHERE (idDepartamento = @idDepartamento)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Departamento" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Departamento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Cantidad_Empleado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cantidad Empleado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Jefe" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Jefe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Extesión" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Extesión" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_Departamento" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Departamento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Cantidad_Empleado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cantidad Empleado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_Jefe" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Jefe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_Extesión" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Extesión" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Departamento" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID Departamento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idDepartamento" ColumnName="idDepartamento" DataSourceName="BDAyatoLovers.dbo.Departamento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idDepartamento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID Departamento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="Cantidad Empleado" DataSetColumn="Cantidad Empleado" />
+              <Mapping SourceColumn="Jefe" DataSetColumn="Jefe" />
+              <Mapping SourceColumn="Extesión" DataSetColumn="Extesión" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="ID Departamento" DataSetColumn="ID Departamento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RptDepartamentoTableAdapter" GeneratorDataComponentClassName="RptDepartamentoTableAdapter" Name="RptDepartamento" UserDataComponentName="RptDepartamentoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectName="BDAyatoLovers.dbo.Departamento" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Departamento] ([nombre], [cantEmpleado], [jefeDepartamento], [ext], [gmail]) VALUES (@Departamento, @CantidadEmpleados, @Jefe, @Extensión, @Email)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Departamento" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Departamento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CantidadEmpleados" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CantidadEmpleados" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Jefe" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Jefe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Extensión" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="Extensión" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        nombre AS Departamento, cantEmpleado AS CantidadEmpleados, jefeDepartamento AS Jefe, ext AS Extensión, gmail AS Email
+FROM            Departamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="Jefe" DataSetColumn="Jefe" />
+              <Mapping SourceColumn="Extensión" DataSetColumn="Extensión" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="CantidadEmpleados" DataSetColumn="CantidadEmpleados" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1039,76 +1188,76 @@ FROM            Cargo INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DatosEmpleados" msprop:Generator_RowEvHandlerName="DatosEmpleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosEmpleadosRowDeleted" msprop:Generator_RowDeletingName="DatosEmpleadosRowDeleting" msprop:Generator_RowEvArgName="DatosEmpleadosRowChangeEvent" msprop:Generator_TablePropName="DatosEmpleados" msprop:Generator_RowChangedName="DatosEmpleadosRowChanged" msprop:Generator_RowChangingName="DatosEmpleadosRowChanging" msprop:Generator_TableClassName="DatosEmpleadosDataTable" msprop:Generator_RowClassName="DatosEmpleadosRow" msprop:Generator_TableVarName="tableDatosEmpleados" msprop:Generator_UserTableName="DatosEmpleados">
+        <xs:element name="DatosEmpleados" msprop:Generator_RowClassName="DatosEmpleadosRow" msprop:Generator_RowEvHandlerName="DatosEmpleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosEmpleadosRowDeleted" msprop:Generator_RowDeletingName="DatosEmpleadosRowDeleting" msprop:Generator_RowEvArgName="DatosEmpleadosRowChangeEvent" msprop:Generator_TablePropName="DatosEmpleados" msprop:Generator_RowChangedName="DatosEmpleadosRowChanged" msprop:Generator_UserTableName="DatosEmpleados" msprop:Generator_RowChangingName="DatosEmpleadosRowChanging" msprop:Generator_TableClassName="DatosEmpleadosDataTable" msprop:Generator_TableVarName="tableDatosEmpleados">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IdEmpleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IdEmpleado" msprop:Generator_ColumnPropNameInTable="IdEmpleadoColumn" msprop:Generator_ColumnVarNameInTable="columnIdEmpleado" msprop:Generator_UserColumnName="IdEmpleado" type="xs:int" />
-              <xs:element name="Email_x0020_Personal" msprop:Generator_ColumnPropNameInRow="Email_Personal" msprop:Generator_ColumnPropNameInTable="Email_PersonalColumn" msprop:Generator_ColumnVarNameInTable="columnEmail_Personal" msprop:Generator_UserColumnName="Email Personal">
+              <xs:element name="IdEmpleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IdEmpleado" msprop:Generator_ColumnPropNameInTable="IdEmpleadoColumn" msprop:Generator_ColumnPropNameInRow="IdEmpleado" msprop:Generator_ColumnVarNameInTable="columnIdEmpleado" type="xs:int" />
+              <xs:element name="Email_x0020_Personal" msprop:Generator_UserColumnName="Email Personal" msprop:Generator_ColumnPropNameInTable="Email_PersonalColumn" msprop:Generator_ColumnPropNameInRow="Email_Personal" msprop:Generator_ColumnVarNameInTable="columnEmail_Personal">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email_x0020_Laboral" msprop:Generator_ColumnPropNameInRow="Email_Laboral" msprop:Generator_ColumnPropNameInTable="Email_LaboralColumn" msprop:Generator_ColumnVarNameInTable="columnEmail_Laboral" msprop:Generator_UserColumnName="Email Laboral">
+              <xs:element name="Email_x0020_Laboral" msprop:Generator_UserColumnName="Email Laboral" msprop:Generator_ColumnPropNameInTable="Email_LaboralColumn" msprop:Generator_ColumnPropNameInRow="Email_Laboral" msprop:Generator_ColumnVarNameInTable="columnEmail_Laboral">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Télefono" msprop:Generator_ColumnPropNameInRow="Télefono" msprop:Generator_ColumnPropNameInTable="TélefonoColumn" msprop:Generator_ColumnVarNameInTable="columnTélefono" msprop:Generator_UserColumnName="Télefono">
+              <xs:element name="Télefono" msprop:Generator_UserColumnName="Télefono" msprop:Generator_ColumnPropNameInTable="TélefonoColumn" msprop:Generator_ColumnPropNameInRow="Télefono" msprop:Generator_ColumnVarNameInTable="columnTélefono">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_UserColumnName="Nombre">
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Ciudad" msprop:Generator_ColumnPropNameInRow="Ciudad" msprop:Generator_ColumnPropNameInTable="CiudadColumn" msprop:Generator_ColumnVarNameInTable="columnCiudad" msprop:Generator_UserColumnName="Ciudad">
+              <xs:element name="Ciudad" msprop:Generator_UserColumnName="Ciudad" msprop:Generator_ColumnPropNameInTable="CiudadColumn" msprop:Generator_ColumnPropNameInRow="Ciudad" msprop:Generator_ColumnVarNameInTable="columnCiudad">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Apellido" msprop:Generator_ColumnPropNameInRow="Apellido" msprop:Generator_ColumnPropNameInTable="ApellidoColumn" msprop:Generator_ColumnVarNameInTable="columnApellido" msprop:Generator_UserColumnName="Apellido">
+              <xs:element name="Apellido" msprop:Generator_UserColumnName="Apellido" msprop:Generator_ColumnPropNameInTable="ApellidoColumn" msprop:Generator_ColumnPropNameInRow="Apellido" msprop:Generator_ColumnVarNameInTable="columnApellido">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Cédula" msprop:Generator_ColumnPropNameInRow="Cédula" msprop:Generator_ColumnPropNameInTable="CédulaColumn" msprop:Generator_ColumnVarNameInTable="columnCédula" msprop:Generator_UserColumnName="Cédula">
+              <xs:element name="Cédula" msprop:Generator_UserColumnName="Cédula" msprop:Generator_ColumnPropNameInTable="CédulaColumn" msprop:Generator_ColumnPropNameInRow="Cédula" msprop:Generator_ColumnVarNameInTable="columnCédula">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="14" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Dirección" msprop:Generator_ColumnPropNameInRow="Dirección" msprop:Generator_ColumnPropNameInTable="DirecciónColumn" msprop:Generator_ColumnVarNameInTable="columnDirección" msprop:Generator_UserColumnName="Dirección">
+              <xs:element name="Dirección" msprop:Generator_UserColumnName="Dirección" msprop:Generator_ColumnPropNameInTable="DirecciónColumn" msprop:Generator_ColumnPropNameInRow="Dirección" msprop:Generator_ColumnVarNameInTable="columnDirección">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="IdCargo" msprop:Generator_ColumnPropNameInRow="IdCargo" msprop:Generator_ColumnPropNameInTable="IdCargoColumn" msprop:Generator_ColumnVarNameInTable="columnIdCargo" msprop:Generator_UserColumnName="IdCargo" type="xs:int" />
-              <xs:element name="IdHorario" msprop:Generator_ColumnPropNameInRow="IdHorario" msprop:Generator_ColumnPropNameInTable="IdHorarioColumn" msprop:Generator_ColumnVarNameInTable="columnIdHorario" msprop:Generator_UserColumnName="IdHorario" type="xs:int" />
-              <xs:element name="Cargo" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnPropNameInTable="CargoColumn" msprop:Generator_ColumnVarNameInTable="columnCargo" msprop:Generator_UserColumnName="Cargo">
+              <xs:element name="IdCargo" msprop:Generator_UserColumnName="IdCargo" msprop:Generator_ColumnPropNameInTable="IdCargoColumn" msprop:Generator_ColumnPropNameInRow="IdCargo" msprop:Generator_ColumnVarNameInTable="columnIdCargo" type="xs:int" />
+              <xs:element name="IdHorario" msprop:Generator_UserColumnName="IdHorario" msprop:Generator_ColumnPropNameInTable="IdHorarioColumn" msprop:Generator_ColumnPropNameInRow="IdHorario" msprop:Generator_ColumnVarNameInTable="columnIdHorario" type="xs:int" />
+              <xs:element name="Cargo" msprop:Generator_UserColumnName="Cargo" msprop:Generator_ColumnPropNameInTable="CargoColumn" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnVarNameInTable="columnCargo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Horario" msprop:Generator_ColumnPropNameInRow="Horario" msprop:Generator_ColumnPropNameInTable="HorarioColumn" msprop:Generator_ColumnVarNameInTable="columnHorario" msprop:Generator_UserColumnName="Horario">
+              <xs:element name="Horario" msprop:Generator_UserColumnName="Horario" msprop:Generator_ColumnPropNameInTable="HorarioColumn" msprop:Generator_ColumnPropNameInRow="Horario" msprop:Generator_ColumnVarNameInTable="columnHorario">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -1118,25 +1267,25 @@ FROM            Cargo INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DatosHorarios" msprop:Generator_RowEvHandlerName="DatosHorariosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosHorariosRowDeleted" msprop:Generator_RowDeletingName="DatosHorariosRowDeleting" msprop:Generator_RowEvArgName="DatosHorariosRowChangeEvent" msprop:Generator_TablePropName="DatosHorarios" msprop:Generator_RowChangedName="DatosHorariosRowChanged" msprop:Generator_RowChangingName="DatosHorariosRowChanging" msprop:Generator_TableClassName="DatosHorariosDataTable" msprop:Generator_RowClassName="DatosHorariosRow" msprop:Generator_TableVarName="tableDatosHorarios" msprop:Generator_UserTableName="DatosHorarios">
+        <xs:element name="DatosHorarios" msprop:Generator_RowClassName="DatosHorariosRow" msprop:Generator_RowEvHandlerName="DatosHorariosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosHorariosRowDeleted" msprop:Generator_RowDeletingName="DatosHorariosRowDeleting" msprop:Generator_RowEvArgName="DatosHorariosRowChangeEvent" msprop:Generator_TablePropName="DatosHorarios" msprop:Generator_RowChangedName="DatosHorariosRowChanged" msprop:Generator_UserTableName="DatosHorarios" msprop:Generator_RowChangingName="DatosHorariosRowChanging" msprop:Generator_TableClassName="DatosHorariosDataTable" msprop:Generator_TableVarName="tableDatosHorarios">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_x0020_Horario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Horario" msprop:Generator_ColumnPropNameInTable="ID_HorarioColumn" msprop:Generator_ColumnVarNameInTable="columnID_Horario" msprop:Generator_UserColumnName="ID Horario" type="xs:int" />
-              <xs:element name="Descripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_UserColumnName="Descripción">
+              <xs:element name="ID_x0020_Horario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID Horario" msprop:Generator_ColumnPropNameInTable="ID_HorarioColumn" msprop:Generator_ColumnPropNameInRow="ID_Horario" msprop:Generator_ColumnVarNameInTable="columnID_Horario" type="xs:int" />
+              <xs:element name="Descripción" msprop:Generator_UserColumnName="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Hora_x0020_de_x0020_Entrada" msprop:Generator_ColumnPropNameInRow="Hora_de_Entrada" msprop:Generator_ColumnPropNameInTable="Hora_de_EntradaColumn" msprop:Generator_ColumnVarNameInTable="columnHora_de_Entrada" msprop:Generator_UserColumnName="Hora de Entrada" minOccurs="0">
+              <xs:element name="Hora_x0020_de_x0020_Entrada" msprop:Generator_UserColumnName="Hora de Entrada" msprop:Generator_ColumnPropNameInTable="Hora_de_EntradaColumn" msprop:Generator_ColumnPropNameInRow="Hora_de_Entrada" msprop:Generator_ColumnVarNameInTable="columnHora_de_Entrada" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Hora_x0020_de_x0020_Salida" msprop:Generator_ColumnPropNameInRow="Hora_de_Salida" msprop:Generator_ColumnPropNameInTable="Hora_de_SalidaColumn" msprop:Generator_ColumnVarNameInTable="columnHora_de_Salida" msprop:Generator_UserColumnName="Hora de Salida" minOccurs="0">
+              <xs:element name="Hora_x0020_de_x0020_Salida" msprop:Generator_UserColumnName="Hora de Salida" msprop:Generator_ColumnPropNameInTable="Hora_de_SalidaColumn" msprop:Generator_ColumnPropNameInRow="Hora_de_Salida" msprop:Generator_ColumnVarNameInTable="columnHora_de_Salida" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -1146,10 +1295,163 @@ FROM            Cargo INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DatosDepartamentos" msprop:Generator_RowEvHandlerName="DatosDepartamentosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosDepartamentosRowDeleted" msprop:Generator_RowDeletingName="DatosDepartamentosRowDeleting" msprop:Generator_RowEvArgName="DatosDepartamentosRowChangeEvent" msprop:Generator_TablePropName="DatosDepartamentos" msprop:Generator_RowChangedName="DatosDepartamentosRowChanged" msprop:Generator_RowChangingName="DatosDepartamentosRowChanging" msprop:Generator_TableClassName="DatosDepartamentosDataTable" msprop:Generator_RowClassName="DatosDepartamentosRow" msprop:Generator_TableVarName="tableDatosDepartamentos" msprop:Generator_UserTableName="DatosDepartamentos">
+        <xs:element name="DatosDepartamentos" msprop:Generator_RowClassName="DatosDepartamentosRow" msprop:Generator_RowEvHandlerName="DatosDepartamentosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosDepartamentosRowDeleted" msprop:Generator_RowDeletingName="DatosDepartamentosRowDeleting" msprop:Generator_RowEvArgName="DatosDepartamentosRowChangeEvent" msprop:Generator_TablePropName="DatosDepartamentos" msprop:Generator_RowChangedName="DatosDepartamentosRowChanged" msprop:Generator_UserTableName="DatosDepartamentos" msprop:Generator_RowChangingName="DatosDepartamentosRowChanging" msprop:Generator_TableClassName="DatosDepartamentosDataTable" msprop:Generator_TableVarName="tableDatosDepartamentos">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_x0020_Departamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Departamento" msprop:Generator_ColumnPropNameInTable="ID_DepartamentoColumn" msprop:Generator_ColumnVarNameInTable="columnID_Departamento" msprop:Generator_UserColumnName="ID Departamento" type="xs:int" />
+              <xs:element name="ID_x0020_Departamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID Departamento" msprop:Generator_ColumnPropNameInTable="ID_DepartamentoColumn" msprop:Generator_ColumnPropNameInRow="ID_Departamento" msprop:Generator_ColumnVarNameInTable="columnID_Departamento" type="xs:int" />
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad_x0020_Empleado" msprop:Generator_UserColumnName="Cantidad Empleado" msprop:Generator_ColumnPropNameInTable="Cantidad_EmpleadoColumn" msprop:Generator_ColumnPropNameInRow="Cantidad_Empleado" msprop:Generator_ColumnVarNameInTable="columnCantidad_Empleado" type="xs:int" />
+              <xs:element name="Jefe" msprop:Generator_UserColumnName="Jefe" msprop:Generator_ColumnPropNameInTable="JefeColumn" msprop:Generator_ColumnPropNameInRow="Jefe" msprop:Generator_ColumnVarNameInTable="columnJefe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Extensión" msprop:Generator_UserColumnName="Extensión" msprop:Generator_ColumnPropNameInTable="ExtensiónColumn" msprop:Generator_ColumnPropNameInRow="Extensión" msprop:Generator_ColumnVarNameInTable="columnExtensión">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DatosCargos" msprop:Generator_RowClassName="DatosCargosRow" msprop:Generator_RowEvHandlerName="DatosCargosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosCargosRowDeleted" msprop:Generator_RowDeletingName="DatosCargosRowDeleting" msprop:Generator_RowEvArgName="DatosCargosRowChangeEvent" msprop:Generator_TablePropName="DatosCargos" msprop:Generator_RowChangedName="DatosCargosRowChanged" msprop:Generator_UserTableName="DatosCargos" msprop:Generator_RowChangingName="DatosCargosRowChanging" msprop:Generator_TableClassName="DatosCargosDataTable" msprop:Generator_TableVarName="tableDatosCargos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_x0020_Cargo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID Cargo" msprop:Generator_ColumnPropNameInTable="ID_CargoColumn" msprop:Generator_ColumnPropNameInRow="ID_Cargo" msprop:Generator_ColumnVarNameInTable="columnID_Cargo" type="xs:int" />
+              <xs:element name="Cargo" msprop:Generator_UserColumnName="Cargo" msprop:Generator_ColumnPropNameInTable="CargoColumn" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnVarNameInTable="columnCargo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripción" msprop:Generator_UserColumnName="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_x0020_Departamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID Departamento" msprop:Generator_ColumnPropNameInTable="ID_DepartamentoColumn" msprop:Generator_ColumnPropNameInRow="ID_Departamento" msprop:Generator_ColumnVarNameInTable="columnID_Departamento" type="xs:int" />
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RptEmpleado" msprop:Generator_RowClassName="RptEmpleadoRow" msprop:Generator_RowEvHandlerName="RptEmpleadoRowChangeEventHandler" msprop:Generator_RowDeletedName="RptEmpleadoRowDeleted" msprop:Generator_RowDeletingName="RptEmpleadoRowDeleting" msprop:Generator_RowEvArgName="RptEmpleadoRowChangeEvent" msprop:Generator_TablePropName="RptEmpleado" msprop:Generator_RowChangedName="RptEmpleadoRowChanged" msprop:Generator_UserTableName="RptEmpleado" msprop:Generator_RowChangingName="RptEmpleadoRowChanging" msprop:Generator_TableClassName="RptEmpleadoDataTable" msprop:Generator_TableVarName="tableRptEmpleado">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellido" msprop:Generator_UserColumnName="Apellido" msprop:Generator_ColumnPropNameInTable="ApellidoColumn" msprop:Generator_ColumnPropNameInRow="Apellido" msprop:Generator_ColumnVarNameInTable="columnApellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Teléfono" msprop:Generator_UserColumnName="Teléfono" msprop:Generator_ColumnPropNameInTable="TeléfonoColumn" msprop:Generator_ColumnPropNameInRow="Teléfono" msprop:Generator_ColumnVarNameInTable="columnTeléfono">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cédula" msprop:Generator_UserColumnName="Cédula" msprop:Generator_ColumnPropNameInTable="CédulaColumn" msprop:Generator_ColumnPropNameInRow="Cédula" msprop:Generator_ColumnVarNameInTable="columnCédula">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cargo" msprop:Generator_UserColumnName="Cargo" msprop:Generator_ColumnPropNameInTable="CargoColumn" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnVarNameInTable="columnCargo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Horario" msprop:Generator_UserColumnName="Horario" msprop:Generator_ColumnPropNameInTable="HorarioColumn" msprop:Generator_ColumnPropNameInRow="Horario" msprop:Generator_ColumnVarNameInTable="columnHorario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RptCargo" msprop:Generator_RowClassName="RptCargoRow" msprop:Generator_RowEvHandlerName="RptCargoRowChangeEventHandler" msprop:Generator_RowDeletedName="RptCargoRowDeleted" msprop:Generator_RowDeletingName="RptCargoRowDeleting" msprop:Generator_RowEvArgName="RptCargoRowChangeEvent" msprop:Generator_TablePropName="RptCargo" msprop:Generator_RowChangedName="RptCargoRowChanged" msprop:Generator_UserTableName="RptCargo" msprop:Generator_RowChangingName="RptCargoRowChanging" msprop:Generator_TableClassName="RptCargoDataTable" msprop:Generator_TableVarName="tableRptCargo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cargo" msprop:Generator_UserColumnName="Cargo" msprop:Generator_ColumnPropNameInTable="CargoColumn" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnVarNameInTable="columnCargo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripción" msprop:Generator_UserColumnName="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Departamento1" msprop:Generator_RowEvHandlerName="Departamento1RowChangeEventHandler" msprop:Generator_RowDeletedName="Departamento1RowDeleted" msprop:Generator_RowDeletingName="Departamento1RowDeleting" msprop:Generator_RowEvArgName="Departamento1RowChangeEvent" msprop:Generator_TablePropName="Departamento1" msprop:Generator_RowChangedName="Departamento1RowChanged" msprop:Generator_RowChangingName="Departamento1RowChanging" msprop:Generator_TableClassName="Departamento1DataTable" msprop:Generator_RowClassName="Departamento1Row" msprop:Generator_TableVarName="tableDepartamento1" msprop:Generator_UserTableName="Departamento1">
+          <xs:complexType>
+            <xs:sequence>
               <xs:element name="Departamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_UserColumnName="Departamento">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1158,6 +1460,41 @@ FROM            Cargo INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Cantidad_x0020_Empleado" msprop:Generator_ColumnPropNameInRow="Cantidad_Empleado" msprop:Generator_ColumnPropNameInTable="Cantidad_EmpleadoColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad_Empleado" msprop:Generator_UserColumnName="Cantidad Empleado" type="xs:int" />
+              <xs:element name="Jefe" msprop:Generator_ColumnPropNameInRow="Jefe" msprop:Generator_ColumnPropNameInTable="JefeColumn" msprop:Generator_ColumnVarNameInTable="columnJefe" msprop:Generator_UserColumnName="Jefe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Extesión" msprop:Generator_ColumnPropNameInRow="Extesión" msprop:Generator_ColumnPropNameInTable="ExtesiónColumn" msprop:Generator_ColumnVarNameInTable="columnExtesión" msprop:Generator_UserColumnName="Extesión">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_x0020_Departamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Departamento" msprop:Generator_ColumnPropNameInTable="ID_DepartamentoColumn" msprop:Generator_ColumnVarNameInTable="columnID_Departamento" msprop:Generator_UserColumnName="ID Departamento" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RptDepartamento" msprop:Generator_RowEvHandlerName="RptDepartamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="RptDepartamentoRowDeleted" msprop:Generator_RowDeletingName="RptDepartamentoRowDeleting" msprop:Generator_RowEvArgName="RptDepartamentoRowChangeEvent" msprop:Generator_TablePropName="RptDepartamento" msprop:Generator_RowChangedName="RptDepartamentoRowChanged" msprop:Generator_RowChangingName="RptDepartamentoRowChanging" msprop:Generator_TableClassName="RptDepartamentoDataTable" msprop:Generator_RowClassName="RptDepartamentoRow" msprop:Generator_TableVarName="tableRptDepartamento" msprop:Generator_UserTableName="RptDepartamento">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Departamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_UserColumnName="Departamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Jefe" msprop:Generator_ColumnPropNameInRow="Jefe" msprop:Generator_ColumnPropNameInTable="JefeColumn" msprop:Generator_ColumnVarNameInTable="columnJefe" msprop:Generator_UserColumnName="Jefe">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1179,35 +1516,7 @@ FROM            Cargo INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="DatosCargos" msprop:Generator_RowEvHandlerName="DatosCargosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosCargosRowDeleted" msprop:Generator_RowDeletingName="DatosCargosRowDeleting" msprop:Generator_RowEvArgName="DatosCargosRowChangeEvent" msprop:Generator_TablePropName="DatosCargos" msprop:Generator_RowChangedName="DatosCargosRowChanged" msprop:Generator_RowChangingName="DatosCargosRowChanging" msprop:Generator_TableClassName="DatosCargosDataTable" msprop:Generator_RowClassName="DatosCargosRow" msprop:Generator_TableVarName="tableDatosCargos" msprop:Generator_UserTableName="DatosCargos">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID_x0020_Cargo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Cargo" msprop:Generator_ColumnPropNameInTable="ID_CargoColumn" msprop:Generator_ColumnVarNameInTable="columnID_Cargo" msprop:Generator_UserColumnName="ID Cargo" type="xs:int" />
-              <xs:element name="Cargo" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnPropNameInTable="CargoColumn" msprop:Generator_ColumnVarNameInTable="columnCargo" msprop:Generator_UserColumnName="Cargo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Descripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_UserColumnName="Descripción">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID_x0020_Departamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Departamento" msprop:Generator_ColumnPropNameInTable="ID_DepartamentoColumn" msprop:Generator_ColumnVarNameInTable="columnID_Departamento" msprop:Generator_UserColumnName="ID Departamento" type="xs:int" />
-              <xs:element name="Departamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_UserColumnName="Departamento">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="CantidadEmpleados" msprop:Generator_ColumnPropNameInRow="CantidadEmpleados" msprop:Generator_ColumnPropNameInTable="CantidadEmpleadosColumn" msprop:Generator_ColumnVarNameInTable="columnCantidadEmpleados" msprop:Generator_UserColumnName="CantidadEmpleados" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1258,16 +1567,20 @@ FROM            Cargo INNER JOIN
       <xs:field xpath="mstns:ID_x0020_Cargo" />
       <xs:field xpath="mstns:ID_x0020_Departamento" />
     </xs:unique>
+    <xs:unique name="Departamento1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Departamento1" />
+      <xs:field xpath="mstns:ID_x0020_Departamento" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="RefCargo28" msdata:parent="Cargo" msdata:child="Empleado" msdata:parentkey="idCargo" msdata:childkey="idCargo" msprop:Generator_UserParentTable="Cargo" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefCargo28" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_ParentPropName="CargoRow" msprop:Generator_UserRelationName="RefCargo28" />
-      <msdata:Relationship name="RefDepartamento27" msdata:parent="Departamento" msdata:child="Cargo" msdata:parentkey="idDepartamento" msdata:childkey="idDepartamento" msprop:Generator_UserParentTable="Departamento" msprop:Generator_UserChildTable="Cargo" msprop:Generator_RelationVarName="relationRefDepartamento27" msprop:Generator_ChildPropName="GetCargoRows" msprop:Generator_UserRelationName="RefDepartamento27" msprop:Generator_ParentPropName="DepartamentoRow" />
-      <msdata:Relationship name="RefEmpleado30" msdata:parent="Empleado" msdata:child="EmpleadoLogin" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="EmpleadoLogin" msprop:Generator_RelationVarName="relationRefEmpleado30" msprop:Generator_ChildPropName="GetEmpleadoLoginRows" msprop:Generator_UserRelationName="RefEmpleado30" msprop:Generator_ParentPropName="EmpleadoRow" />
-      <msdata:Relationship name="RefHorario29" msdata:parent="Horario" msdata:child="Empleado" msdata:parentkey="idHorario" msdata:childkey="idHorario" msprop:Generator_UserParentTable="Horario" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefHorario29" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_ParentPropName="HorarioRow" msprop:Generator_UserRelationName="RefHorario29" />
-      <msdata:Relationship name="RefEmpleadoLogin32" msdata:parent="EmpleadoLogin" msdata:child="Login" msdata:parentkey="empleadoLogin" msdata:childkey="empleadoLogin" msprop:Generator_UserParentTable="EmpleadoLogin" msprop:Generator_UserChildTable="Login" msprop:Generator_RelationVarName="relationRefEmpleadoLogin32" msprop:Generator_ChildPropName="GetLoginRows" msprop:Generator_UserRelationName="RefEmpleadoLogin32" msprop:Generator_ParentPropName="EmpleadoLoginRow" />
-      <msdata:Relationship name="RefEmpleado31" msdata:parent="Empleado" msdata:child="RegistroEntradaySalida" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="RegistroEntradaySalida" msprop:Generator_RelationVarName="relationRefEmpleado31" msprop:Generator_ChildPropName="GetRegistroEntradaySalidaRows" msprop:Generator_UserRelationName="RefEmpleado31" msprop:Generator_ParentPropName="EmpleadoRow" />
-      <msdata:Relationship name="RefCargo281" msdata:parent="DatosEmpleados" msdata:child="Empleado" msdata:parentkey="IdCargo" msdata:childkey="idCargo" msprop:Generator_UserParentTable="DatosEmpleados" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefCargo281" msprop:Generator_UserRelationName="RefCargo281" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_ParentPropName="DatosEmpleadosRow" />
+      <msdata:Relationship name="RefCargo28" msdata:parent="Cargo" msdata:child="Empleado" msdata:parentkey="idCargo" msdata:childkey="idCargo" msprop:Generator_UserParentTable="Cargo" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefCargo28" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="RefCargo28" msprop:Generator_ParentPropName="CargoRow" />
+      <msdata:Relationship name="RefDepartamento27" msdata:parent="Departamento" msdata:child="Cargo" msdata:parentkey="idDepartamento" msdata:childkey="idDepartamento" msprop:Generator_UserParentTable="Departamento" msprop:Generator_UserChildTable="Cargo" msprop:Generator_RelationVarName="relationRefDepartamento27" msprop:Generator_ChildPropName="GetCargoRows" msprop:Generator_ParentPropName="DepartamentoRow" msprop:Generator_UserRelationName="RefDepartamento27" />
+      <msdata:Relationship name="RefEmpleado30" msdata:parent="Empleado" msdata:child="EmpleadoLogin" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="EmpleadoLogin" msprop:Generator_RelationVarName="relationRefEmpleado30" msprop:Generator_ChildPropName="GetEmpleadoLoginRows" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_UserRelationName="RefEmpleado30" />
+      <msdata:Relationship name="RefHorario29" msdata:parent="Horario" msdata:child="Empleado" msdata:parentkey="idHorario" msdata:childkey="idHorario" msprop:Generator_UserParentTable="Horario" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefHorario29" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="RefHorario29" msprop:Generator_ParentPropName="HorarioRow" />
+      <msdata:Relationship name="RefEmpleadoLogin32" msdata:parent="EmpleadoLogin" msdata:child="Login" msdata:parentkey="empleadoLogin" msdata:childkey="empleadoLogin" msprop:Generator_UserParentTable="EmpleadoLogin" msprop:Generator_UserChildTable="Login" msprop:Generator_RelationVarName="relationRefEmpleadoLogin32" msprop:Generator_ChildPropName="GetLoginRows" msprop:Generator_ParentPropName="EmpleadoLoginRow" msprop:Generator_UserRelationName="RefEmpleadoLogin32" />
+      <msdata:Relationship name="RefEmpleado31" msdata:parent="Empleado" msdata:child="RegistroEntradaySalida" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="RegistroEntradaySalida" msprop:Generator_RelationVarName="relationRefEmpleado31" msprop:Generator_ChildPropName="GetRegistroEntradaySalidaRows" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_UserRelationName="RefEmpleado31" />
+      <msdata:Relationship name="RefCargo281" msdata:parent="DatosEmpleados" msdata:child="Empleado" msdata:parentkey="IdCargo" msdata:childkey="idCargo" msprop:Generator_UserParentTable="DatosEmpleados" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefCargo281" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_ParentPropName="DatosEmpleadosRow" msprop:Generator_UserRelationName="RefCargo281" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

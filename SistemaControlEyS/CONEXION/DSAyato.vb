@@ -6,3 +6,9 @@
 
     End Class
 End Class
+
+Namespace DSAyatoTableAdapters
+
+    Partial Public Class RptEmpleadoTableAdapter
+    End Class
+End Namespace

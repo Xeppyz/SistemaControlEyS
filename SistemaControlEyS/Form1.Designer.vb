@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,7 +37,6 @@ Partial Class Form1
         Me.CargoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradaYSalidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrarEntradaYSalidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EntradaySalidaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,31 +73,31 @@ Partial Class Form1
         '
         Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadoToolStripMenuItem1, Me.CargoToolStripMenuItem1, Me.EmpleadoToolStripMenuItem2, Me.HorarioToolStripMenuItem})
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
         '
         'EmpleadoToolStripMenuItem1
         '
         Me.EmpleadoToolStripMenuItem1.Name = "EmpleadoToolStripMenuItem1"
-        Me.EmpleadoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EmpleadoToolStripMenuItem1.Size = New System.Drawing.Size(150, 22)
         Me.EmpleadoToolStripMenuItem1.Text = "Cargo"
         '
         'CargoToolStripMenuItem1
         '
         Me.CargoToolStripMenuItem1.Name = "CargoToolStripMenuItem1"
-        Me.CargoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.CargoToolStripMenuItem1.Size = New System.Drawing.Size(150, 22)
         Me.CargoToolStripMenuItem1.Text = "Departamento"
         '
         'EmpleadoToolStripMenuItem2
         '
         Me.EmpleadoToolStripMenuItem2.Name = "EmpleadoToolStripMenuItem2"
-        Me.EmpleadoToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.EmpleadoToolStripMenuItem2.Size = New System.Drawing.Size(150, 22)
         Me.EmpleadoToolStripMenuItem2.Text = "Empleado"
         '
         'HorarioToolStripMenuItem
         '
         Me.HorarioToolStripMenuItem.Name = "HorarioToolStripMenuItem"
-        Me.HorarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.HorarioToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.HorarioToolStripMenuItem.Text = "Horario"
         '
         'ReporteToolStripMenuItem
@@ -111,39 +110,32 @@ Partial Class Form1
         'EmpleadoToolStripMenuItem
         '
         Me.EmpleadoToolStripMenuItem.Name = "EmpleadoToolStripMenuItem"
-        Me.EmpleadoToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.EmpleadoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EmpleadoToolStripMenuItem.Text = "Empleado"
         '
         'DepartamentoToolStripMenuItem
         '
         Me.DepartamentoToolStripMenuItem.Name = "DepartamentoToolStripMenuItem"
-        Me.DepartamentoToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.DepartamentoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DepartamentoToolStripMenuItem.Text = "Departamento"
         '
         'CargoToolStripMenuItem
         '
         Me.CargoToolStripMenuItem.Name = "CargoToolStripMenuItem"
-        Me.CargoToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.CargoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CargoToolStripMenuItem.Text = "Cargo"
         '
         'EntradaYSalidaToolStripMenuItem
         '
         Me.EntradaYSalidaToolStripMenuItem.Name = "EntradaYSalidaToolStripMenuItem"
-        Me.EntradaYSalidaToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.EntradaYSalidaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EntradaYSalidaToolStripMenuItem.Text = "Entrada y Salida"
         '
         'RegistrarEntradaYSalidaToolStripMenuItem
         '
-        Me.RegistrarEntradaYSalidaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntradaySalidaToolStripMenuItem1})
         Me.RegistrarEntradaYSalidaToolStripMenuItem.Name = "RegistrarEntradaYSalidaToolStripMenuItem"
-        Me.RegistrarEntradaYSalidaToolStripMenuItem.Size = New System.Drawing.Size(151, 20)
-        Me.RegistrarEntradaYSalidaToolStripMenuItem.Text = "Registrar Entrada y Salida"
-        '
-        'EntradaySalidaToolStripMenuItem1
-        '
-        Me.EntradaySalidaToolStripMenuItem1.Name = "EntradaySalidaToolStripMenuItem1"
-        Me.EntradaySalidaToolStripMenuItem1.Size = New System.Drawing.Size(151, 22)
-        Me.EntradaySalidaToolStripMenuItem1.Text = "EntradaySalida"
+        Me.RegistrarEntradaYSalidaToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
+        Me.RegistrarEntradaYSalidaToolStripMenuItem.Text = "Cerrar sesión"
         '
         'Form1
         '
@@ -177,5 +169,4 @@ Partial Class Form1
     Friend WithEvents HorarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EntradaYSalidaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistrarEntradaYSalidaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EntradaySalidaToolStripMenuItem1 As ToolStripMenuItem
 End Class

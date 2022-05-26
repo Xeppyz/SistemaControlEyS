@@ -171,4 +171,8 @@
 
 
     End Sub
+
+    Private Sub TextExt_TextChanged(sender As Object, e As EventArgs) Handles TextExt.TextChanged
+
+    End Sub
 End Class
