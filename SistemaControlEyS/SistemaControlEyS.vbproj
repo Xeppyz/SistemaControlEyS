@@ -207,6 +207,7 @@
     <EmbeddedResource Include="Reporte\RptEmpleado.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BDScript\BDAyatoLovers.bak" />
     <None Include="CONEXION\DSAyato.xsc">
       <DependentUpon>DSAyato.xsd</DependentUpon>
     </None>

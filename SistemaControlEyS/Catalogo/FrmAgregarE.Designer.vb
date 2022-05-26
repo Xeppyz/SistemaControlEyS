@@ -23,6 +23,10 @@ Partial Class FrmAgregarE
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.BtnNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
+        Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CmbHorario = New System.Windows.Forms.ComboBox()
         Me.CmbCargo = New System.Windows.Forms.ComboBox()
@@ -49,10 +53,6 @@ Partial Class FrmAgregarE
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtDato = New System.Windows.Forms.TextBox()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.BtnNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
-        Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -67,6 +67,42 @@ Partial Class FrmAgregarE
         Me.ToolStrip1.Size = New System.Drawing.Size(974, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'BtnNuevo
+        '
+        Me.BtnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnNuevo.Image = Global.SistemaControlEyS.My.Resources.Resources.cleaning
+        Me.BtnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(23, 22)
+        Me.BtnNuevo.Text = "Nuevo"
+        '
+        'BtnGuardar
+        '
+        Me.BtnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnGuardar.Image = Global.SistemaControlEyS.My.Resources.Resources.disquete
+        Me.BtnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(23, 22)
+        Me.BtnGuardar.Text = "Guardar"
+        '
+        'BtnEditar
+        '
+        Me.BtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnEditar.Image = Global.SistemaControlEyS.My.Resources.Resources.editar
+        Me.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnEditar.Name = "BtnEditar"
+        Me.BtnEditar.Size = New System.Drawing.Size(23, 22)
+        Me.BtnEditar.Text = "Editar"
+        '
+        'BtnEliminar
+        '
+        Me.BtnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnEliminar.Image = Global.SistemaControlEyS.My.Resources.Resources.boton_eliminar
+        Me.BtnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)
+        Me.BtnEliminar.Text = "Eliminar"
         '
         'GroupBox1
         '
@@ -103,7 +139,7 @@ Partial Class FrmAgregarE
         Me.CmbHorario.Location = New System.Drawing.Point(789, 26)
         Me.CmbHorario.Name = "CmbHorario"
         Me.CmbHorario.Size = New System.Drawing.Size(158, 21)
-        Me.CmbHorario.TabIndex = 21
+        Me.CmbHorario.TabIndex = 9
         '
         'CmbCargo
         '
@@ -111,7 +147,7 @@ Partial Class FrmAgregarE
         Me.CmbCargo.Location = New System.Drawing.Point(789, 65)
         Me.CmbCargo.Name = "CmbCargo"
         Me.CmbCargo.Size = New System.Drawing.Size(158, 21)
-        Me.CmbCargo.TabIndex = 20
+        Me.CmbCargo.TabIndex = 10
         '
         'TextDireccion
         '
@@ -120,49 +156,49 @@ Partial Class FrmAgregarE
         Me.TextDireccion.Name = "TextDireccion"
         Me.TextDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextDireccion.Size = New System.Drawing.Size(166, 47)
-        Me.TextDireccion.TabIndex = 17
+        Me.TextDireccion.TabIndex = 8
         '
         'TextCedula
         '
         Me.TextCedula.Location = New System.Drawing.Point(573, 22)
         Me.TextCedula.Name = "TextCedula"
         Me.TextCedula.Size = New System.Drawing.Size(166, 20)
-        Me.TextCedula.TabIndex = 16
+        Me.TextCedula.TabIndex = 7
         '
         'TextApellidos
         '
         Me.TextApellidos.Location = New System.Drawing.Point(374, 118)
         Me.TextApellidos.Name = "TextApellidos"
         Me.TextApellidos.Size = New System.Drawing.Size(135, 20)
-        Me.TextApellidos.TabIndex = 15
+        Me.TextApellidos.TabIndex = 6
         '
         'TextCiudad
         '
         Me.TextCiudad.Location = New System.Drawing.Point(365, 68)
         Me.TextCiudad.Name = "TextCiudad"
         Me.TextCiudad.Size = New System.Drawing.Size(144, 20)
-        Me.TextCiudad.TabIndex = 14
+        Me.TextCiudad.TabIndex = 5
         '
         'TextNombre
         '
         Me.TextNombre.Location = New System.Drawing.Point(365, 25)
         Me.TextNombre.Name = "TextNombre"
         Me.TextNombre.Size = New System.Drawing.Size(144, 20)
-        Me.TextNombre.TabIndex = 13
+        Me.TextNombre.TabIndex = 4
         '
         'TextTelefono
         '
         Me.TextTelefono.Location = New System.Drawing.Point(110, 111)
         Me.TextTelefono.Name = "TextTelefono"
         Me.TextTelefono.Size = New System.Drawing.Size(199, 20)
-        Me.TextTelefono.TabIndex = 12
+        Me.TextTelefono.TabIndex = 3
         '
         'TextLaboral
         '
         Me.TextLaboral.Location = New System.Drawing.Point(110, 65)
         Me.TextLaboral.Name = "TextLaboral"
         Me.TextLaboral.Size = New System.Drawing.Size(199, 20)
-        Me.TextLaboral.TabIndex = 11
+        Me.TextLaboral.TabIndex = 2
         '
         'Label11
         '
@@ -178,7 +214,7 @@ Partial Class FrmAgregarE
         Me.TextPersonal.Location = New System.Drawing.Point(110, 21)
         Me.TextPersonal.Name = "TextPersonal"
         Me.TextPersonal.Size = New System.Drawing.Size(199, 20)
-        Me.TextPersonal.TabIndex = 9
+        Me.TextPersonal.TabIndex = 1
         '
         'Label10
         '
@@ -295,52 +331,16 @@ Partial Class FrmAgregarE
         Me.TxtDato.Location = New System.Drawing.Point(162, 185)
         Me.TxtDato.Name = "TxtDato"
         Me.TxtDato.Size = New System.Drawing.Size(242, 20)
-        Me.TxtDato.TabIndex = 5
+        Me.TxtDato.TabIndex = 11
         '
         'BtnBuscar
         '
         Me.BtnBuscar.Location = New System.Drawing.Point(410, 185)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(81, 23)
-        Me.BtnBuscar.TabIndex = 6
+        Me.BtnBuscar.TabIndex = 12
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
-        '
-        'BtnNuevo
-        '
-        Me.BtnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnNuevo.Image = Global.SistemaControlEyS.My.Resources.Resources.cleaning
-        Me.BtnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnNuevo.Name = "BtnNuevo"
-        Me.BtnNuevo.Size = New System.Drawing.Size(23, 22)
-        Me.BtnNuevo.Text = "Nuevo"
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnGuardar.Image = Global.SistemaControlEyS.My.Resources.Resources.disquete
-        Me.BtnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnGuardar.Text = "Guardar"
-        '
-        'BtnEditar
-        '
-        Me.BtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnEditar.Image = Global.SistemaControlEyS.My.Resources.Resources.editar
-        Me.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnEditar.Text = "Editar"
-        '
-        'BtnEliminar
-        '
-        Me.BtnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnEliminar.Image = Global.SistemaControlEyS.My.Resources.Resources.boton_eliminar
-        Me.BtnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)
-        Me.BtnEliminar.Text = "Eliminar"
         '
         'FrmAgregarE
         '

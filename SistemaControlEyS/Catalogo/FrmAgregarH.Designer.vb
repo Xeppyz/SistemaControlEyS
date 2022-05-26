@@ -111,14 +111,14 @@ Partial Class FrmAgregarH
         Me.TextSalida.Location = New System.Drawing.Point(552, 28)
         Me.TextSalida.Name = "TextSalida"
         Me.TextSalida.Size = New System.Drawing.Size(100, 20)
-        Me.TextSalida.TabIndex = 5
+        Me.TextSalida.TabIndex = 3
         '
         'TextEntrada
         '
         Me.TextEntrada.Location = New System.Drawing.Point(365, 27)
         Me.TextEntrada.Name = "TextEntrada"
         Me.TextEntrada.Size = New System.Drawing.Size(100, 20)
-        Me.TextEntrada.TabIndex = 4
+        Me.TextEntrada.TabIndex = 2
         '
         'TextDescrip
         '
@@ -127,7 +127,7 @@ Partial Class FrmAgregarH
         Me.TextDescrip.Name = "TextDescrip"
         Me.TextDescrip.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextDescrip.Size = New System.Drawing.Size(175, 84)
-        Me.TextDescrip.TabIndex = 3
+        Me.TextDescrip.TabIndex = 1
         '
         'Label3
         '

@@ -236,8 +236,9 @@
         If (emplea.ActualizarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
         idCargo, idHorario, Idempleado)) Then
             MsgBox("Se actualizo correctamente empleado...", MsgBoxStyle.Information, "ÉXITO")
-            Exit Sub
             llenarGrid()
+            Exit Sub
+
         End If
     End Sub
 

@@ -4,11 +4,12 @@
     Dim idcargo As Integer
     Dim depart As New DSAyatoTableAdapters.DepartamentoTableAdapter
 
+    Dim Tacargo As New DSAyatoTableAdapters.DatosCargosTableAdapter
+    Dim Dtcargo As New DSAyato.DatosCargosDataTable
 
 
     Private Sub FrmAgregarC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DSAyato.Cargo' Puede moverla o quitarla según sea necesario.
-        Me.CargoTableAdapter.Fill(Me.DSAyato.Cargo)
+
         llenarGrid()
         llenarDepart()
 
@@ -24,9 +25,12 @@
     End Sub
 
     Sub llenarGrid()
-        DgvCargo.DataSource = carg.GetData
+
+        Tacargo.Fill(Dtcargo)
+        DgvCargo.DataSource = Dtcargo
         DgvCargo.Refresh()
-        DgvCargo.Columns().Item(0).Visible = False
+        DgvCargo.Columns.Item("ID Departamento").Visible = False
+        DgvCargo.Columns.Item("ID Cargo").Visible = False
         Dim contador As Integer = CInt(DgvCargo.Rows.Count) - 1
         GroupBox2.Text = "Cargos encontrados: " & contador.ToString
 

@@ -74,21 +74,21 @@ Partial Class FrmAgregarD
         Me.TextEmail.Location = New System.Drawing.Point(706, 29)
         Me.TextEmail.Name = "TextEmail"
         Me.TextEmail.Size = New System.Drawing.Size(145, 20)
-        Me.TextEmail.TabIndex = 9
+        Me.TextEmail.TabIndex = 5
         '
         'TextJefe
         '
         Me.TextJefe.Location = New System.Drawing.Point(493, 68)
         Me.TextJefe.Name = "TextJefe"
         Me.TextJefe.Size = New System.Drawing.Size(167, 20)
-        Me.TextJefe.TabIndex = 8
+        Me.TextJefe.TabIndex = 4
         '
         'TextExt
         '
         Me.TextExt.Location = New System.Drawing.Point(493, 26)
         Me.TextExt.Name = "TextExt"
         Me.TextExt.Size = New System.Drawing.Size(167, 20)
-        Me.TextExt.TabIndex = 7
+        Me.TextExt.TabIndex = 3
         '
         'Label5
         '
@@ -104,14 +104,14 @@ Partial Class FrmAgregarD
         Me.TextCant.Location = New System.Drawing.Point(149, 75)
         Me.TextCant.Name = "TextCant"
         Me.TextCant.Size = New System.Drawing.Size(197, 20)
-        Me.TextCant.TabIndex = 6
+        Me.TextCant.TabIndex = 2
         '
         'TextDepart
         '
         Me.TextDepart.Location = New System.Drawing.Point(144, 26)
         Me.TextDepart.Name = "TextDepart"
         Me.TextDepart.Size = New System.Drawing.Size(202, 20)
-        Me.TextDepart.TabIndex = 5
+        Me.TextDepart.TabIndex = 1
         '
         'Label4
         '
@@ -233,14 +233,14 @@ Partial Class FrmAgregarD
         Me.TextDato.Location = New System.Drawing.Point(154, 166)
         Me.TextDato.Name = "TextDato"
         Me.TextDato.Size = New System.Drawing.Size(170, 20)
-        Me.TextDato.TabIndex = 4
+        Me.TextDato.TabIndex = 6
         '
         'BtnBuscar
         '
         Me.BtnBuscar.Location = New System.Drawing.Point(340, 166)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnBuscar.TabIndex = 5
+        Me.BtnBuscar.TabIndex = 7
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '

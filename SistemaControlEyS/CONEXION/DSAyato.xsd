@@ -828,6 +828,28 @@ SELECT idDepartamento AS [ID Departamento], nombre AS Departamento, cantEmpleado
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DatosCargosTableAdapter" GeneratorDataComponentClassName="DatosCargosTableAdapter" Name="DatosCargos" UserDataComponentName="DatosCargosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDAyatoLoversConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Cargo.idCargo AS [ID Cargo], Cargo.nombre AS Cargo, Cargo.descripcion AS Descripción, Departamento.idDepartamento AS [ID Departamento], Departamento.nombre AS Departamento
+FROM            Cargo INNER JOIN
+                         Departamento ON Cargo.idDepartamento = Departamento.idDepartamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID Cargo" DataSetColumn="ID Cargo" />
+              <Mapping SourceColumn="Cargo" DataSetColumn="Cargo" />
+              <Mapping SourceColumn="Descripción" DataSetColumn="Descripción" />
+              <Mapping SourceColumn="ID Departamento" DataSetColumn="ID Departamento" />
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1160,6 +1182,35 @@ SELECT idDepartamento AS [ID Departamento], nombre AS Departamento, cantEmpleado
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DatosCargos" msprop:Generator_RowEvHandlerName="DatosCargosRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosCargosRowDeleted" msprop:Generator_RowDeletingName="DatosCargosRowDeleting" msprop:Generator_RowEvArgName="DatosCargosRowChangeEvent" msprop:Generator_TablePropName="DatosCargos" msprop:Generator_RowChangedName="DatosCargosRowChanged" msprop:Generator_RowChangingName="DatosCargosRowChanging" msprop:Generator_TableClassName="DatosCargosDataTable" msprop:Generator_RowClassName="DatosCargosRow" msprop:Generator_TableVarName="tableDatosCargos" msprop:Generator_UserTableName="DatosCargos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_x0020_Cargo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Cargo" msprop:Generator_ColumnPropNameInTable="ID_CargoColumn" msprop:Generator_ColumnVarNameInTable="columnID_Cargo" msprop:Generator_UserColumnName="ID Cargo" type="xs:int" />
+              <xs:element name="Cargo" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnPropNameInTable="CargoColumn" msprop:Generator_ColumnVarNameInTable="columnCargo" msprop:Generator_UserColumnName="Cargo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_UserColumnName="Descripción">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_x0020_Departamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Departamento" msprop:Generator_ColumnPropNameInTable="ID_DepartamentoColumn" msprop:Generator_ColumnVarNameInTable="columnID_Departamento" msprop:Generator_UserColumnName="ID Departamento" type="xs:int" />
+              <xs:element name="Departamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_UserColumnName="Departamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1200,6 +1251,11 @@ SELECT idDepartamento AS [ID Departamento], nombre AS Departamento, cantEmpleado
     </xs:unique>
     <xs:unique name="DatosDepartamentos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DatosDepartamentos" />
+      <xs:field xpath="mstns:ID_x0020_Departamento" />
+    </xs:unique>
+    <xs:unique name="DatosCargos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DatosCargos" />
+      <xs:field xpath="mstns:ID_x0020_Cargo" />
       <xs:field xpath="mstns:ID_x0020_Departamento" />
     </xs:unique>
   </xs:element>

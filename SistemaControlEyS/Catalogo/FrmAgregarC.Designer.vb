@@ -22,7 +22,6 @@ Partial Class FrmAgregarC
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CmbDepart = New System.Windows.Forms.ComboBox()
         Me.TextDescrip = New System.Windows.Forms.TextBox()
@@ -32,12 +31,6 @@ Partial Class FrmAgregarC
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvCargo = New System.Windows.Forms.DataGridView()
-        Me.IdCargoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdDepartamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CargoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.TextDato = New System.Windows.Forms.TextBox()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -46,13 +39,12 @@ Partial Class FrmAgregarC
         Me.BtnGuardar = New System.Windows.Forms.ToolStripButton()
         Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
         Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
-        Me.CargoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.CargoTableAdapter()
+        Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CargoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -75,7 +67,7 @@ Partial Class FrmAgregarC
         Me.CmbDepart.Location = New System.Drawing.Point(586, 33)
         Me.CmbDepart.Name = "CmbDepart"
         Me.CmbDepart.Size = New System.Drawing.Size(160, 21)
-        Me.CmbDepart.TabIndex = 5
+        Me.CmbDepart.TabIndex = 3
         '
         'TextDescrip
         '
@@ -84,14 +76,14 @@ Partial Class FrmAgregarC
         Me.TextDescrip.Name = "TextDescrip"
         Me.TextDescrip.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextDescrip.Size = New System.Drawing.Size(162, 78)
-        Me.TextDescrip.TabIndex = 4
+        Me.TextDescrip.TabIndex = 2
         '
         'TextCargo
         '
         Me.TextCargo.Location = New System.Drawing.Point(71, 30)
         Me.TextCargo.Name = "TextCargo"
         Me.TextCargo.Size = New System.Drawing.Size(162, 20)
-        Me.TextCargo.TabIndex = 3
+        Me.TextCargo.TabIndex = 1
         '
         'Label3
         '
@@ -132,10 +124,7 @@ Partial Class FrmAgregarC
         '
         'DgvCargo
         '
-        Me.DgvCargo.AutoGenerateColumns = False
         Me.DgvCargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvCargo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCargoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.IdDepartamentoDataGridViewTextBoxColumn})
-        Me.DgvCargo.DataSource = Me.CargoBindingSource
         Me.DgvCargo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvCargo.Location = New System.Drawing.Point(3, 16)
         Me.DgvCargo.Name = "DgvCargo"
@@ -143,54 +132,19 @@ Partial Class FrmAgregarC
         Me.DgvCargo.Size = New System.Drawing.Size(746, 120)
         Me.DgvCargo.TabIndex = 0
         '
-        'IdCargoDataGridViewTextBoxColumn
-        '
-        Me.IdCargoDataGridViewTextBoxColumn.DataPropertyName = "idCargo"
-        Me.IdCargoDataGridViewTextBoxColumn.HeaderText = "idCargo"
-        Me.IdCargoDataGridViewTextBoxColumn.Name = "IdCargoDataGridViewTextBoxColumn"
-        Me.IdCargoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        '
-        'IdDepartamentoDataGridViewTextBoxColumn
-        '
-        Me.IdDepartamentoDataGridViewTextBoxColumn.DataPropertyName = "idDepartamento"
-        Me.IdDepartamentoDataGridViewTextBoxColumn.HeaderText = "idDepartamento"
-        Me.IdDepartamentoDataGridViewTextBoxColumn.Name = "IdDepartamentoDataGridViewTextBoxColumn"
-        '
-        'CargoBindingSource
-        '
-        Me.CargoBindingSource.DataMember = "Cargo"
-        Me.CargoBindingSource.DataSource = Me.DSAyato
-        '
-        'DSAyato
-        '
-        Me.DSAyato.DataSetName = "DSAyato"
-        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TextDato
         '
         Me.TextDato.Location = New System.Drawing.Point(89, 163)
         Me.TextDato.Name = "TextDato"
         Me.TextDato.Size = New System.Drawing.Size(196, 20)
-        Me.TextDato.TabIndex = 2
+        Me.TextDato.TabIndex = 4
         '
         'BtnBuscar
         '
         Me.BtnBuscar.Location = New System.Drawing.Point(304, 163)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnBuscar.TabIndex = 3
+        Me.BtnBuscar.TabIndex = 5
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
@@ -248,9 +202,10 @@ Partial Class FrmAgregarC
         Me.BtnEliminar.Size = New System.Drawing.Size(23, 22)
         Me.BtnEliminar.Text = "Eliminar"
         '
-        'CargoTableAdapter
+        'DSAyato
         '
-        Me.CargoTableAdapter.ClearBeforeFill = True
+        Me.DSAyato.DataSetName = "DSAyato"
+        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'FrmAgregarC
         '
@@ -270,10 +225,9 @@ Partial Class FrmAgregarC
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CargoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -291,12 +245,6 @@ Partial Class FrmAgregarC
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents DSAyato As DSAyato
-    Friend WithEvents CargoBindingSource As BindingSource
-    Friend WithEvents CargoTableAdapter As DSAyatoTableAdapters.CargoTableAdapter
-    Friend WithEvents IdCargoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdDepartamentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents BtnNuevo As ToolStripButton
     Friend WithEvents BtnGuardar As ToolStripButton
