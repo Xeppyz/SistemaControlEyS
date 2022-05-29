@@ -65,9 +65,9 @@ Partial Public Class DSAyato
     
     Private relationRefEmpleadoLogin32 As Global.System.Data.DataRelation
     
-    Private relationRefEmpleado31 As Global.System.Data.DataRelation
-    
     Private relationRefCargo281 As Global.System.Data.DataRelation
+    
+    Private relationRefEmpleado31 As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -549,8 +549,8 @@ Partial Public Class DSAyato
         Me.relationRefEmpleado30 = Me.Relations("RefEmpleado30")
         Me.relationRefHorario29 = Me.Relations("RefHorario29")
         Me.relationRefEmpleadoLogin32 = Me.Relations("RefEmpleadoLogin32")
-        Me.relationRefEmpleado31 = Me.Relations("RefEmpleado31")
         Me.relationRefCargo281 = Me.Relations("RefCargo281")
+        Me.relationRefEmpleado31 = Me.Relations("RefEmpleado31")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -601,10 +601,10 @@ Partial Public Class DSAyato
         Me.Relations.Add(Me.relationRefHorario29)
         Me.relationRefEmpleadoLogin32 = New Global.System.Data.DataRelation("RefEmpleadoLogin32", New Global.System.Data.DataColumn() {Me.tableEmpleadoLogin.empleadoLoginColumn}, New Global.System.Data.DataColumn() {Me.tableLogin.empleadoLoginColumn}, false)
         Me.Relations.Add(Me.relationRefEmpleadoLogin32)
-        Me.relationRefEmpleado31 = New Global.System.Data.DataRelation("RefEmpleado31", New Global.System.Data.DataColumn() {Me.tableEmpleado.idEmpleadoColumn}, New Global.System.Data.DataColumn() {Me.tableRegistroEntradaySalida.idEmpleadoColumn}, false)
-        Me.Relations.Add(Me.relationRefEmpleado31)
         Me.relationRefCargo281 = New Global.System.Data.DataRelation("RefCargo281", New Global.System.Data.DataColumn() {Me.tableDatosEmpleados.IdCargoColumn}, New Global.System.Data.DataColumn() {Me.tableEmpleado.idCargoColumn}, false)
         Me.Relations.Add(Me.relationRefCargo281)
+        Me.relationRefEmpleado31 = New Global.System.Data.DataRelation("RefEmpleado31", New Global.System.Data.DataColumn() {Me.tableEmpleado.idEmpleadoColumn}, New Global.System.Data.DataColumn() {Me.tableRegistroEntradaySalida.idEmpleadoColumn}, false)
+        Me.Relations.Add(Me.relationRefEmpleado31)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2782,15 +2782,15 @@ Partial Public Class DSAyato
         
         Private columnidRegistro As Global.System.Data.DataColumn
         
-        Private columnhoraDeMarca As Global.System.Data.DataColumn
-        
-        Private columnhorasExtras As Global.System.Data.DataColumn
-        
-        Private columntipoDeMarca As Global.System.Data.DataColumn
-        
         Private columnidEmpleado As Global.System.Data.DataColumn
         
-        Private columnidLogin As Global.System.Data.DataColumn
+        Private columnHoraEntrada As Global.System.Data.DataColumn
+        
+        Private columnHoraSalida As Global.System.Data.DataColumn
+        
+        Private columncedula As Global.System.Data.DataColumn
+        
+        Private columnfechaAsistencia As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -2837,30 +2837,6 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property horaDeMarcaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnhoraDeMarca
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property horasExtrasColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnhorasExtras
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property tipoDeMarcaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columntipoDeMarca
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property idEmpleadoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnidEmpleado
@@ -2869,9 +2845,33 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property idLoginColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property HoraEntradaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnidLogin
+                Return Me.columnHoraEntrada
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property HoraSalidaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnHoraSalida
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property cedulaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncedula
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property fechaAsistenciaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfechaAsistencia
             End Get
         End Property
         
@@ -2912,11 +2912,11 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRegistroEntradaySalidaRow(ByVal horaDeMarca As Date, ByVal horasExtras As Integer, ByVal tipoDeMarca As Boolean, ByVal parentEmpleadoRowByRefEmpleado31 As EmpleadoRow, ByVal idLogin As Integer) As RegistroEntradaySalidaRow
+        Public Overloads Function AddRegistroEntradaySalidaRow(ByVal parentEmpleadoRowByRefEmpleado31 As EmpleadoRow, ByVal HoraEntrada As System.TimeSpan, ByVal HoraSalida As System.TimeSpan, ByVal cedula As String, ByVal fechaAsistencia As Date) As RegistroEntradaySalidaRow
             Dim rowRegistroEntradaySalidaRow As RegistroEntradaySalidaRow = CType(Me.NewRow,RegistroEntradaySalidaRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, horaDeMarca, horasExtras, tipoDeMarca, Nothing, idLogin}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, HoraEntrada, HoraSalida, cedula, fechaAsistencia}
             If (Not (parentEmpleadoRowByRefEmpleado31) Is Nothing) Then
-                columnValuesArray(4) = parentEmpleadoRowByRefEmpleado31(0)
+                columnValuesArray(1) = parentEmpleadoRowByRefEmpleado31(0)
             End If
             rowRegistroEntradaySalidaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRegistroEntradaySalidaRow)
@@ -2947,11 +2947,11 @@ Partial Public Class DSAyato
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnidRegistro = MyBase.Columns("idRegistro")
-            Me.columnhoraDeMarca = MyBase.Columns("horaDeMarca")
-            Me.columnhorasExtras = MyBase.Columns("horasExtras")
-            Me.columntipoDeMarca = MyBase.Columns("tipoDeMarca")
             Me.columnidEmpleado = MyBase.Columns("idEmpleado")
-            Me.columnidLogin = MyBase.Columns("idLogin")
+            Me.columnHoraEntrada = MyBase.Columns("HoraEntrada")
+            Me.columnHoraSalida = MyBase.Columns("HoraSalida")
+            Me.columncedula = MyBase.Columns("cedula")
+            Me.columnfechaAsistencia = MyBase.Columns("fechaAsistencia")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2959,16 +2959,16 @@ Partial Public Class DSAyato
         Private Sub InitClass()
             Me.columnidRegistro = New Global.System.Data.DataColumn("idRegistro", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnidRegistro)
-            Me.columnhoraDeMarca = New Global.System.Data.DataColumn("horaDeMarca", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnhoraDeMarca)
-            Me.columnhorasExtras = New Global.System.Data.DataColumn("horasExtras", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnhorasExtras)
-            Me.columntipoDeMarca = New Global.System.Data.DataColumn("tipoDeMarca", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntipoDeMarca)
             Me.columnidEmpleado = New Global.System.Data.DataColumn("idEmpleado", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnidEmpleado)
-            Me.columnidLogin = New Global.System.Data.DataColumn("idLogin", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnidLogin)
+            Me.columnHoraEntrada = New Global.System.Data.DataColumn("HoraEntrada", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnHoraEntrada)
+            Me.columnHoraSalida = New Global.System.Data.DataColumn("HoraSalida", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnHoraSalida)
+            Me.columncedula = New Global.System.Data.DataColumn("cedula", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncedula)
+            Me.columnfechaAsistencia = New Global.System.Data.DataColumn("fechaAsistencia", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfechaAsistencia)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidRegistro}, true))
             Me.columnidRegistro.AutoIncrement = true
             Me.columnidRegistro.AutoIncrementSeed = -1
@@ -2976,10 +2976,9 @@ Partial Public Class DSAyato
             Me.columnidRegistro.AllowDBNull = false
             Me.columnidRegistro.ReadOnly = true
             Me.columnidRegistro.Unique = true
-            Me.columnhoraDeMarca.AllowDBNull = false
-            Me.columntipoDeMarca.AllowDBNull = false
             Me.columnidEmpleado.AllowDBNull = false
-            Me.columnidLogin.AllowDBNull = false
+            Me.columncedula.MaxLength = 50
+            Me.columnfechaAsistencia.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6412,44 +6411,6 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property horaDeMarca() As Date
-            Get
-                Return CType(Me(Me.tableRegistroEntradaySalida.horaDeMarcaColumn),Date)
-            End Get
-            Set
-                Me(Me.tableRegistroEntradaySalida.horaDeMarcaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property horasExtras() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableRegistroEntradaySalida.horasExtrasColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'horasExtras' de la tabla 'RegistroEntradaySalida' es DBNu"& _ 
-                            "ll.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableRegistroEntradaySalida.horasExtrasColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property tipoDeMarca() As Boolean
-            Get
-                Return CType(Me(Me.tableRegistroEntradaySalida.tipoDeMarcaColumn),Boolean)
-            End Get
-            Set
-                Me(Me.tableRegistroEntradaySalida.tipoDeMarcaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property idEmpleado() As Integer
             Get
                 Return CType(Me(Me.tableRegistroEntradaySalida.idEmpleadoColumn),Integer)
@@ -6461,12 +6422,59 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property idLogin() As Integer
+        Public Property HoraEntrada() As System.TimeSpan
             Get
-                Return CType(Me(Me.tableRegistroEntradaySalida.idLoginColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableRegistroEntradaySalida.HoraEntradaColumn),Global.System.TimeSpan)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'HoraEntrada' de la tabla 'RegistroEntradaySalida' es DBNu"& _ 
+                            "ll.", e)
+                End Try
             End Get
             Set
-                Me(Me.tableRegistroEntradaySalida.idLoginColumn) = value
+                Me(Me.tableRegistroEntradaySalida.HoraEntradaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property HoraSalida() As System.TimeSpan
+            Get
+                Try 
+                    Return CType(Me(Me.tableRegistroEntradaySalida.HoraSalidaColumn),Global.System.TimeSpan)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'HoraSalida' de la tabla 'RegistroEntradaySalida' es DBNul"& _ 
+                            "l.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRegistroEntradaySalida.HoraSalidaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property cedula() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRegistroEntradaySalida.cedulaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'cedula' de la tabla 'RegistroEntradaySalida' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRegistroEntradaySalida.cedulaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property fechaAsistencia() As Date
+            Get
+                Return CType(Me(Me.tableRegistroEntradaySalida.fechaAsistenciaColumn),Date)
+            End Get
+            Set
+                Me(Me.tableRegistroEntradaySalida.fechaAsistenciaColumn) = value
             End Set
         End Property
         
@@ -6483,14 +6491,38 @@ Partial Public Class DSAyato
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IshorasExtrasNull() As Boolean
-            Return Me.IsNull(Me.tableRegistroEntradaySalida.horasExtrasColumn)
+        Public Function IsHoraEntradaNull() As Boolean
+            Return Me.IsNull(Me.tableRegistroEntradaySalida.HoraEntradaColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SethorasExtrasNull()
-            Me(Me.tableRegistroEntradaySalida.horasExtrasColumn) = Global.System.Convert.DBNull
+        Public Sub SetHoraEntradaNull()
+            Me(Me.tableRegistroEntradaySalida.HoraEntradaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsHoraSalidaNull() As Boolean
+            Return Me.IsNull(Me.tableRegistroEntradaySalida.HoraSalidaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetHoraSalidaNull()
+            Me(Me.tableRegistroEntradaySalida.HoraSalidaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IscedulaNull() As Boolean
+            Return Me.IsNull(Me.tableRegistroEntradaySalida.cedulaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetcedulaNull()
+            Me(Me.tableRegistroEntradaySalida.cedulaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -10942,64 +10974,70 @@ Namespace DSAyatoTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "RegistroEntradaySalida"
             tableMapping.ColumnMappings.Add("idRegistro", "idRegistro")
-            tableMapping.ColumnMappings.Add("horaDeMarca", "horaDeMarca")
-            tableMapping.ColumnMappings.Add("horasExtras", "horasExtras")
-            tableMapping.ColumnMappings.Add("tipoDeMarca", "tipoDeMarca")
             tableMapping.ColumnMappings.Add("idEmpleado", "idEmpleado")
-            tableMapping.ColumnMappings.Add("idLogin", "idLogin")
+            tableMapping.ColumnMappings.Add("HoraEntrada", "HoraEntrada")
+            tableMapping.ColumnMappings.Add("HoraSalida", "HoraSalida")
+            tableMapping.ColumnMappings.Add("cedula", "cedula")
+            tableMapping.ColumnMappings.Add("fechaAsistencia", "fechaAsistencia")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Registro Entrada y Salida] WHERE (([idRegistro] = @Original_id"& _ 
-                "Registro) AND ([horaDeMarca] = @Original_horaDeMarca) AND ((@IsNull_horasExtras "& _ 
-                "= 1 AND [horasExtras] IS NULL) OR ([horasExtras] = @Original_horasExtras)) AND ("& _ 
-                "[tipoDeMarca] = @Original_tipoDeMarca) AND ([idEmpleado] = @Original_idEmpleado)"& _ 
-                " AND ([idLogin] = @Original_idLogin))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Registro_Entrada_y_Salida] WHERE (([idRegistro] = @Original_idRegist"& _ 
+                "ro) AND ([idEmpleado] = @Original_idEmpleado) AND ((@IsNull_HoraEntrada = 1 AND "& _ 
+                "[HoraEntrada] IS NULL) OR ([HoraEntrada] = @Original_HoraEntrada)) AND ((@IsNull"& _ 
+                "_HoraSalida = 1 AND [HoraSalida] IS NULL) OR ([HoraSalida] = @Original_HoraSalid"& _ 
+                "a)) AND ((@IsNull_cedula = 1 AND [cedula] IS NULL) OR ([cedula] = @Original_cedu"& _ 
+                "la)) AND ([fechaAsistencia] = @Original_fechaAsistencia))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idRegistro", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idRegistro", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_horaDeMarca", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horaDeMarca", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_horasExtras", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horasExtras", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_horasExtras", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horasExtras", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tipoDeMarca", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tipoDeMarca", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idEmpleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idLogin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idLogin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HoraEntrada", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEntrada", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HoraEntrada", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEntrada", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HoraSalida", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraSalida", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HoraSalida", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraSalida", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_cedula", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "cedula", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_cedula", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "cedula", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_fechaAsistencia", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaAsistencia", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Registro Entrada y Salida] ([horaDeMarca], [horasExtras], [tip"& _ 
-                "oDeMarca], [idEmpleado], [idLogin]) VALUES (@horaDeMarca, @horasExtras, @tipoDeM"& _ 
-                "arca, @idEmpleado, @idLogin);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT idRegistro, horaDeMarca, horasExtras, tipo"& _ 
-                "DeMarca, idEmpleado, idLogin FROM [Registro Entrada y Salida] WHERE (idRegistro "& _ 
-                "= SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Registro_Entrada_y_Salida] ([idEmpleado], [HoraEntrada], [HoraSalida"& _ 
+                "], [cedula], [fechaAsistencia]) VALUES (@idEmpleado, @HoraEntrada, @HoraSalida, "& _ 
+                "@cedula, @fechaAsistencia);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT idRegistro, idEmpleado, HoraEntrada, HoraSal"& _ 
+                "ida, cedula, fechaAsistencia FROM Registro_Entrada_y_Salida WHERE (idRegistro = "& _ 
+                "SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horaDeMarca", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horaDeMarca", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horasExtras", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horasExtras", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tipoDeMarca", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tipoDeMarca", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idEmpleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idLogin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idLogin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HoraEntrada", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEntrada", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HoraSalida", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraSalida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cedula", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "cedula", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fechaAsistencia", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaAsistencia", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Registro Entrada y Salida] SET [horaDeMarca] = @horaDeMarca, [horas"& _ 
-                "Extras] = @horasExtras, [tipoDeMarca] = @tipoDeMarca, [idEmpleado] = @idEmpleado"& _ 
-                ", [idLogin] = @idLogin WHERE (([idRegistro] = @Original_idRegistro) AND ([horaDe"& _ 
-                "Marca] = @Original_horaDeMarca) AND ((@IsNull_horasExtras = 1 AND [horasExtras] "& _ 
-                "IS NULL) OR ([horasExtras] = @Original_horasExtras)) AND ([tipoDeMarca] = @Origi"& _ 
-                "nal_tipoDeMarca) AND ([idEmpleado] = @Original_idEmpleado) AND ([idLogin] = @Ori"& _ 
-                "ginal_idLogin));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT idRegistro, horaDeMarca, horasExtras, tipoDeMarca, idEm"& _ 
-                "pleado, idLogin FROM [Registro Entrada y Salida] WHERE (idRegistro = @idRegistro"& _ 
-                ")"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Registro_Entrada_y_Salida] SET [idEmpleado] = @idEmpleado, [HoraEntrada] "& _ 
+                "= @HoraEntrada, [HoraSalida] = @HoraSalida, [cedula] = @cedula, [fechaAsistencia"& _ 
+                "] = @fechaAsistencia WHERE (([idRegistro] = @Original_idRegistro) AND ([idEmplea"& _ 
+                "do] = @Original_idEmpleado) AND ((@IsNull_HoraEntrada = 1 AND [HoraEntrada] IS N"& _ 
+                "ULL) OR ([HoraEntrada] = @Original_HoraEntrada)) AND ((@IsNull_HoraSalida = 1 AN"& _ 
+                "D [HoraSalida] IS NULL) OR ([HoraSalida] = @Original_HoraSalida)) AND ((@IsNull_"& _ 
+                "cedula = 1 AND [cedula] IS NULL) OR ([cedula] = @Original_cedula)) AND ([fechaAs"& _ 
+                "istencia] = @Original_fechaAsistencia));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT idRegistro, idEmpleado, HoraEnt"& _ 
+                "rada, HoraSalida, cedula, fechaAsistencia FROM Registro_Entrada_y_Salida WHERE ("& _ 
+                "idRegistro = @idRegistro)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horaDeMarca", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horaDeMarca", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horasExtras", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horasExtras", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tipoDeMarca", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tipoDeMarca", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idEmpleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idLogin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idLogin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HoraEntrada", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEntrada", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HoraSalida", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraSalida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cedula", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "cedula", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fechaAsistencia", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaAsistencia", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idRegistro", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idRegistro", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_horaDeMarca", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horaDeMarca", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_horasExtras", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horasExtras", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_horasExtras", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horasExtras", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tipoDeMarca", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tipoDeMarca", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idEmpleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idLogin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idLogin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HoraEntrada", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEntrada", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HoraEntrada", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraEntrada", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HoraSalida", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraSalida", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HoraSalida", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HoraSalida", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_cedula", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "cedula", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_cedula", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "cedula", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_fechaAsistencia", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fechaAsistencia", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idRegistro", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idRegistro", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -11016,8 +11054,8 @@ Namespace DSAyatoTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT idRegistro, horaDeMarca, horasExtras, tipoDeMarca, idEmpleado, idLogin FRO"& _ 
-                "M dbo.[Registro Entrada y Salida]"
+            Me._commandCollection(0).CommandText = "SELECT        idRegistro, idEmpleado, HoraEntrada, HoraSalida, cedula, fechaAsist"& _ 
+                "encia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Registro_Entrada_y_Salida"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -11071,117 +11109,6 @@ Namespace DSAyatoTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_idRegistro As Integer, ByVal Original_horaDeMarca As Date, ByVal Original_horasExtras As Global.System.Nullable(Of Integer), ByVal Original_tipoDeMarca As Boolean, ByVal Original_idEmpleado As Integer, ByVal Original_idLogin As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_idRegistro,Integer)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_horaDeMarca,Date)
-            If (Original_horasExtras.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_horasExtras.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_tipoDeMarca,Boolean)
-            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_idEmpleado,Integer)
-            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_idLogin,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal horaDeMarca As Date, ByVal horasExtras As Global.System.Nullable(Of Integer), ByVal tipoDeMarca As Boolean, ByVal idEmpleado As Integer, ByVal idLogin As Integer) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(horaDeMarca,Date)
-            If (horasExtras.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(horasExtras.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(tipoDeMarca,Boolean)
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(idEmpleado,Integer)
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(idLogin,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal horaDeMarca As Date, ByVal horasExtras As Global.System.Nullable(Of Integer), ByVal tipoDeMarca As Boolean, ByVal idEmpleado As Integer, ByVal idLogin As Integer, ByVal Original_idRegistro As Integer, ByVal Original_horaDeMarca As Date, ByVal Original_horasExtras As Global.System.Nullable(Of Integer), ByVal Original_tipoDeMarca As Boolean, ByVal Original_idEmpleado As Integer, ByVal Original_idLogin As Integer, ByVal idRegistro As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(horaDeMarca,Date)
-            If (horasExtras.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(horasExtras.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(tipoDeMarca,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(idEmpleado,Integer)
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(idLogin,Integer)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_idRegistro,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_horaDeMarca,Date)
-            If (Original_horasExtras.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_horasExtras.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_tipoDeMarca,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_idEmpleado,Integer)
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_idLogin,Integer)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(idRegistro,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal horaDeMarca As Date, ByVal horasExtras As Global.System.Nullable(Of Integer), ByVal tipoDeMarca As Boolean, ByVal idEmpleado As Integer, ByVal idLogin As Integer, ByVal Original_idRegistro As Integer, ByVal Original_horaDeMarca As Date, ByVal Original_horasExtras As Global.System.Nullable(Of Integer), ByVal Original_tipoDeMarca As Boolean, ByVal Original_idEmpleado As Integer, ByVal Original_idLogin As Integer) As Integer
-            Return Me.Update(horaDeMarca, horasExtras, tipoDeMarca, idEmpleado, idLogin, Original_idRegistro, Original_horaDeMarca, Original_horasExtras, Original_tipoDeMarca, Original_idEmpleado, Original_idLogin, Original_idRegistro)
         End Function
     End Class
     
@@ -13766,15 +13693,6 @@ Namespace DSAyatoTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._datosHorariosTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.DatosHorarios.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -13808,6 +13726,15 @@ Namespace DSAyatoTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._rptDepartamentoTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -13869,14 +13796,6 @@ Namespace DSAyatoTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._datosHorariosTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.DatosHorarios.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -13909,6 +13828,14 @@ Namespace DSAyatoTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -13919,6 +13846,14 @@ Namespace DSAyatoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DSAyato, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._rptDepartamentoTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.RptDepartamento.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -13948,14 +13883,6 @@ Namespace DSAyatoTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._datosHorariosTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._registroEntradaySalidaTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.RegistroEntradaySalida.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._registroEntradaySalidaTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
