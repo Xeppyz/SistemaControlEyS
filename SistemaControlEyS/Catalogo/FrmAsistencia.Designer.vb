@@ -25,19 +25,25 @@ Partial Class FrmAsistencia
         Me.components = New System.ComponentModel.Container()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvRegistros = New System.Windows.Forms.DataGridView()
         Me.TextCedula = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvBusqueda = New System.Windows.Forms.DataGridView()
+        Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DSAyato = New SistemaControlEyS.DSAyato()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnEntrada = New System.Windows.Forms.Button()
         Me.BtnSalida = New System.Windows.Forms.Button()
         Me.LblTiempo = New System.Windows.Forms.Label()
-        Me.DSAyato = New SistemaControlEyS.DSAyato()
+        Me.EmpleadoTableAdapter = New SistemaControlEyS.DSAyatoTableAdapters.EmpleadoTableAdapter()
+        Me.IdEmpleadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvRegistros, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,7 +53,7 @@ Partial Class FrmAsistencia
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.DgvRegistros)
         Me.GroupBox1.Location = New System.Drawing.Point(262, 28)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(346, 273)
@@ -55,14 +61,15 @@ Partial Class FrmAsistencia
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registros "
         '
-        'DataGridView1
+        'DgvRegistros
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(340, 254)
-        Me.DataGridView1.TabIndex = 0
+        Me.DgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvRegistros.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvRegistros.Location = New System.Drawing.Point(3, 16)
+        Me.DgvRegistros.Name = "DgvRegistros"
+        Me.DgvRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvRegistros.Size = New System.Drawing.Size(340, 254)
+        Me.DgvRegistros.TabIndex = 0
         '
         'TextCedula
         '
@@ -83,12 +90,26 @@ Partial Class FrmAsistencia
         '
         'DgvBusqueda
         '
+        Me.DgvBusqueda.AutoGenerateColumns = False
         Me.DgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvBusqueda.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdEmpleadoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn})
+        Me.DgvBusqueda.DataSource = Me.EmpleadoBindingSource
         Me.DgvBusqueda.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvBusqueda.Location = New System.Drawing.Point(3, 16)
         Me.DgvBusqueda.Name = "DgvBusqueda"
+        Me.DgvBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvBusqueda.Size = New System.Drawing.Size(230, 142)
         Me.DgvBusqueda.TabIndex = 0
+        '
+        'EmpleadoBindingSource
+        '
+        Me.EmpleadoBindingSource.DataMember = "Empleado"
+        Me.EmpleadoBindingSource.DataSource = Me.DSAyato
+        '
+        'DSAyato
+        '
+        Me.DSAyato.DataSetName = "DSAyato"
+        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label1
         '
@@ -121,16 +142,35 @@ Partial Class FrmAsistencia
         'LblTiempo
         '
         Me.LblTiempo.AutoSize = True
+        Me.LblTiempo.Font = New System.Drawing.Font("Consolas", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblTiempo.Location = New System.Drawing.Point(109, 325)
         Me.LblTiempo.Name = "LblTiempo"
-        Me.LblTiempo.Size = New System.Drawing.Size(39, 13)
+        Me.LblTiempo.Size = New System.Drawing.Size(90, 28)
         Me.LblTiempo.TabIndex = 7
         Me.LblTiempo.Text = "Label2"
         '
-        'DSAyato
+        'EmpleadoTableAdapter
         '
-        Me.DSAyato.DataSetName = "DSAyato"
-        Me.DSAyato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.EmpleadoTableAdapter.ClearBeforeFill = True
+        '
+        'IdEmpleadoDataGridViewTextBoxColumn
+        '
+        Me.IdEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "idEmpleado"
+        Me.IdEmpleadoDataGridViewTextBoxColumn.HeaderText = "idEmpleado"
+        Me.IdEmpleadoDataGridViewTextBoxColumn.Name = "IdEmpleadoDataGridViewTextBoxColumn"
+        Me.IdEmpleadoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'CedulaDataGridViewTextBoxColumn
+        '
+        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "cedula"
+        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "cedula"
+        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
         '
         'FrmAsistencia
         '
@@ -148,9 +188,10 @@ Partial Class FrmAsistencia
         Me.Name = "FrmAsistencia"
         Me.Text = "Registrar Asistencia"
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvRegistros, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DSAyato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -159,7 +200,7 @@ Partial Class FrmAsistencia
     Friend WithEvents DSAyato As DSAyato
     Friend WithEvents Timer1 As Timer
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvRegistros As DataGridView
     Friend WithEvents TextCedula As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DgvBusqueda As DataGridView
@@ -167,4 +208,9 @@ Partial Class FrmAsistencia
     Friend WithEvents BtnEntrada As Button
     Friend WithEvents BtnSalida As Button
     Friend WithEvents LblTiempo As Label
+    Friend WithEvents EmpleadoBindingSource As BindingSource
+    Friend WithEvents EmpleadoTableAdapter As DSAyatoTableAdapters.EmpleadoTableAdapter
+    Friend WithEvents IdEmpleadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -27,11 +27,9 @@ Partial Class FrmAgregarD
         Me.TextJefe = New System.Windows.Forms.TextBox()
         Me.TextExt = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextCant = New System.Windows.Forms.TextBox()
         Me.TextDepart = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvDepartamento = New System.Windows.Forms.DataGridView()
@@ -57,66 +55,57 @@ Partial Class FrmAgregarD
         Me.GroupBox1.Controls.Add(Me.TextJefe)
         Me.GroupBox1.Controls.Add(Me.TextExt)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TextCant)
         Me.GroupBox1.Controls.Add(Me.TextDepart)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 40)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(857, 120)
+        Me.GroupBox1.Size = New System.Drawing.Size(509, 120)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
         'TextEmail
         '
-        Me.TextEmail.Location = New System.Drawing.Point(706, 29)
+        Me.TextEmail.Location = New System.Drawing.Point(258, 58)
         Me.TextEmail.Name = "TextEmail"
-        Me.TextEmail.Size = New System.Drawing.Size(145, 20)
-        Me.TextEmail.TabIndex = 5
+        Me.TextEmail.Size = New System.Drawing.Size(195, 20)
+        Me.TextEmail.TabIndex = 4
         '
         'TextJefe
         '
-        Me.TextJefe.Location = New System.Drawing.Point(493, 68)
+        Me.TextJefe.Location = New System.Drawing.Point(75, 58)
         Me.TextJefe.Name = "TextJefe"
-        Me.TextJefe.Size = New System.Drawing.Size(167, 20)
-        Me.TextJefe.TabIndex = 4
+        Me.TextJefe.Size = New System.Drawing.Size(132, 20)
+        Me.TextJefe.TabIndex = 3
         '
         'TextExt
         '
-        Me.TextExt.Location = New System.Drawing.Point(493, 26)
+        Me.TextExt.Location = New System.Drawing.Point(328, 22)
         Me.TextExt.Name = "TextExt"
-        Me.TextExt.Size = New System.Drawing.Size(167, 20)
-        Me.TextExt.TabIndex = 3
+        Me.TextExt.Size = New System.Drawing.Size(125, 20)
+        Me.TextExt.TabIndex = 2
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(668, 33)
+        Me.Label5.Location = New System.Drawing.Point(220, 61)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(32, 13)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Email"
         '
-        'TextCant
-        '
-        Me.TextCant.Location = New System.Drawing.Point(149, 75)
-        Me.TextCant.Name = "TextCant"
-        Me.TextCant.Size = New System.Drawing.Size(197, 20)
-        Me.TextCant.TabIndex = 2
-        '
         'TextDepart
         '
-        Me.TextDepart.Location = New System.Drawing.Point(144, 26)
+        Me.TextDepart.Location = New System.Drawing.Point(75, 22)
         Me.TextDepart.Name = "TextDepart"
-        Me.TextDepart.Size = New System.Drawing.Size(202, 20)
+        Me.TextDepart.Size = New System.Drawing.Size(132, 20)
         Me.TextDepart.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(377, 75)
+        Me.Label4.Location = New System.Drawing.Point(16, 61)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 13)
         Me.Label4.TabIndex = 3
@@ -125,20 +114,11 @@ Partial Class FrmAgregarD
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(377, 29)
+        Me.Label3.Location = New System.Drawing.Point(229, 26)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(95, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Jefe departamento"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 82)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Cantidad de empleados"
         '
         'Label1
         '
@@ -154,7 +134,7 @@ Partial Class FrmAgregarD
         Me.GroupBox2.Controls.Add(Me.DgvDepartamento)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 202)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(788, 145)
+        Me.GroupBox2.Size = New System.Drawing.Size(509, 145)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Departamentos encontrados: 0"
@@ -166,7 +146,7 @@ Partial Class FrmAgregarD
         Me.DgvDepartamento.Location = New System.Drawing.Point(3, 16)
         Me.DgvDepartamento.Name = "DgvDepartamento"
         Me.DgvDepartamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvDepartamento.Size = New System.Drawing.Size(782, 126)
+        Me.DgvDepartamento.Size = New System.Drawing.Size(503, 126)
         Me.DgvDepartamento.TabIndex = 0
         '
         'ToolStrip1
@@ -174,7 +154,7 @@ Partial Class FrmAgregarD
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNuevo, Me.BtnGuardar, Me.BtnEditar, Me.BtnEliminar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(881, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(548, 25)
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -249,7 +229,7 @@ Partial Class FrmAgregarD
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
-        Me.ClientSize = New System.Drawing.Size(881, 364)
+        Me.ClientSize = New System.Drawing.Size(548, 364)
         Me.Controls.Add(Me.BtnBuscar)
         Me.Controls.Add(Me.TextDato)
         Me.Controls.Add(Me.Label6)
@@ -277,11 +257,9 @@ Partial Class FrmAgregarD
     Friend WithEvents TextJefe As TextBox
     Friend WithEvents TextExt As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextCant As TextBox
     Friend WithEvents TextDepart As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents BtnNuevo As ToolStripButton

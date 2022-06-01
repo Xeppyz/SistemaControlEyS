@@ -2,8 +2,10 @@
 
 
     'Esto es un campo
-    Private user As String = "admin"
-    Private pw As String = "123"
+    ' Private user As String = "admin"
+    ' Private pw As String = "123"
+
+    Dim login As New DSAyatoTableAdapters.LoginTableAdapter
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
@@ -19,30 +21,33 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnAceptar.Click
 
+        Try
 
-        EvauluarUser()
+            Dim x As DataTable = login.BuscarLogin(TextUsuario.Text, TextContraseña.Text)
+            If (x.Rows.Count() <= 0) Then
+                MsgBox("Usuario no encontrado", MsgBoxStyle.Critical, "ERROR")
+            Else
+                MsgBox("Usuario encontrado", MsgBoxStyle.Information, "Correcto")
+                Form1.Show()
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub TexUsuario_TextChanged(sender As Object, e As EventArgs) Handles TextUsuario.TextChanged
 
     End Sub
 
-    Sub EvauluarUser()
-        If (TextUsuario.Text.Equals(user) And TextContraseña.Text.Equals(pw)) Then
 
-            Form1.Show()
-            Me.Close()
 
-        Else
-            MsgBox("Usuario o contraseña incorrecta. Verifica y vuelva a intentar...", MsgBoxStyle.Critical, "Error")
-
-        End If
-
-    End Sub
 
     Private Sub TextContraseña_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextContraseña.KeyPress
         If Asc(e.KeyChar()) = 13 Then
-            EvauluarUser()
+
         End If
 
     End Sub
@@ -50,7 +55,7 @@
     Private Sub TextUsuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextUsuario.KeyPress
         If Asc(e.KeyChar()) = 13 Then
             TextContraseña.Focus()
-            EvauluarUser()
+
         End If
     End Sub
 
