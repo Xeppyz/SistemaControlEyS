@@ -9,6 +9,9 @@
     Dim depart As New DSAyatoTableAdapters.RptDepartamentoTableAdapter
     Dim tbldepart As New DSAyato.RptDepartamentoDataTable
 
+
+    Dim asis As New DSAyatoTableAdapters.RptAsistenciaTableAdapter
+    Dim tblasis As New DSAyato.RptAsistenciaDataTable
     Private Sub btnReporte_Click(sender As Object, e As EventArgs)
 
 
@@ -33,7 +36,7 @@
     Private Sub EmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem.Click
 
         empleado.Fill(tblemp)
-        VerReporte(tblemp, "DsEmpleado", "C:\Users\alexa\OneDrive\Escritorio\SistemaControlEyS\SistemaControlEyS\Reporte\RptEmpleado.rdlc")
+        VerReporte(tblemp, "DsEmpleado", "C:\Users\alexa\OneDrive\Escritorio\BDFINAL\SistemaControlEyS\Reporte\RptEmpleado.rdlc")
 
 
 
@@ -41,7 +44,7 @@
 
     Private Sub DepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DepartamentoToolStripMenuItem.Click
         depart.Fill(tbldepart)
-        VerReporte(tbldepart, "DsDepartamento", "C:\Users\alexa\OneDrive\Escritorio\SistemaControlEyS\SistemaControlEyS\Reporte\RptDepartamento.rdlc")
+        VerReporte(tbldepart, "DsDepartamento", "C:\Users\alexa\OneDrive\Escritorio\BDFINAL\SistemaControlEyS\Reporte\RptDepartamento.rdlc")
 
 
 
@@ -51,7 +54,7 @@
 
 
         carg.Fill(tblcarg)
-        VerReporte(tblcarg, "DsCargo", "C:\Users\alexa\OneDrive\Escritorio\SistemaControlEyS\SistemaControlEyS\Reporte\RptCargo.rdlc")
+        VerReporte(tblcarg, "DsCargo", "C:\Users\alexa\OneDrive\Escritorio\BDFINAL\SistemaControlEyS\Reporte\RptCargo.rdlc")
 
 
     End Sub
@@ -64,7 +67,8 @@
 
     Private Sub EntradaYSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradaYSalidaToolStripMenuItem.Click
 
-
+        asis.Fill(tblasis)
+        VerReporte(tblasis, "DsAsistencia", "C:\Users\alexa\OneDrive\Escritorio\BDFINAL\SistemaControlEyS\Reporte\RptAsistencia.rdlc")
 
     End Sub
 

@@ -15,6 +15,8 @@
 
     Private Sub FrmAgregarE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DSAyato.DatosEmpleados' Puede moverla o quitarla según sea necesario.
+        Me.DatosEmpleadosTableAdapter.Fill(Me.DSAyato.DatosEmpleados)
+        'TODO: esta línea de código carga datos en la tabla 'DSAyato.DatosEmpleados' Puede moverla o quitarla según sea necesario.
 
         llenarGrid()
         llenarCarg()
@@ -41,18 +43,8 @@
     Sub llenarGrid()
 
 
-        Taemp.Fill(Dtemp)
-
-        DgvEmpleado.DataSource = Dtemp
+        DgvEmpleado.DataSource = Taemp.GetData
         DgvEmpleado.Refresh()
-        DgvEmpleado.Columns.Item("Idempleado").Visible = False
-        DgvEmpleado.Columns.Item("Email Personal").Visible = False
-        DgvEmpleado.Columns.Item("Ciudad").Visible = False
-        DgvEmpleado.Columns.Item("Dirección").Visible = False
-        DgvEmpleado.Columns.Item("IdCargo").Visible = False
-        DgvEmpleado.Columns.Item("IdHorario").Visible = False
-
-
         Dim contador As Integer = CInt(DgvEmpleado.Rows.Count) - 1
         GroupBox2.Text = "Empleados encontrados: " & contador.ToString
 
@@ -77,6 +69,8 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+
+
         If (String.IsNullOrEmpty(TextPersonal.Text)) Then
             MsgBox("No puede quedar vacio el Correo Personal ", MsgBoxStyle.Critical, "ERROR")
             TextPersonal.Focus()
@@ -143,12 +137,16 @@
         Dim direccion As String = TextDireccion.Text.Trim
         Dim idCargo As Integer = CInt(CmbCargo.SelectedValue)
         Dim idHorario As Integer = CInt(CmbHorario.SelectedValue)
+        Try
+            If (emplea.InsertarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
+                    idCargo, idHorario)) Then
+                MsgBox("Se guardó con éxito el empleado", MsgBoxStyle.Information, "CORRECTO")
+                llenarGrid()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-        If (emplea.InsertarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
-        idCargo, idHorario)) Then
-            MsgBox("Se guardó con éxito el empleado", MsgBoxStyle.Information, "CORRECTO")
-            llenarGrid()
-        End If
 
 
     End Sub
@@ -233,31 +231,35 @@
         Dim idCargo As Integer = CInt(CmbCargo.SelectedValue)
         Dim idHorario As Integer = CInt(CmbHorario.SelectedValue)
 
-        If (emplea.ActualizarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
-        idCargo, idHorario, Idempleado)) Then
-            MsgBox("Se actualizo correctamente empleado...", MsgBoxStyle.Information, "ÉXITO")
-            llenarGrid()
-            Exit Sub
+        Try
+            If (emplea.ActualizarEmpleado(correoPersona, correoLaboral, telefono, nombre, ciudad, apellido, cedula, direccion,
+       idCargo, idHorario, Idempleado)) Then
+                MsgBox("Se actualizo correctamente empleado...", MsgBoxStyle.Information, "ÉXITO")
+                llenarGrid()
+                Exit Sub
+            End If
 
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
     End Sub
 
     Private Sub DgvEmpleado_DoubleClick(sender As Object, e As EventArgs) Handles DgvEmpleado.DoubleClick
         Try
             Dim fila As Integer = DgvEmpleado.CurrentRow.Index
             Idempleado = DgvEmpleado.Item(0, fila).Value
-            TextPersonal.Text = DgvEmpleado.Item(1, fila).Value
-            TextLaboral.Text = DgvEmpleado.Item(2, fila).Value
-            TextTelefono.Text = DgvEmpleado.Item(3, fila).Value
-            TextNombre.Text = DgvEmpleado.Item(4, fila).Value
-            TextCiudad.Text = DgvEmpleado.Item(5, fila).Value
-            TextApellidos.Text = DgvEmpleado.Item(6, fila).Value
-            TextCedula.Text = DgvEmpleado.Item(7, fila).Value
+            TextCedula.Text = DgvEmpleado.Item(1, fila).Value
+            TextNombre.Text = DgvEmpleado.Item(2, fila).Value
+            TextApellidos.Text = DgvEmpleado.Item(3, fila).Value
+            TextPersonal.Text = DgvEmpleado.Item(4, fila).Value
+            TextLaboral.Text = DgvEmpleado.Item(5, fila).Value
+            TextTelefono.Text = DgvEmpleado.Item(6, fila).Value
+            TextCiudad.Text = DgvEmpleado.Item(7, fila).Value
             TextDireccion.Text = DgvEmpleado.Item(8, fila).Value
-            CmbCargo.SelectedValue = DgvEmpleado.Item(9, fila).Value
-            CmbHorario.SelectedValue = DgvEmpleado.Item(10, fila).Value
-
-
+            CmbHorario.SelectedValue = DgvEmpleado.Item(9, fila).Value
+            CmbCargo.SelectedValue = DgvEmpleado.Item(10, fila).Value
             BtnGuardar.Enabled = False
             BtnEditar.Enabled = True
             BtnEliminar.Enabled = True

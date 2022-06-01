@@ -67,12 +67,16 @@
         Dim cargo As String = TextCargo.Text.Trim
         Dim descripcion As String = TextDescrip.Text.Trim
         Dim iddepartamento As Integer = CInt(CmbDepart.SelectedValue)
+        Try
+            If (carg.InsertarCargo(cargo, descripcion, iddepartamento)) Then
+                MsgBox("Se guardó exitosamente", MsgBoxStyle.Information, "CORRECTO")
+                llenarGrid()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
 
-        If (carg.InsertarCargo(cargo, descripcion, iddepartamento)) Then
-            MsgBox("Se guardó exitosamente", MsgBoxStyle.Information, "CORRECTO")
-            llenarGrid()
-        End If
 
     End Sub
 
@@ -95,13 +99,19 @@
         Dim descripcion As String = TextDescrip.Text.Trim
         Dim iddepartamento As Integer = CInt(CmbDepart.SelectedValue)
 
-        If (carg.ActualizarCargo(cargo, descripcion, iddepartamento, idcargo)) Then
-            MsgBox("Se actualizó correctamente el cargo", MsgBoxStyle.Information, "Correcto")
-            llenarGrid()
 
-            Exit Sub
+        Try
+            If (carg.ActualizarCargo(cargo, descripcion, iddepartamento, idcargo)) Then
+                MsgBox("Se actualizó correctamente el cargo", MsgBoxStyle.Information, "Correcto")
+                llenarGrid()
 
-        End If
+                Exit Sub
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
 
 
     End Sub

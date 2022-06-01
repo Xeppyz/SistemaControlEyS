@@ -62,11 +62,15 @@
         Dim extension As String = TextExt.Text.Trim
         Dim jefeDepartamento As String = TextJefe.Text.Trim
         Dim email As String = TextEmail.Text.Trim
+        Try
+            If (Depart.InsertarDepartamento(nombreDepartamento, extension, jefeDepartamento, email)) Then
+                MsgBox("Se guardó correctamente el departamento", MsgBoxStyle.Information, "Correcto")
+                llenarGrid()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-        If (Depart.InsertarDepartamento(nombreDepartamento, extension, jefeDepartamento, email)) Then
-            MsgBox("Se guardó correctamente el departamento", MsgBoxStyle.Information, "Correcto")
-            llenarGrid()
-        End If
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
@@ -93,11 +97,15 @@
         Dim extension As String = TextExt.Text.Trim
         Dim jefeDepartamento As String = TextJefe.Text.Trim
         Dim email As String = TextEmail.Text.Trim
+        Try
+            If (Depart.ActualizarDepartamento(nombreDepartamento, extension, jefeDepartamento, email, IdDepart)) Then
+                MsgBox("Se actualizó con éxito el departamento...", MsgBoxStyle.Information, "CORRECTO")
+                llenarGrid()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-        If (Depart.ActualizarDepartamento(nombreDepartamento, extension, jefeDepartamento, email, IdDepart)) Then
-            MsgBox("Se actualizó con éxito el departamento...", MsgBoxStyle.Information, "CORRECTO")
-            llenarGrid()
-        End If
     End Sub
 
     Private Sub DgvDepartamento_DoubleClick(sender As Object, e As EventArgs) Handles DgvDepartamento.DoubleClick

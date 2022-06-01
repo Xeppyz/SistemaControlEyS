@@ -213,6 +213,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\RptAsistencia.rdlc" />
     <EmbeddedResource Include="Reporte\RptCargo.rdlc" />
     <EmbeddedResource Include="Reporte\RptDepartamento.rdlc" />
     <EmbeddedResource Include="Reporte\RptEmpleado.rdlc" />
