@@ -248,6 +248,8 @@
     <Content Include="Iconos\cleaning.png" />
     <Content Include="Iconos\disquete.png" />
     <Content Include="Iconos\editar.png" />
+    <Content Include="Iconos\iniciar-sesion %281%29.png" />
+    <Content Include="Iconos\iniciar-sesion.png" />
     <Content Include="PictureBox\pngwing.com.png" />
     <Content Include="PictureBox\WhatsApp Image 2022-06-01 at 6.21.59 PM.jpeg" />
     <Content Include="SqlServerTypes\Loader.cs" />

@@ -27,11 +27,11 @@ Partial Class FrmLogin
         Me.Contraseña = New System.Windows.Forms.Label()
         Me.TextUsuario = New System.Windows.Forms.TextBox()
         Me.TextContraseña = New System.Windows.Forms.TextBox()
-        Me.BtnAceptar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.BtnAceptar = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -79,16 +79,6 @@ Partial Class FrmLogin
         Me.TextContraseña.Size = New System.Drawing.Size(307, 30)
         Me.TextContraseña.TabIndex = 3
         '
-        'BtnAceptar
-        '
-        Me.BtnAceptar.Location = New System.Drawing.Point(411, 278)
-        Me.BtnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.BtnAceptar.Name = "BtnAceptar"
-        Me.BtnAceptar.Size = New System.Drawing.Size(145, 63)
-        Me.BtnAceptar.TabIndex = 4
-        Me.BtnAceptar.Text = "Aceptar"
-        Me.BtnAceptar.UseVisualStyleBackColor = True
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(832, 15)
@@ -98,6 +88,17 @@ Partial Class FrmLogin
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Registrar asistencia"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Consolas", 22.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.SkyBlue
+        Me.Label2.Location = New System.Drawing.Point(798, 102)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(239, 43)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "AyatoLovers"
         '
         'PictureBox2
         '
@@ -120,16 +121,15 @@ Partial Class FrmLogin
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
-        'Label2
+        'BtnAceptar
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Consolas", 22.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.SkyBlue
-        Me.Label2.Location = New System.Drawing.Point(798, 102)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(239, 43)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "AyatoLovers"
+        Me.BtnAceptar.Image = Global.SistemaControlEyS.My.Resources.Resources.iniciar_sesion__1_
+        Me.BtnAceptar.Location = New System.Drawing.Point(411, 256)
+        Me.BtnAceptar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnAceptar.Name = "BtnAceptar"
+        Me.BtnAceptar.Size = New System.Drawing.Size(144, 51)
+        Me.BtnAceptar.TabIndex = 4
+        Me.BtnAceptar.UseVisualStyleBackColor = True
         '
         'FrmLogin
         '
