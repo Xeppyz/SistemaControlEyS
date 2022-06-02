@@ -76,7 +76,7 @@
                 DgvBusqueda.Columns.Item(2).Visible = True
 
                 Try
-                    Dim dato As String = TextCedula.Text & "%"
+                    Dim dato As String = TextCedula.Text
                     DgvBusqueda.DataSource = Emp.BuscarPorCedula(dato)
 
                     DgvBusqueda.Refresh()
@@ -138,4 +138,9 @@
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        FrmLogin.Show()
+        Me.Close()
+
+    End Sub
 End Class

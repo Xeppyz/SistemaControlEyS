@@ -219,7 +219,7 @@
     <EmbeddedResource Include="Reporte\RptEmpleado.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BDScript\TheRealOne" />
+    <None Include="BDScript\BDAyatoOne.bak" />
     <None Include="CONEXION\DSAyato.xsc">
       <DependentUpon>DSAyato.xsd</DependentUpon>
     </None>
@@ -249,6 +249,7 @@
     <Content Include="Iconos\disquete.png" />
     <Content Include="Iconos\editar.png" />
     <Content Include="PictureBox\pngwing.com.png" />
+    <Content Include="PictureBox\WhatsApp Image 2022-06-01 at 6.21.59 PM.jpeg" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

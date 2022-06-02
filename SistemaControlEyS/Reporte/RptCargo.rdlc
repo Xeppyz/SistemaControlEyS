@@ -227,8 +227,8 @@
         </TablixRowHierarchy>
         <DataSetName>DsCargo</DataSetName>
         <Top>0.17639cm</Top>
-        <Height>2.68731cm</Height>
-        <Width>15.75184cm</Width>
+        <Height>2.68732cm</Height>
+        <Width>15.75183cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -253,7 +253,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de registro de cargos </Value>
+                  <Value>Reporte de cargos </Value>
                   <Style>
                     <FontFamily>Consolas</FontFamily>
                     <FontSize>20pt</FontSize>
@@ -265,9 +265,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.37042cm</Top>
-          <Left>1.42557cm</Left>
+          <Left>3.90032cm</Left>
           <Height>1.02333cm</Height>
-          <Width>12.99104cm</Width>
+          <Width>7.19137cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -293,8 +293,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.39375cm</Top>
-          <Left>11.26808cm</Left>
+          <Top>1.42903cm</Top>
+          <Left>7.94315cm</Left>
           <Height>0.52352cm</Height>
           <Width>3.14854cm</Width>
           <ZIndex>1</ZIndex>
@@ -336,7 +336,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.07056cm</Top>
+          <Top>0.07055cm</Top>
           <Left>11.26808cm</Left>
           <Height>0.6cm</Height>
           <Width>2.92333cm</Width>

@@ -36,7 +36,7 @@
     Private Sub EmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem.Click
 
         empleado.Fill(tblemp)
-        VerReporte(tblemp, "DsEmpleado", "C:\Users\alexa\OneDrive\Escritorio\BDFINAL\SistemaControlEyS\Reporte\RptEmpleado.rdlc")
+        VerReporte(tblemp, "DsEmpleado", "U:\SistemaControlEyS\SistemaControlEyS\Reporte\RptEmpleado.rdlc")
 
 
 
@@ -44,7 +44,7 @@
 
     Private Sub DepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DepartamentoToolStripMenuItem.Click
         depart.Fill(tbldepart)
-        VerReporte(tbldepart, "DsDepartamento", "C:\Users\alexa\OneDrive\Escritorio\BDFINAL\SistemaControlEyS\Reporte\RptDepartamento.rdlc")
+        VerReporte(tbldepart, "DsDepartamento", "U:\SistemaControlEyS\SistemaControlEyS\Reporte\RptDepartamento.rdlc")
 
 
 
@@ -54,7 +54,7 @@
 
 
         carg.Fill(tblcarg)
-        VerReporte(tblcarg, "DsCargo", "C:\Users\alexa\OneDrive\Escritorio\BDFINAL\SistemaControlEyS\Reporte\RptCargo.rdlc")
+        VerReporte(tblcarg, "DsCargo", "U:\SistemaControlEyS\SistemaControlEyS\Reporte\RptCargo.rdlc")
 
 
     End Sub
@@ -68,7 +68,7 @@
     Private Sub EntradaYSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradaYSalidaToolStripMenuItem.Click
 
         asis.Fill(tblasis)
-        VerReporte(tblasis, "DsAsistencia", "C:\Users\alexa\OneDrive\Escritorio\BDFINAL\SistemaControlEyS\Reporte\RptAsistencia.rdlc")
+        VerReporte(tblasis, "DsAsistencia", "U:\SistemaControlEyS\SistemaControlEyS\Reporte\RptAsistencia.rdlc")
 
     End Sub
 

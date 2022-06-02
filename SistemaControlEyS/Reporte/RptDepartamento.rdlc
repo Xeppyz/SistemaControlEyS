@@ -6,21 +6,21 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.8575cm</Width>
+              <Width>3.83984cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.79917cm</Width>
+              <Width>2.78151cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.27542cm</Width>
+              <Width>3.25776cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.47896cm</Width>
+              <Width>4.4613cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.64823cm</Height>
+              <Height>0.39423cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -292,8 +292,8 @@
         <DataSetName>DsDepartamento</DataSetName>
         <Top>0.49953cm</Top>
         <Left>0.66146cm</Left>
-        <Height>1.05833cm</Height>
-        <Width>10.41104cm</Width>
+        <Height>0.80433cm</Height>
+        <Width>14.34042cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -318,7 +318,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de registro de departamentos</Value>
+                  <Value>Reporte de departamentos</Value>
                   <Style>
                     <FontFamily>Consolas</FontFamily>
                     <FontSize>20pt</FontSize>
@@ -330,8 +330,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
           <Top>0.36724cm</Top>
+          <Left>2.032cm</Left>
           <Height>1.00859cm</Height>
-          <Width>15.00188cm</Width>
+          <Width>9.43505cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

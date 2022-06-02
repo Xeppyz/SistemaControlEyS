@@ -277,7 +277,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.79844cm</Height>
+              <Height>0.43861cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -546,9 +546,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DsEmpleado</DataSetName>
-        <Top>0.89641cm</Top>
+        <Top>0.55774cm</Top>
         <Left>0.88255cm</Left>
-        <Height>1.59688cm</Height>
+        <Height>1.23705cm</Height>
         <Width>16.48102cm</Width>
         <Style>
           <Border>
@@ -557,14 +557,14 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.25in</Height>
+    <Height>1.10833in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>7.26425in</Width>
+  <Width>6.83605in</Width>
   <Page>
     <PageHeader>
       <Height>2.42245cm</Height>
